@@ -1,4 +1,4 @@
-from gi.repository import GObject
+from gi.repository import GObject as GObject
 
 class Category:
     APPLICATION: int
@@ -6,46 +6,159 @@ class Category:
     SYSTEM: int
     HARDWARE: int
 
-def category_to_nick(self): ...
-def category_from_string(value=None): ...
+def category_to_nick(self):
+    """    
+    @returns: 
+    @rtype: str
+    """
+def category_from_string(value=None):
+    """    
+    @type value: str
+    @returns: 
+    @rtype: AstalTray.Category
+    """
 
 class Status:
     PASSIVE: int
     ACTIVE: int
     NEEDS_ATTENTION: int
 
-def status_to_nick(self): ...
-def status_from_string(value=None): ...
+def status_to_nick(self):
+    """    
+    @returns: 
+    @rtype: str
+    """
+def status_from_string(value=None):
+    """    
+    @type value: str
+    @returns: 
+    @rtype: AstalTray.Status
+    """
 
 MAJOR_VERSION: int
 MINOR_VERSION: int
 MICRO_VERSION: int
 VERSION: str
 
-def get_default(): ...
+def get_default():
+    """    Get the singleton instance of [class@AstalTray.Tray]
+    @returns: 
+    @rtype: AstalTray.Tray
+    """
 
 class TrayItem(GObject.Object):
-    def about_to_show(self): ...
-    def activate(self, x=None, y=None): ...
-    def secondary_activate(self, x=None, y=None): ...
-    def scroll(self, delta=None, orientation=None): ...
-    def to_json_string(self): ...
-    def get_title(self): ...
-    def get_category(self): ...
-    def get_status(self): ...
-    def get_tooltip(self): ...
-    def get_tooltip_markup(self): ...
-    def get_tooltip_text(self): ...
-    def get_id(self): ...
-    def get_is_menu(self): ...
-    def get_icon_theme_path(self): ...
-    def get_icon_name(self): ...
-    def get_icon_pixbuf(self): ...
-    def get_gicon(self): ...
-    def get_item_id(self): ...
-    def get_menu_path(self): ...
-    def get_menu_model(self): ...
-    def get_action_group(self): ...
+    def about_to_show(self):
+        """        tells the tray app that its menu is about to be opened, so it can update the menu if needed. You should call this method before openening the 
+        menu.
+        @returns: 
+        @rtype: None
+        """
+    def activate(self, x=None, y=None):
+        """        Send an activate request to the tray app.
+        @type x: int
+        @type y: int
+        @returns: 
+        @rtype: None
+        """
+    def secondary_activate(self, x=None, y=None):
+        """        Send a secondary activate request to the tray app.
+        @type x: int
+        @type y: int
+        @returns: 
+        @rtype: None
+        """
+    def scroll(self, delta=None, orientation=None):
+        '''        Send a scroll request to the tray app. valid values for the orientation are "horizontal" and "vertical".
+        @type delta: int
+        @type orientation: str
+        @returns: 
+        @rtype: None
+        '''
+    def to_json_string(self):
+        """        
+        @returns: 
+        @rtype: str
+        """
+    def get_title(self):
+        """        
+        @returns: 
+        @rtype: str
+        """
+    def get_category(self):
+        """        
+        @returns: 
+        @rtype: AstalTray.Category
+        """
+    def get_status(self):
+        """        
+        @returns: 
+        @rtype: AstalTray.Status
+        """
+    def get_tooltip(self):
+        """        
+        @returns: 
+        @rtype: AstalTray.Tooltip
+        """
+    def get_tooltip_markup(self):
+        """        
+        @returns: 
+        @rtype: str
+        """
+    def get_tooltip_text(self):
+        """        
+        @returns: 
+        @rtype: str
+        """
+    def get_id(self):
+        """        
+        @returns: 
+        @rtype: str
+        """
+    def get_is_menu(self):
+        """        
+        @returns: 
+        @rtype: bool
+        """
+    def get_icon_theme_path(self):
+        """        
+        @returns: 
+        @rtype: str
+        """
+    def get_icon_name(self):
+        """        
+        @returns: 
+        @rtype: str
+        """
+    def get_icon_pixbuf(self):
+        """        
+        @returns: 
+        @rtype: GdkPixbuf.Pixbuf
+        """
+    def get_gicon(self):
+        """        
+        @returns: 
+        @rtype: Gio.Icon
+        """
+    def get_item_id(self):
+        """        
+        @returns: 
+        @rtype: str
+        """
+    def get_menu_path(self):
+        """        
+        @returns: 
+        @rtype: GLib.ObjectPath
+        """
+    def get_menu_model(self):
+        """        
+        @returns: 
+        @rtype: Gio.MenuModel
+        """
+    def get_action_group(self):
+        """        
+        @returns: 
+        @rtype: Gio.ActionGroup
+        """
     @property
     def parent_instance(self): ...
     @property
@@ -58,14 +171,39 @@ class TrayItemClass:
 class TrayItemPrivate: ...
 
 class Tray(GObject.Object):
-    def __init__(self, **kwargs) -> None: ...
+    def __init__(self, **kwargs) -> None:
+        """        
+        @returns: Newly created Tray
+        @rtype: Tray
+        """
     @staticmethod
-    def new(): ...
+    def new():
+        """        
+        @returns: Newly created Tray
+        @rtype: Tray
+        """
     @staticmethod
-    def get_default(): ...
-    def get_item(self, item_id=None): ...
-    def get_items(self): ...
-    def get_items_model(self): ...
+    def get_default():
+        """        Get the singleton instance of [class@AstalTray.Tray]
+        @returns: 
+        @rtype: AstalTray.Tray
+        """
+    def get_item(self, item_id=None):
+        """        gets the TrayItem with the given item-id.
+        @type item_id: str
+        @returns: 
+        @rtype: AstalTray.TrayItem
+        """
+    def get_items(self):
+        """        
+        @returns: 
+        @rtype: GLib.List
+        """
+    def get_items_model(self):
+        """        
+        @returns: 
+        @rtype: Gio.ListModel
+        """
     @property
     def parent_instance(self): ...
     @property
