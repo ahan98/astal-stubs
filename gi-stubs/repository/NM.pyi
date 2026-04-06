@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 import enum
 import typing
+from typing import Any, Literal, overload
 
 from gi.repository import GLib, GObject, Gio
 
-# NOTE: The runtime name is '80211ApFlags' (invalid Python identifier).
-# Access at runtime via: getattr(NM, '80211ApFlags')
+# NOTE: Access at runtime via: getattr(NM, '80211ApFlags')
 class _80211ApFlags(enum.Enum):
     """802.11 access point flags."""
 
@@ -15,8 +15,7 @@ class _80211ApFlags(enum.Enum):
     WPS_PBC = 4
     WPS_PIN = 8
 
-# NOTE: The runtime name is '80211ApSecurityFlags' (invalid Python identifier).
-# Access at runtime via: getattr(NM, '80211ApSecurityFlags')
+# NOTE: Access at runtime via: getattr(NM, '80211ApSecurityFlags')
 class _80211ApSecurityFlags(enum.Enum):
     """802.11 access point security and authentication flags.  These flags describe
     the current security requirements of an access point as determined from the
@@ -38,8 +37,7 @@ class _80211ApSecurityFlags(enum.Enum):
     KEY_MGMT_OWE_TM = 4096
     KEY_MGMT_EAP_SUITE_B_192 = 8192
 
-# NOTE: The runtime name is '80211Mode' (invalid Python identifier).
-# Access at runtime via: getattr(NM, '80211Mode')
+# NOTE: Access at runtime via: getattr(NM, '80211Mode')
 class _80211Mode(enum.Enum):
     """Indicates the 802.11 mode an access point or device is currently in."""
 
@@ -48,6 +46,17 @@ class _80211Mode(enum.Enum):
     INFRA = 2
     AP = 3
     MESH = 4
+
+@overload
+def __getattr__(name: Literal["80211ApFlags"]) -> type[_80211ApFlags]: ...
+@overload
+def __getattr__(
+    name: Literal["80211ApSecurityFlags"],
+) -> type[_80211ApSecurityFlags]: ...
+@overload
+def __getattr__(name: Literal["80211Mode"]) -> type[_80211Mode]: ...
+@overload
+def __getattr__(name: str) -> Any: ...
 
 ACCESS_POINT_BANDWIDTH = "bandwidth"
 ACCESS_POINT_BSSID = "bssid"
