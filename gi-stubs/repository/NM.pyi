@@ -2508,7 +2508,7 @@ def agent_manager_error_quark() -> GLib.Quark:
     pass
 
 
-def bridge_vlan_from_str(str: str=None) -> BridgeVlan:
+def bridge_vlan_from_str(str: str | None = None) -> BridgeVlan:
     """Parses the string representation of the queueing
 discipline to a %NMBridgeVlan instance.
 
@@ -2524,7 +2524,7 @@ def client_error_quark() -> GLib.Quark:
     pass
 
 
-def conn_wireguard_import(filename: str=None) -> Connection:
+def conn_wireguard_import(filename: str | None = None) -> Connection:
     """
 
 :param filename: name of the file to attempt to read into a new #NMConnection
@@ -2553,7 +2553,7 @@ def device_error_quark() -> GLib.Quark:
     pass
 
 
-def dns_server_validate(str: str=None, family: int=None) -> bool:
+def dns_server_validate(str: str | None = None, family: int | None = None) -> bool:
     """Validates a DNS name server string.
 
 :param str: the string containing the DNS server
@@ -2562,7 +2562,7 @@ def dns_server_validate(str: str=None, family: int=None) -> bool:
     pass
 
 
-def ethtool_optname_is_channels(optname: str=None) -> bool:
+def ethtool_optname_is_channels(optname: str | None = None) -> bool:
     """Checks whether @optname is a valid option name for a channels setting.
 
 :param optname: the option name to check
@@ -2570,7 +2570,7 @@ def ethtool_optname_is_channels(optname: str=None) -> bool:
     pass
 
 
-def ethtool_optname_is_coalesce(optname: str=None) -> bool:
+def ethtool_optname_is_coalesce(optname: str | None = None) -> bool:
     """Checks whether @optname is a valid option name for a coalesce setting.
 
 :param optname: the option name to check
@@ -2578,7 +2578,7 @@ def ethtool_optname_is_coalesce(optname: str=None) -> bool:
     pass
 
 
-def ethtool_optname_is_eee(optname: str=None) -> bool:
+def ethtool_optname_is_eee(optname: str | None = None) -> bool:
     """Checks whether @optname is a valid option name for an eee setting.
 
 :param optname: the option name to check
@@ -2586,7 +2586,7 @@ def ethtool_optname_is_eee(optname: str=None) -> bool:
     pass
 
 
-def ethtool_optname_is_feature(optname: str=None) -> bool:
+def ethtool_optname_is_feature(optname: str | None = None) -> bool:
     """Checks whether @optname is a valid option name for an offload feature.
 
 :param optname: the option name to check
@@ -2594,7 +2594,7 @@ def ethtool_optname_is_feature(optname: str=None) -> bool:
     pass
 
 
-def ethtool_optname_is_fec(optname: str=None) -> bool:
+def ethtool_optname_is_fec(optname: str | None = None) -> bool:
     """Checks whether @optname is a valid option name for a fec setting.
 
 :param optname: the option name to check
@@ -2602,7 +2602,7 @@ def ethtool_optname_is_fec(optname: str=None) -> bool:
     pass
 
 
-def ethtool_optname_is_pause(optname: str=None) -> bool:
+def ethtool_optname_is_pause(optname: str | None = None) -> bool:
     """Checks whether @optname is a valid option name for a pause setting.
 
 :param optname: the option name to check
@@ -2610,7 +2610,7 @@ def ethtool_optname_is_pause(optname: str=None) -> bool:
     pass
 
 
-def ethtool_optname_is_ring(optname: str=None) -> bool:
+def ethtool_optname_is_ring(optname: str | None = None) -> bool:
     """Checks whether @optname is a valid option name for a ring setting.
 
 :param optname: the option name to check
@@ -2618,8 +2618,8 @@ def ethtool_optname_is_ring(optname: str=None) -> bool:
     pass
 
 
-def ip_route_attribute_validate(name: str=None, value: GLib.Variant=None,
-    family: int=None, known: bool=None) -> bool:
+def ip_route_attribute_validate(name: str | None = None, value: GLib.Variant | None = None,
+    family: int | None = None, known: bool | None = None) -> bool:
     """Validates a route attribute, i.e. checks that the attribute is a known one
 and the value is of the correct type and well-formed.
 
@@ -2638,8 +2638,8 @@ def ip_route_get_variant_attribute_spec() -> VariantAttributeSpec:
     pass
 
 
-def ip_routing_rule_from_string(str: str=None, to_string_flags:
-    IPRoutingRuleAsStringFlags=None, extra_args: GLib.HashTable=None
+def ip_routing_rule_from_string(str: str | None = None, to_string_flags:
+    IPRoutingRuleAsStringFlags | None = None, extra_args: GLib.HashTable | None = None
     ) -> IPRoutingRule:
     """
 
@@ -2650,9 +2650,9 @@ def ip_routing_rule_from_string(str: str=None, to_string_flags:
     pass
 
 
-def keyfile_read(keyfile: GLib.KeyFile=None, base_dir: str=None,
-    handler_flags: KeyfileHandlerFlags=None, handler: KeyfileReadHandler=
-    None, user_data: typing.Any=None) -> Connection:
+def keyfile_read(keyfile: GLib.KeyFile | None = None, base_dir: str | None = None,
+    handler_flags: KeyfileHandlerFlags | None = None, handler: KeyfileReadHandler=
+    None, user_data: typing.Any | None = None) -> Connection:
     """Tries to create a NMConnection from a keyfile. The resulting keyfile is
 not normalized and might not even verify.
 
@@ -2665,9 +2665,9 @@ not normalized and might not even verify.
     pass
 
 
-def keyfile_write(connection: Connection=None, handler_flags:
-    KeyfileHandlerFlags=None, handler: KeyfileWriteHandler=None, user_data:
-    typing.Any=None) -> GLib.KeyFile:
+def keyfile_write(connection: Connection | None = None, handler_flags:
+    KeyfileHandlerFlags | None = None, handler: KeyfileWriteHandler | None = None, user_data:
+    typing.Any | None = None) -> GLib.KeyFile:
     """@connection should verify as a valid profile according to
 nm_connection_verify(). If it does not verify, the keyfile may
 be incomplete and the parser may not be able to fully recreate
@@ -2688,7 +2688,7 @@ def manager_error_quark() -> GLib.Quark:
     pass
 
 
-def range_from_str(str: str=None) -> Range:
+def range_from_str(str: str | None = None) -> Range:
     """Parses the string representation of the range to create a %NMRange
 instance.
 
@@ -2711,8 +2711,8 @@ def settings_error_quark() -> GLib.Quark:
     pass
 
 
-def sriov_vf_attribute_validate(name: str=None, value: GLib.Variant=None,
-    known: bool=None) -> bool:
+def sriov_vf_attribute_validate(name: str | None = None, value: GLib.Variant | None = None,
+    known: bool | None = None) -> bool:
     """Validates a VF attribute, i.e. checks that the attribute is a known one,
 the value is of the correct type and well-formed.
 
@@ -2723,8 +2723,8 @@ the value is of the correct type and well-formed.
     pass
 
 
-def utils_ap_mode_security_valid(type: UtilsSecurityType=None, wifi_caps:
-    DeviceWifiCapabilities=None) -> bool:
+def utils_ap_mode_security_valid(type: UtilsSecurityType | None = None, wifi_caps:
+    DeviceWifiCapabilities | None = None) -> bool:
     """Given a set of device capabilities, and a desired security type to check
 against, determines whether the combination of device capabilities and
 desired security type are valid for AP/Hotspot connections.
@@ -2735,8 +2735,8 @@ desired security type are valid for AP/Hotspot connections.
     pass
 
 
-def utils_base64secret_decode(base64_key: str=None, required_key_len: int=
-    None, out_key: int=None) -> bool:
+def utils_base64secret_decode(base64_key: str | None = None, required_key_len: int=
+    None, out_key: int | None = None) -> bool:
     """
 
 :param base64_key: the (possibly invalid) base64 encode key.
@@ -2747,7 +2747,7 @@ def utils_base64secret_decode(base64_key: str=None, required_key_len: int=
     pass
 
 
-def utils_bin2hexstr(src: typing.Any=None, len: int=None, final_len: int=None
+def utils_bin2hexstr(src: typing.Any | None = None, len: int | None = None, final_len: int | None = None
     ) -> str:
     """Converts the byte array @src into a hexadecimal string. If @final_len is
 greater than -1, the returned string is terminated at that index
@@ -2760,7 +2760,7 @@ greater than -1, the returned string is terminated at that index
     pass
 
 
-def utils_bond_mode_int_to_string(mode: int=None) -> str:
+def utils_bond_mode_int_to_string(mode: int | None = None) -> str:
     """Convert bonding mode from integer value to descriptive name.
 See https://www.kernel.org/doc/Documentation/networking/bonding.txt for
 available modes.
@@ -2770,7 +2770,7 @@ available modes.
     pass
 
 
-def utils_bond_mode_string_to_int(mode: str=None) -> int:
+def utils_bond_mode_string_to_int(mode: str | None = None) -> int:
     """Convert bonding mode from string representation to numeric value.
 See https://www.kernel.org/doc/Documentation/networking/bonding.txt for
 available modes.
@@ -2781,8 +2781,8 @@ The @mode string can be either a descriptive name or a number (as string).
     pass
 
 
-def utils_check_virtual_device_compatibility(virtual_type: GType=None,
-    other_type: GType=None) -> bool:
+def utils_check_virtual_device_compatibility(virtual_type: GType | None = None,
+    other_type: GType | None = None) -> bool:
     """Determines if a connection of type @virtual_type can (in the
 general case) work with connections of type @other_type.
 
@@ -2805,7 +2805,7 @@ underlying device driver.
     pass
 
 
-def utils_copy_cert_as_user(filename: str=None, user: str=None) -> str:
+def utils_copy_cert_as_user(filename: str | None = None, user: str | None = None) -> str:
     """Reads @filename on behalf of user @user and writes the
 content to a new file in /run/NetworkManager/cert/.
 The new file has permission 600 and is owned by root.
@@ -2832,8 +2832,8 @@ This cannot fail and does nothing if the type already exists.
     pass
 
 
-def utils_enum_from_str(type: GType=None, str: str=None, out_value: int=
-    None, err_token: str=None) -> bool:
+def utils_enum_from_str(type: GType | None = None, str: str | None = None, out_value: int=
+    None, err_token: str | None = None) -> bool:
     """Converts a string to the matching enum value.
 
 If the enum is a %G_TYPE_FLAGS the function returns the logical OR of values
@@ -2849,7 +2849,7 @@ containing the unrecognized token in @err_token.
     pass
 
 
-def utils_enum_get_values(type: GType=None, _from: int=None, to: int=None
+def utils_enum_get_values(type: GType | None = None, _from: int | None = None, to: int | None = None
     ) -> typing.Any:
     """Returns the list of possible values for a given enum.
 
@@ -2860,7 +2860,7 @@ def utils_enum_get_values(type: GType=None, _from: int=None, to: int=None
     pass
 
 
-def utils_enum_to_str(type: GType=None, value: int=None) -> str:
+def utils_enum_to_str(type: GType | None = None, value: int | None = None) -> str:
     """Converts an enum value to its string representation. If the enum is a
 %G_TYPE_FLAGS the function returns a comma-separated list of matching values.
 If the value has no corresponding string representation, it is converted
@@ -2873,7 +2873,7 @@ to an (unsigned) hex number.
     pass
 
 
-def utils_escape_ssid(ssid: typing.Any=None, len: int=None) -> str:
+def utils_escape_ssid(ssid: typing.Any | None = None, len: int | None = None) -> str:
     """This function does a quick printable character conversion of the SSID, simply
 replacing embedded NULLs and non-printable characters with the hexadecimal
 representation of that character.  Intended for debugging only, should not
@@ -2888,7 +2888,7 @@ Warning: this function uses a static buffer. It is not thread-safe. Don't
     pass
 
 
-def utils_file_is_certificate(filename: str=None) -> bool:
+def utils_file_is_certificate(filename: str | None = None) -> bool:
     """Tests if @filename has a valid extension for an X.509 certificate file
 (".cer", ".crt", ".der", or ".pem"), and contains a certificate in a format
 recognized by NetworkManager.
@@ -2898,7 +2898,7 @@ recognized by NetworkManager.
     pass
 
 
-def utils_file_is_pkcs12(filename: str=None) -> bool:
+def utils_file_is_pkcs12(filename: str | None = None) -> bool:
     """Tests if @filename is a PKCS#<!-- -->12 file.
 
 :param filename: name of the file to test
@@ -2906,7 +2906,7 @@ def utils_file_is_pkcs12(filename: str=None) -> bool:
     pass
 
 
-def utils_file_is_private_key(filename: str=None, out_encrypted: bool=None
+def utils_file_is_private_key(filename: str | None = None, out_encrypted: bool | None = None
     ) -> bool:
     """Tests if @filename has a valid extension for an X.509 private key file
 (".der", ".key", ".pem", or ".p12"), and contains a private key in a format
@@ -2918,9 +2918,9 @@ recognized by NetworkManager.
     pass
 
 
-def utils_file_search_in_paths(progname: str=None, try_first: str=None,
-    paths: str=None, file_test_flags: GLib.FileTest=None, predicate:
-    UtilsFileSearchInPathsPredicate=None, user_data: typing.Any=None) -> str:
+def utils_file_search_in_paths(progname: str | None = None, try_first: str | None = None,
+    paths: str | None = None, file_test_flags: GLib.FileTest | None = None, predicate:
+    UtilsFileSearchInPathsPredicate | None = None, user_data: typing.Any | None = None) -> str:
     """Searches for a @progname file in a list of search @paths.
 
 :param progname: the helper program name, like "iptables"   Must be a non-empty string, without path separator (/).
@@ -2935,8 +2935,8 @@ def utils_file_search_in_paths(progname: str=None, try_first: str=None,
     pass
 
 
-def utils_format_variant_attributes(attributes: GLib.HashTable=None,
-    attr_separator: str=None, key_value_separator: str=None) -> str:
+def utils_format_variant_attributes(attributes: GLib.HashTable | None = None,
+    attr_separator: str | None = None, key_value_separator: str | None = None) -> str:
     """Format attributes to a string.
 
 :param attributes: a #GHashTable mapping attribute names to #GVariant values
@@ -2954,7 +2954,7 @@ def utils_get_timestamp_msec() -> int:
     pass
 
 
-def utils_hexstr2bin(hex: str=None) -> GLib.Bytes:
+def utils_hexstr2bin(hex: str | None = None) -> GLib.Bytes:
     """Converts a hexadecimal string @hex into an array of bytes.  The optional
 separator ':' may be used between single or pairs of hexadecimal characters,
 eg "00:11" or "0:1".  Any "0x" at the beginning of @hex is ignored.  @hex
@@ -2965,7 +2965,7 @@ may not start or end with ':'.
     pass
 
 
-def utils_hwaddr_atoba(asc: str=None, length: int=None) -> typing.Any:
+def utils_hwaddr_atoba(asc: str | None = None, length: int | None = None) -> typing.Any:
     """Parses @asc and converts it to binary form in a #GByteArray. See
 nm_utils_hwaddr_aton() if you don't want a #GByteArray.
 
@@ -2975,7 +2975,7 @@ nm_utils_hwaddr_aton() if you don't want a #GByteArray.
     pass
 
 
-def utils_hwaddr_aton(asc: str=None, buffer: typing.Any=None, length: int=None
+def utils_hwaddr_aton(asc: str | None = None, buffer: typing.Any | None = None, length: int | None = None
     ) -> int:
     """Parses @asc and converts it to binary form in @buffer.
 Bytes in @asc can be separated by colons (:), or hyphens (-), but not mixed.
@@ -2988,7 +2988,7 @@ Bytes in @asc can be separated by colons (:), or hyphens (-), but not mixed.
     pass
 
 
-def utils_hwaddr_canonical(asc: str=None, length: gssize=None) -> str:
+def utils_hwaddr_canonical(asc: str | None = None, length: gssize | None = None) -> str:
     """Parses @asc to see if it is a valid hardware address of the given
 length, and if so, returns it in canonical form (uppercase, with
 leading 0s as needed, and with colons rather than hyphens).
@@ -3000,7 +3000,7 @@ leading 0s as needed, and with colons rather than hyphens).
     pass
 
 
-def utils_hwaddr_len(type: int=None) -> int:
+def utils_hwaddr_len(type: int | None = None) -> int:
     """Returns the length in octets of a hardware address of type @type.
 
 Before 1.28, it was an error to call this function with any value other than
@@ -3011,8 +3011,8 @@ Before 1.28, it was an error to call this function with any value other than
     pass
 
 
-def utils_hwaddr_matches(hwaddr1: typing.Any=None, hwaddr1_len: gssize=None,
-    hwaddr2: typing.Any=None, hwaddr2_len: gssize=None) -> bool:
+def utils_hwaddr_matches(hwaddr1: typing.Any | None = None, hwaddr1_len: gssize | None = None,
+    hwaddr2: typing.Any | None = None, hwaddr2_len: gssize | None = None) -> bool:
     """Generalized hardware address comparison function. Tests if @hwaddr1 and
 @hwaddr2 "equal" (or more precisely, "equivalent"), with several advantages
 over a simple memcmp():
@@ -3046,7 +3046,7 @@ guaranteed to not match if they are invalid.)
     pass
 
 
-def utils_hwaddr_ntoa(addr: typing.Any=None, length: int=None) -> str:
+def utils_hwaddr_ntoa(addr: typing.Any | None = None, length: int | None = None) -> str:
     """Converts @addr to textual form.
 
 :param addr: a binary hardware address
@@ -3055,7 +3055,7 @@ def utils_hwaddr_ntoa(addr: typing.Any=None, length: int=None) -> str:
     pass
 
 
-def utils_hwaddr_valid(asc: str=None, length: gssize=None) -> bool:
+def utils_hwaddr_valid(asc: str | None = None, length: gssize | None = None) -> bool:
     """Parses @asc to see if it is a valid hardware address of the given
 length.
 
@@ -3066,7 +3066,7 @@ length.
     pass
 
 
-def utils_iface_valid_name(name: str=None) -> bool:
+def utils_iface_valid_name(name: str | None = None) -> bool:
     """Validate the network interface name.
 
 :param name: Name of interface
@@ -3075,7 +3075,7 @@ def utils_iface_valid_name(name: str=None) -> bool:
     pass
 
 
-def utils_inet4_ntop(inaddr: int=None, dst: str=None) -> str:
+def utils_inet4_ntop(inaddr: int | None = None, dst: str | None = None) -> str:
     """Wrapper for inet_ntop.
 
 :param inaddr: the address that should be converted to string.
@@ -3084,7 +3084,7 @@ def utils_inet4_ntop(inaddr: int=None, dst: str=None) -> str:
     pass
 
 
-def utils_inet6_ntop(in6addr: typing.Any=None, dst: str=None) -> str:
+def utils_inet6_ntop(in6addr: typing.Any | None = None, dst: str | None = None) -> str:
     """Wrapper for inet_ntop.
 
 :param in6addr: the address that should be converted to string.
@@ -3093,8 +3093,8 @@ def utils_inet6_ntop(in6addr: typing.Any=None, dst: str=None) -> str:
     pass
 
 
-def utils_ip4_addresses_from_variant(value: GLib.Variant=None, out_gateway:
-    str=None) -> typing.Any:
+def utils_ip4_addresses_from_variant(value: GLib.Variant | None = None, out_gateway:
+    str | None = None) -> typing.Any:
     """Utility function to convert a #GVariant of type 'aau' representing a list of
 NetworkManager IPv4 addresses (which are tuples of address, prefix, and
 gateway) into a #GPtrArray of #NMIPAddress objects. The "gateway" field of
@@ -3112,7 +3112,7 @@ Since 1.46, an empty list is returned if the variant type is not valid
     pass
 
 
-def utils_ip4_addresses_to_variant(addresses: typing.Any=None, gateway: str
+def utils_ip4_addresses_to_variant(addresses: typing.Any | None = None, gateway: str
     =None) -> GLib.Variant:
     """Utility function to convert a #GPtrArray of #NMIPAddress objects representing
 IPv4 addresses into a #GVariant of type 'aau' representing an array of
@@ -3126,7 +3126,7 @@ gateway). The "gateway" field of the first address will get the value of
     pass
 
 
-def utils_ip4_dns_from_variant(value: GLib.Variant=None) -> str:
+def utils_ip4_dns_from_variant(value: GLib.Variant | None = None) -> str:
     """Utility function to convert a #GVariant of type 'au' representing a list of
 IPv4 addresses into an array of IP address strings.
 
@@ -3138,7 +3138,7 @@ Since 1.46, an empty list is returned if the variant type is not valid
     pass
 
 
-def utils_ip4_dns_to_variant(dns: str=None) -> GLib.Variant:
+def utils_ip4_dns_to_variant(dns: str | None = None) -> GLib.Variant:
     """Utility function to convert an array of IP address strings int a #GVariant of
 type 'au' representing an array of IPv4 addresses.
 
@@ -3147,7 +3147,7 @@ type 'au' representing an array of IPv4 addresses.
     pass
 
 
-def utils_ip4_get_default_prefix(ip: int=None) -> int:
+def utils_ip4_get_default_prefix(ip: int | None = None) -> int:
     """When the Internet was originally set up, various ranges of IP addresses were
 segmented into three network classes: A, B, and C.  This function will return
 a prefix that is associated with the IP address specified defining where it
@@ -3158,7 +3158,7 @@ falls in the predefined classes.
     pass
 
 
-def utils_ip4_netmask_to_prefix(netmask: int=None) -> int:
+def utils_ip4_netmask_to_prefix(netmask: int | None = None) -> int:
     """
 
 :param netmask: an IPv4 netmask in network byte order.   Usually the netmask has all leading bits up to the prefix   set so that the netmask is identical to having the first   prefix bits of the address set.   If that is not the case and there are "holes" in the   mask, the prefix is determined based on the lowest bit   set.
@@ -3166,7 +3166,7 @@ def utils_ip4_netmask_to_prefix(netmask: int=None) -> int:
     pass
 
 
-def utils_ip4_prefix_to_netmask(prefix: int=None) -> int:
+def utils_ip4_prefix_to_netmask(prefix: int | None = None) -> int:
     """
 
 :param prefix: a CIDR prefix, must be not larger than 32.
@@ -3174,7 +3174,7 @@ def utils_ip4_prefix_to_netmask(prefix: int=None) -> int:
     pass
 
 
-def utils_ip4_routes_from_variant(value: GLib.Variant=None) -> typing.Any:
+def utils_ip4_routes_from_variant(value: GLib.Variant | None = None) -> typing.Any:
     """Utility function to convert a #GVariant of type 'aau' representing an array
 of NetworkManager IPv4 routes (which are tuples of route, prefix, next hop,
 and metric) into a #GPtrArray of #NMIPRoute objects. Note that invalid routes
@@ -3189,7 +3189,7 @@ Since 1.46, an empty list is returned if the variant type is not valid
     pass
 
 
-def utils_ip4_routes_to_variant(routes: typing.Any=None) -> GLib.Variant:
+def utils_ip4_routes_to_variant(routes: typing.Any | None = None) -> GLib.Variant:
     """Utility function to convert a #GPtrArray of #NMIPRoute objects representing
 IPv4 routes into a #GVariant of type 'aau' representing an array of
 NetworkManager IPv4 routes (which are tuples of route, prefix, next hop, and
@@ -3200,8 +3200,8 @@ metric).
     pass
 
 
-def utils_ip6_addresses_from_variant(value: GLib.Variant=None, out_gateway:
-    str=None) -> typing.Any:
+def utils_ip6_addresses_from_variant(value: GLib.Variant | None = None, out_gateway:
+    str | None = None) -> typing.Any:
     """Utility function to convert a #GVariant of type 'a(ayuay)' representing a
 list of NetworkManager IPv6 addresses (which are tuples of address, prefix,
 and gateway) into a #GPtrArray of #NMIPAddress objects. The "gateway" field
@@ -3219,7 +3219,7 @@ Since 1.46, an empty list is returned if the variant type is not valid
     pass
 
 
-def utils_ip6_addresses_to_variant(addresses: typing.Any=None, gateway: str
+def utils_ip6_addresses_to_variant(addresses: typing.Any | None = None, gateway: str
     =None) -> GLib.Variant:
     """Utility function to convert a #GPtrArray of #NMIPAddress objects representing
 IPv6 addresses into a #GVariant of type 'a(ayuay)' representing an array of
@@ -3234,7 +3234,7 @@ all 0s.
     pass
 
 
-def utils_ip6_dns_from_variant(value: GLib.Variant=None) -> str:
+def utils_ip6_dns_from_variant(value: GLib.Variant | None = None) -> str:
     """Utility function to convert a #GVariant of type 'aay' representing a list of
 IPv6 addresses into an array of IP address strings. Each "ay" entry must be
 a IPv6 address in binary form (16 bytes long). Invalid entries are silently
@@ -3248,7 +3248,7 @@ Since 1.46, an empty list is returned if the variant type is not valid
     pass
 
 
-def utils_ip6_dns_to_variant(dns: str=None) -> GLib.Variant:
+def utils_ip6_dns_to_variant(dns: str | None = None) -> GLib.Variant:
     """Utility function to convert an array of IP address strings int a #GVariant of
 type 'aay' representing an array of IPv6 addresses.
 
@@ -3259,7 +3259,7 @@ If a string cannot be parsed, it will be silently ignored.
     pass
 
 
-def utils_ip6_routes_from_variant(value: GLib.Variant=None) -> typing.Any:
+def utils_ip6_routes_from_variant(value: GLib.Variant | None = None) -> typing.Any:
     """Utility function to convert a #GVariant of type 'a(ayuayu)' representing an
 array of NetworkManager IPv6 routes (which are tuples of route, prefix, next
 hop, and metric) into a #GPtrArray of #NMIPRoute objects. Note that invalid
@@ -3274,7 +3274,7 @@ Since 1.46, an empty list is returned if the variant type is not valid
     pass
 
 
-def utils_ip6_routes_to_variant(routes: typing.Any=None) -> GLib.Variant:
+def utils_ip6_routes_to_variant(routes: typing.Any | None = None) -> GLib.Variant:
     """Utility function to convert a #GPtrArray of #NMIPRoute objects representing
 IPv6 routes into a #GVariant of type 'a(ayuayu)' representing an array of
 NetworkManager IPv6 routes (which are tuples of route, prefix, next hop, and
@@ -3285,7 +3285,7 @@ metric).
     pass
 
 
-def utils_ip_addresses_from_variant(value: GLib.Variant=None, family: int=None
+def utils_ip_addresses_from_variant(value: GLib.Variant | None = None, family: int | None = None
     ) -> typing.Any:
     """Utility function to convert a #GVariant representing a list of new-style
 NetworkManager IPv4 or IPv6 addresses (as described in the documentation for
@@ -3303,7 +3303,7 @@ Since 1.46, an empty list is returned if the variant type is not valid
     pass
 
 
-def utils_ip_addresses_to_variant(addresses: typing.Any=None) -> GLib.Variant:
+def utils_ip_addresses_to_variant(addresses: typing.Any | None = None) -> GLib.Variant:
     """Utility function to convert a #GPtrArray of #NMIPAddress objects representing
 IPv4 or IPv6 addresses into a #GVariant of type 'aa{sv}' representing an
 array of new-style NetworkManager IP addresses. All addresses will include
@@ -3315,7 +3315,7 @@ include additional attributes.
     pass
 
 
-def utils_ip_routes_from_variant(value: GLib.Variant=None, family: int=None
+def utils_ip_routes_from_variant(value: GLib.Variant | None = None, family: int | None = None
     ) -> typing.Any:
     """Utility function to convert a #GVariant representing a list of new-style
 NetworkManager IPv4 or IPv6 addresses (as described in the documentation for
@@ -3332,7 +3332,7 @@ Since 1.46, an empty list is returned if the variant type is not valid
     pass
 
 
-def utils_ip_routes_to_variant(routes: typing.Any=None) -> GLib.Variant:
+def utils_ip_routes_to_variant(routes: typing.Any | None = None) -> GLib.Variant:
     """Utility function to convert a #GPtrArray of #NMIPRoute objects representing
 IPv4 or IPv6 routes into a #GVariant of type 'aa{sv}' representing an array
 of new-style NetworkManager IP routes. All routes will include "dest" (an IP
@@ -3346,7 +3346,7 @@ valid routes are still returned.
     pass
 
 
-def utils_ipaddr_valid(family: int=None, ip: str=None) -> bool:
+def utils_ipaddr_valid(family: int | None = None, ip: str | None = None) -> bool:
     """Checks if @ip contains a valid IP address of the given family.
 
 :param family: <literal>AF_INET</literal> or <literal>AF_INET6</literal>, or   <literal>AF_UNSPEC</literal> to accept either
@@ -3355,7 +3355,7 @@ def utils_ipaddr_valid(family: int=None, ip: str=None) -> bool:
     pass
 
 
-def utils_is_empty_ssid(ssid: typing.Any=None, len: int=None) -> bool:
+def utils_is_empty_ssid(ssid: typing.Any | None = None, len: int | None = None) -> bool:
     """Different manufacturers use different mechanisms for not broadcasting the
 AP's SSID.  This function attempts to detect blank/empty SSIDs using a
 number of known SSID-cloaking methods.
@@ -3366,7 +3366,7 @@ number of known SSID-cloaking methods.
     pass
 
 
-def utils_is_json_object(str: str=None) -> bool:
+def utils_is_json_object(str: str | None = None) -> bool:
     """
 
 :param str: the JSON string to test
@@ -3377,7 +3377,7 @@ def utils_is_json_object(str: str=None) -> bool:
     pass
 
 
-def utils_is_uuid(str: str=None) -> bool:
+def utils_is_uuid(str: str | None = None) -> bool:
     """Checks if @str is a UUID
 
 :param str: a string that might be a UUID
@@ -3385,7 +3385,7 @@ def utils_is_uuid(str: str=None) -> bool:
     pass
 
 
-def utils_is_valid_iface_name(name: str=None) -> bool:
+def utils_is_valid_iface_name(name: str | None = None) -> bool:
     """Validate the network interface name.
 
 This function is a 1:1 copy of the kernel's interface validation
@@ -3397,9 +3397,9 @@ function in net/core/dev.c.
     pass
 
 
-def utils_parse_variant_attributes(string: str=None, attr_separator: str=
-    None, key_value_separator: str=None, ignore_unknown: bool=None, spec:
-    VariantAttributeSpec=None) -> GLib.HashTable:
+def utils_parse_variant_attributes(string: str | None = None, attr_separator: str=
+    None, key_value_separator: str | None = None, ignore_unknown: bool | None = None, spec:
+    VariantAttributeSpec | None = None) -> GLib.HashTable:
     """Parse attributes from a string.
 
 :param string: the input string
@@ -3411,7 +3411,7 @@ def utils_parse_variant_attributes(string: str=None, attr_separator: str=
     pass
 
 
-def utils_print(output_mode: int=None, msg: str=None) -> None:
+def utils_print(output_mode: int | None = None, msg: str | None = None) -> None:
     """The only purpose of this function is to give access to g_print()
 or g_printerr() from pygobject. libnm can do debug logging by
 setting LIBNM_CLIENT_DEBUG and uses thereby g_printerr() or
@@ -3446,8 +3446,8 @@ are supported since 1.46.
     pass
 
 
-def utils_same_ssid(ssid1: typing.Any=None, len1: int=None, ssid2:
-    typing.Any=None, len2: int=None, ignore_trailing_null: bool=None) -> bool:
+def utils_same_ssid(ssid1: typing.Any | None = None, len1: int | None = None, ssid2:
+    typing.Any | None = None, len2: int | None = None, ignore_trailing_null: bool | None = None) -> bool:
     """Earlier versions of the Linux kernel added a NULL byte to the end of the
 SSID to enable easy printing of the SSID on the console or in a terminal,
 but this behavior was problematic (SSIDs are simply byte arrays, not strings)
@@ -3464,10 +3464,10 @@ NULLs, even though that is functionally pointless.
     pass
 
 
-def utils_security_valid(type: UtilsSecurityType=None, wifi_caps:
-    DeviceWifiCapabilities=None, have_ap: bool=None, adhoc: bool=None,
-    ap_flags: NM80211ApFlags=None, ap_wpa: NM80211ApSecurityFlags=None, ap_rsn:
-    NM80211ApSecurityFlags=None) -> bool:
+def utils_security_valid(type: UtilsSecurityType | None = None, wifi_caps:
+    DeviceWifiCapabilities | None = None, have_ap: bool | None = None, adhoc: bool | None = None,
+    ap_flags: NM80211ApFlags | None = None, ap_wpa: NM80211ApSecurityFlags | None = None, ap_rsn:
+    NM80211ApSecurityFlags | None = None) -> bool:
     """Given a set of device capabilities, and a desired security type to check
 against, determines whether the combination of device, desired security
 type, and AP capabilities intersect.
@@ -3486,7 +3486,7 @@ use nm_utils_ap_mode_security_valid() instead.
     pass
 
 
-def utils_sriov_vf_from_str(str: str=None) -> SriovVF:
+def utils_sriov_vf_from_str(str: str | None = None) -> SriovVF:
     """Converts a string to a SR-IOV virtual function object.
 
 :param str: the input string
@@ -3494,7 +3494,7 @@ def utils_sriov_vf_from_str(str: str=None) -> SriovVF:
     pass
 
 
-def utils_sriov_vf_to_str(vf: SriovVF=None, omit_index: bool=None) -> str:
+def utils_sriov_vf_to_str(vf: SriovVF | None = None, omit_index: bool | None = None) -> str:
     """Converts a SR-IOV virtual function object to its string representation.
 
 :param vf: the %NMSriovVF
@@ -3503,7 +3503,7 @@ def utils_sriov_vf_to_str(vf: SriovVF=None, omit_index: bool=None) -> str:
     pass
 
 
-def utils_ssid_to_utf8(ssid: typing.Any=None, len: int=None) -> str:
+def utils_ssid_to_utf8(ssid: typing.Any | None = None, len: int | None = None) -> str:
     """Wi-Fi SSIDs are byte arrays, they are _not_ strings.  Thus, an SSID may
 contain embedded NULLs and other unprintable characters.  Often it is
 useful to print the SSID out for debugging purposes, but that should be the
@@ -3533,7 +3533,7 @@ _only_.
     pass
 
 
-def utils_tc_action_from_str(str: str=None) -> TCAction:
+def utils_tc_action_from_str(str: str | None = None) -> TCAction:
     """Parses the tc style string action representation of the queueing
 discipline to a %NMTCAction instance. Supports a subset of the tc language.
 
@@ -3542,7 +3542,7 @@ discipline to a %NMTCAction instance. Supports a subset of the tc language.
     pass
 
 
-def utils_tc_action_to_str(action: TCAction=None) -> str:
+def utils_tc_action_to_str(action: TCAction | None = None) -> str:
     """Turns the %NMTCAction into a tc style string representation of the queueing
 discipline.
 
@@ -3551,7 +3551,7 @@ discipline.
     pass
 
 
-def utils_tc_qdisc_from_str(str: str=None) -> TCQdisc:
+def utils_tc_qdisc_from_str(str: str | None = None) -> TCQdisc:
     """Parses the tc style string qdisc representation of the queueing
 discipline to a %NMTCQdisc instance. Supports a subset of the tc language.
 
@@ -3560,7 +3560,7 @@ discipline to a %NMTCQdisc instance. Supports a subset of the tc language.
     pass
 
 
-def utils_tc_qdisc_to_str(qdisc: TCQdisc=None) -> str:
+def utils_tc_qdisc_to_str(qdisc: TCQdisc | None = None) -> str:
     """Turns the %NMTCQdisc into a tc style string representation of the queueing
 discipline.
 
@@ -3569,7 +3569,7 @@ discipline.
     pass
 
 
-def utils_tc_tfilter_from_str(str: str=None) -> TCTfilter:
+def utils_tc_tfilter_from_str(str: str | None = None) -> TCTfilter:
     """Parses the tc style string tfilter representation of the queueing
 discipline to a %NMTCTfilter instance. Supports a subset of the tc language.
 
@@ -3578,7 +3578,7 @@ discipline to a %NMTCTfilter instance. Supports a subset of the tc language.
     pass
 
 
-def utils_tc_tfilter_to_str(tfilter: TCTfilter=None) -> str:
+def utils_tc_tfilter_to_str(tfilter: TCTfilter | None = None) -> str:
     """Turns the %NMTCTfilter into a tc style string representation of the queueing
 discipline.
 
@@ -3602,7 +3602,7 @@ def utils_version() -> int:
     pass
 
 
-def utils_wep_key_valid(key: str=None, wep_type: WepKeyType=None) -> bool:
+def utils_wep_key_valid(key: str | None = None, wep_type: WepKeyType | None = None) -> bool:
     """Checks if @key is a valid WEP key
 
 :param key: a string that might be a WEP key
@@ -3625,7 +3625,7 @@ def utils_wifi_5ghz_freqs() -> int:
     pass
 
 
-def utils_wifi_channel_to_freq(channel: int=None, band: str=None) -> int:
+def utils_wifi_channel_to_freq(channel: int | None = None, band: str | None = None) -> int:
     """Utility function to translate a Wi-Fi channel to its corresponding frequency.
 
 :param channel: channel
@@ -3636,8 +3636,8 @@ def utils_wifi_channel_to_freq(channel: int=None, band: str=None) -> int:
     pass
 
 
-def utils_wifi_find_next_channel(channel: int=None, direction: int=None,
-    band: str=None) -> int:
+def utils_wifi_find_next_channel(channel: int | None = None, direction: int | None = None,
+    band: str | None = None) -> int:
     """Utility function to find out next/previous Wi-Fi channel for a channel.
 
 :param channel: current channel
@@ -3647,7 +3647,7 @@ def utils_wifi_find_next_channel(channel: int=None, direction: int=None,
     pass
 
 
-def utils_wifi_freq_to_channel(freq: int=None) -> int:
+def utils_wifi_freq_to_channel(freq: int | None = None) -> int:
     """Utility function to translate a Wi-Fi frequency to its corresponding channel.
 
 :param freq: frequency
@@ -3655,7 +3655,7 @@ def utils_wifi_freq_to_channel(freq: int=None) -> int:
     pass
 
 
-def utils_wifi_is_channel_valid(channel: int=None, band: str=None) -> bool:
+def utils_wifi_is_channel_valid(channel: int | None = None, band: str | None = None) -> bool:
     """Utility function to verify Wi-Fi channel validity.
 
 :param channel: channel
@@ -3664,7 +3664,7 @@ def utils_wifi_is_channel_valid(channel: int=None, band: str=None) -> bool:
     pass
 
 
-def utils_wifi_strength_bars(strength: int=None) -> str:
+def utils_wifi_strength_bars(strength: int | None = None) -> str:
     """Converts @strength into a 4-character-wide graphical representation of
 strength suitable for printing to stdout.
 
@@ -3678,7 +3678,7 @@ the functionality are encouraged to make their implementations instead.
     pass
 
 
-def utils_wpa_psk_valid(psk: str=None) -> bool:
+def utils_wpa_psk_valid(psk: str | None = None) -> bool:
     """Checks if @psk is a valid WPA PSK
 
 :param psk: a string that might be a WPA PSK
@@ -3686,7 +3686,7 @@ def utils_wpa_psk_valid(psk: str=None) -> bool:
     pass
 
 
-def vpn_editor_plugin_load(plugin_name: str=None, check_service: str=None
+def vpn_editor_plugin_load(plugin_name: str | None = None, check_service: str | None = None
     ) -> VpnEditorPlugin:
     """Load the shared library @plugin_name and create a new
 #NMVpnEditorPlugin instance via the #NMVpnEditorPluginFactory
@@ -3703,9 +3703,9 @@ nm_vpn_editor_plugin_load_from_file() is preferred.
     pass
 
 
-def vpn_editor_plugin_load_from_file(plugin_name: str=None, check_service:
-    str=None, check_owner: int=None, check_file: UtilsCheckFilePredicate=
-    None, user_data: typing.Any=None) -> VpnEditorPlugin:
+def vpn_editor_plugin_load_from_file(plugin_name: str | None = None, check_service:
+    str | None = None, check_owner: int | None = None, check_file: UtilsCheckFilePredicate=
+    None, user_data: typing.Any | None = None) -> VpnEditorPlugin:
     """Load the shared library @plugin_name and create a new
 #NMVpnEditorPlugin instance via the #NMVpnEditorPluginFactory
 function.
@@ -3743,7 +3743,7 @@ class ActiveConnectionClass:
 class BridgeVlan:
     """"""
 
-    def __init__(self, vid_start: int=None, vid_end: int=None) -> None:
+    def __init__(self, vid_start: int | None = None, vid_end: int | None = None) -> None:
         """Creates a new #NMBridgeVlan object for the given VLAN id range.
 Setting @vid_end to 0 is equivalent to setting it to @vid_start
 and creates a single-id VLAN.
@@ -3757,7 +3757,7 @@ Since 1.42, ref-counting of #NMBridgeVlan is thread-safe.
         pass
 
     @staticmethod
-    def new(vid_start: int=None, vid_end: int=None) -> BridgeVlan:
+    def new(vid_start: int | None = None, vid_end: int | None = None) -> BridgeVlan:
         """Creates a new #NMBridgeVlan object for the given VLAN id range.
 Setting @vid_end to 0 is equivalent to setting it to @vid_start
 and creates a single-id VLAN.
@@ -3769,7 +3769,7 @@ Since 1.42, ref-counting of #NMBridgeVlan is thread-safe.
 :return: the new #NMBridgeVlan object."""
         pass
 
-    def cmp(self, b: BridgeVlan=None) -> int:
+    def cmp(self, b: BridgeVlan | None = None) -> int:
         """Compare two bridge VLAN objects.
 
 :param self: a #NMBridgeVlan
@@ -3780,7 +3780,7 @@ Since 1.42, ref-counting of #NMBridgeVlan is thread-safe.
    affect the comparison."""
         pass
 
-    def get_vid_range(self, vid_start: int=None, vid_end: int=None) -> bool:
+    def get_vid_range(self, vid_start: int | None = None, vid_end: int | None = None) -> bool:
         """Gets the VLAN id range.
 
 :param self: the #NMBridgeVlan
@@ -3835,7 +3835,7 @@ an unsealed copy with nm_bridge_vlan_new_clone().
 :return: """
         pass
 
-    def set_pvid(self, value: bool=None) -> None:
+    def set_pvid(self, value: bool | None = None) -> None:
         """Change the value of the PVID property of the VLAN. It
 is invalid to set the value to %TRUE for non-single-id
 VLANs.
@@ -3845,7 +3845,7 @@ VLANs.
 :return: """
         pass
 
-    def set_untagged(self, value: bool=None) -> None:
+    def set_untagged(self, value: bool | None = None) -> None:
         """Change the value of the untagged property of the VLAN.
 
 :param self: the #NMBridgeVlan
@@ -3871,7 +3871,7 @@ Since 1.42, ref-counting of #NMBridgeVlan is thread-safe.
         pass
 
     @staticmethod
-    def from_str(str: str=None) -> BridgeVlan:
+    def from_str(str: str | None = None) -> BridgeVlan:
         """Parses the string representation of the queueing
 discipline to a %NMBridgeVlan instance.
 
@@ -3891,7 +3891,7 @@ D-Bus signals. That means, when iterating the associated #GMainContext,
 D-Bus signals gets processed and the #NMClient instance updates and
 emits #GObject signals."""
 
-    def __init__(self, cancellable: Gio.Cancellable=None) -> None:
+    def __init__(self, cancellable: Gio.Cancellable | None = None) -> None:
         """Creates a new #NMClient synchronously.
 
 Note that this will block until a NMClient instance is fully initialized.
@@ -3932,7 +3932,7 @@ does not cause a failure.
         pass
 
     @staticmethod
-    def new(cancellable: Gio.Cancellable=None) -> Client:
+    def new(cancellable: Gio.Cancellable | None = None) -> Client:
         """Creates a new #NMClient synchronously.
 
 Note that this will block until a NMClient instance is fully initialized.
@@ -3972,7 +3972,7 @@ does not cause a failure.
         pass
 
     @staticmethod
-    def new_finish(result: Gio.AsyncResult=None) -> Client:
+    def new_finish(result: Gio.AsyncResult | None = None) -> Client:
         """Gets the result of an nm_client_new_async() call.
 
 :param result: a #GAsyncResult
@@ -3980,8 +3980,8 @@ does not cause a failure.
         pass
 
     @staticmethod
-    def new_async(cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def new_async(cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Creates a new #NMClient asynchronously.
 @callback will be called when it is done. Use
 nm_client_new_finish() to get the result.
@@ -4011,7 +4011,7 @@ does not cause a failure.
         pass
 
     @staticmethod
-    def wait_shutdown_finish(result: Gio.AsyncResult=None) -> bool:
+    def wait_shutdown_finish(result: Gio.AsyncResult | None = None) -> bool:
         """
 
 :param result: a #GAsyncResult obtained from the #GAsyncReadyCallback passed to nm_client_wait_shutdown()
@@ -4019,10 +4019,10 @@ does not cause a failure.
    nmclient are wrapped up and released. This can only fail by user cancellation."""
         pass
 
-    def activate_connection_async(self, connection: Connection=None, device:
-        Device=None, specific_object: str=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def activate_connection_async(self, connection: Connection | None = None, device:
+        Device | None = None, specific_object: str | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Asynchronously starts a connection to a particular network using the
 configuration settings from @connection and the network device @device.
 Certain connection types also take a "specific object" which is the object
@@ -4050,7 +4050,7 @@ track the activation to its completion.
 :return: """
         pass
 
-    def activate_connection_finish(self, result: Gio.AsyncResult=None
+    def activate_connection_finish(self, result: Gio.AsyncResult | None = None
         ) -> ActiveConnection:
         """Gets the result of a call to nm_client_activate_connection_async().
 
@@ -4060,10 +4060,10 @@ track the activation to its completion.
    failure, in which case @error will be set."""
         pass
 
-    def add_and_activate_connection2(self, partial: Connection=None, device:
-        Device=None, specific_object: str=None, options: GLib.Variant=None,
-        cancellable: Gio.Cancellable=None, callback: Gio.AsyncReadyCallback
-        =None, user_data: typing.Any=None) -> None:
+    def add_and_activate_connection2(self, partial: Connection | None = None, device:
+        Device | None = None, specific_object: str | None = None, options: GLib.Variant | None = None,
+        cancellable: Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback
+        =None, user_data: typing.Any | None = None) -> None:
         """Adds a new connection using the given details (if any) as a template,
 automatically filling in missing settings with the capabilities of the given
 device and specific object.  The new connection is then asynchronously
@@ -4098,7 +4098,7 @@ by the daemon:
         pass
 
     def add_and_activate_connection2_finish(self, result: Gio.AsyncResult=
-        None, out_result: GLib.Variant=None) -> ActiveConnection:
+        None, out_result: GLib.Variant | None = None) -> ActiveConnection:
         """Gets the result of a call to nm_client_add_and_activate_connection2().
 
 You can call nm_active_connection_get_connection() on the returned
@@ -4111,10 +4111,10 @@ You can call nm_active_connection_get_connection() on the returned
    failure, in which case @error will be set."""
         pass
 
-    def add_and_activate_connection_async(self, partial: Connection=None,
-        device: Device=None, specific_object: str=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def add_and_activate_connection_async(self, partial: Connection | None = None,
+        device: Device | None = None, specific_object: str | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Adds a new connection using the given details (if any) as a template,
 automatically filling in missing settings with the capabilities of the given
 device and specific object.  The new connection is then asynchronously
@@ -4136,7 +4136,7 @@ track the activation to its completion.
 :return: """
         pass
 
-    def add_and_activate_connection_finish(self, result: Gio.AsyncResult=None
+    def add_and_activate_connection_finish(self, result: Gio.AsyncResult | None = None
         ) -> ActiveConnection:
         """Gets the result of a call to nm_client_add_and_activate_connection_async().
 
@@ -4149,10 +4149,10 @@ You can call nm_active_connection_get_connection() on the returned
    failure, in which case @error will be set."""
         pass
 
-    def add_connection2(self, settings: GLib.Variant=None, flags:
-        SettingsAddConnection2Flags=None, args: GLib.Variant=None,
-        ignore_out_result: bool=None, cancellable: Gio.Cancellable=None,
-        callback: Gio.AsyncReadyCallback=None, user_data: typing.Any=None
+    def add_connection2(self, settings: GLib.Variant | None = None, flags:
+        SettingsAddConnection2Flags | None = None, args: GLib.Variant | None = None,
+        ignore_out_result: bool | None = None, cancellable: Gio.Cancellable | None = None,
+        callback: Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None
         ) -> None:
         """Call AddConnection2() D-Bus API asynchronously.
 
@@ -4167,8 +4167,8 @@ You can call nm_active_connection_get_connection() on the returned
 :return: """
         pass
 
-    def add_connection2_finish(self, result: Gio.AsyncResult=None,
-        out_result: GLib.Variant=None) -> RemoteConnection:
+    def add_connection2_finish(self, result: Gio.AsyncResult | None = None,
+        out_result: GLib.Variant | None = None) -> RemoteConnection:
         """
 
 :param self: the #NMClient
@@ -4178,9 +4178,9 @@ You can call nm_active_connection_get_connection() on the returned
    #NMRemoteConnection."""
         pass
 
-    def add_connection_async(self, connection: Connection=None,
-        save_to_disk: bool=None, cancellable: Gio.Cancellable=None,
-        callback: Gio.AsyncReadyCallback=None, user_data: typing.Any=None
+    def add_connection_async(self, connection: Connection | None = None,
+        save_to_disk: bool | None = None, cancellable: Gio.Cancellable | None = None,
+        callback: Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None
         ) -> None:
         """Requests that the remote settings service add the given settings to a new
 connection.  If @save_to_disk is %TRUE, the connection is immediately written
@@ -4206,7 +4206,7 @@ completion and/or normalization of connection properties.
 :return: """
         pass
 
-    def add_connection_finish(self, result: Gio.AsyncResult=None
+    def add_connection_finish(self, result: Gio.AsyncResult | None = None
         ) -> RemoteConnection:
         """Gets the result of a call to nm_client_add_connection_async().
 
@@ -4216,7 +4216,7 @@ completion and/or normalization of connection properties.
    failure, in which case @error will be set."""
         pass
 
-    def check_connectivity(self, cancellable: Gio.Cancellable=None
+    def check_connectivity(self, cancellable: Gio.Cancellable | None = None
         ) -> ConnectivityState:
         """Updates the network connectivity state and returns the (new)
 current state. Contrast nm_client_get_connectivity(), which returns
@@ -4230,8 +4230,8 @@ if you do not want to block.
 :return: the (new) current connectivity state"""
         pass
 
-    def check_connectivity_async(self, cancellable: Gio.Cancellable=None,
-        callback: Gio.AsyncReadyCallback=None, user_data: typing.Any=None
+    def check_connectivity_async(self, cancellable: Gio.Cancellable | None = None,
+        callback: Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None
         ) -> None:
         """Asynchronously updates the network connectivity state and invokes
 @callback when complete. Contrast nm_client_get_connectivity(),
@@ -4245,7 +4245,7 @@ re-checking, and nm_client_check_connectivity(), which blocks.
 :return: """
         pass
 
-    def check_connectivity_finish(self, result: Gio.AsyncResult=None
+    def check_connectivity_finish(self, result: Gio.AsyncResult | None = None
         ) -> ConnectivityState:
         """Retrieves the result of an nm_client_check_connectivity_async()
 call.
@@ -4255,9 +4255,9 @@ call.
 :return: the (new) current connectivity state"""
         pass
 
-    def checkpoint_adjust_rollback_timeout(self, checkpoint_path: str=None,
-        add_timeout: int=None, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def checkpoint_adjust_rollback_timeout(self, checkpoint_path: str | None = None,
+        add_timeout: int | None = None, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Resets the timeout for the checkpoint with path @checkpoint_path
 to @timeout_add.
 
@@ -4271,7 +4271,7 @@ to @timeout_add.
         pass
 
     def checkpoint_adjust_rollback_timeout_finish(self, result:
-        Gio.AsyncResult=None) -> bool:
+        Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_client_checkpoint_adjust_rollback_timeout().
 
 :param self: an #NMClient
@@ -4279,10 +4279,10 @@ to @timeout_add.
 :return: %TRUE on success or %FALSE on failure."""
         pass
 
-    def checkpoint_create(self, devices: typing.Any=None, rollback_timeout:
-        int=None, flags: CheckpointCreateFlags=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def checkpoint_create(self, devices: typing.Any | None = None, rollback_timeout:
+        int | None = None, flags: CheckpointCreateFlags | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Creates a checkpoint of the current networking configuration
 for given interfaces. An empty @devices argument means all
 devices. If @rollback_timeout is not zero, a rollback is
@@ -4298,7 +4298,7 @@ automatically performed after the given timeout.
 :return: """
         pass
 
-    def checkpoint_create_finish(self, result: Gio.AsyncResult=None
+    def checkpoint_create_finish(self, result: Gio.AsyncResult | None = None
         ) -> Checkpoint:
         """Gets the result of a call to nm_client_checkpoint_create().
 
@@ -4308,9 +4308,9 @@ automatically performed after the given timeout.
    failure, in which case @error will be set."""
         pass
 
-    def checkpoint_destroy(self, checkpoint_path: str=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def checkpoint_destroy(self, checkpoint_path: str | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Destroys an existing checkpoint without performing a rollback.
 
 :param self: the %NMClient
@@ -4321,7 +4321,7 @@ automatically performed after the given timeout.
 :return: """
         pass
 
-    def checkpoint_destroy_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def checkpoint_destroy_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_client_checkpoint_destroy().
 
 :param self: an #NMClient
@@ -4330,9 +4330,9 @@ automatically performed after the given timeout.
    @error will be set."""
         pass
 
-    def checkpoint_rollback(self, checkpoint_path: str=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def checkpoint_rollback(self, checkpoint_path: str | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Performs the rollback of a checkpoint before the timeout is reached.
 
 :param self: the %NMClient
@@ -4343,7 +4343,7 @@ automatically performed after the given timeout.
 :return: """
         pass
 
-    def checkpoint_rollback_finish(self, result: Gio.AsyncResult=None
+    def checkpoint_rollback_finish(self, result: Gio.AsyncResult | None = None
         ) -> GLib.HashTable:
         """Gets the result of a call to nm_client_checkpoint_rollback().
 
@@ -4378,7 +4378,7 @@ connectivity.
 :return: the connectivity URI in use"""
         pass
 
-    def connectivity_check_set_enabled(self, enabled: bool=None) -> None:
+    def connectivity_check_set_enabled(self, enabled: bool | None = None) -> None:
         """Enable or disable connectivity checking.  Note that if a
 connectivity checking URI has not been configured, this will not
 have any effect.
@@ -4388,11 +4388,11 @@ have any effect.
 :return: """
         pass
 
-    def dbus_call(self, object_path: str=None, interface_name: str=None,
-        method_name: str=None, parameters: GLib.Variant=None, reply_type:
-        GLib.VariantType=None, timeout_msec: int=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def dbus_call(self, object_path: str | None = None, interface_name: str | None = None,
+        method_name: str | None = None, parameters: GLib.Variant | None = None, reply_type:
+        GLib.VariantType | None = None, timeout_msec: int | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Call g_dbus_connection_call() on the current name owner with the specified
 arguments. Most importantly, this invokes g_dbus_connection_call() with the
 client's #GMainContext, so that the response is always in order with other
@@ -4415,7 +4415,7 @@ also use g_dbus_connection_call() directly, with the same effect.
 :return: """
         pass
 
-    def dbus_call_finish(self, result: Gio.AsyncResult=None) -> GLib.Variant:
+    def dbus_call_finish(self, result: Gio.AsyncResult | None = None) -> GLib.Variant:
         """Gets the result of a call to nm_client_dbus_call().
 
 :param self: the #NMClient instance
@@ -4423,10 +4423,10 @@ also use g_dbus_connection_call() directly, with the same effect.
 :return: the result #GVariant or %NULL on error."""
         pass
 
-    def dbus_set_property(self, object_path: str=None, interface_name: str=
-        None, property_name: str=None, value: GLib.Variant=None,
-        timeout_msec: int=None, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def dbus_set_property(self, object_path: str | None = None, interface_name: str=
+        None, property_name: str | None = None, value: GLib.Variant | None = None,
+        timeout_msec: int | None = None, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Like nm_client_dbus_call() but calls "Set" on the standard "org.freedesktop.DBus.Properties"
 D-Bus interface.
 
@@ -4442,7 +4442,7 @@ D-Bus interface.
 :return: """
         pass
 
-    def dbus_set_property_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def dbus_set_property_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_client_dbus_set_property().
 
 :param self: the #NMClient instance
@@ -4450,8 +4450,8 @@ D-Bus interface.
 :return: %TRUE on success or %FALSE on failure."""
         pass
 
-    def deactivate_connection(self, active: ActiveConnection=None,
-        cancellable: Gio.Cancellable=None) -> bool:
+    def deactivate_connection(self, active: ActiveConnection | None = None,
+        cancellable: Gio.Cancellable | None = None) -> bool:
         """Deactivates an active #NMActiveConnection.
 
 :param self: a #NMClient
@@ -4460,9 +4460,9 @@ D-Bus interface.
 :return: success or failure"""
         pass
 
-    def deactivate_connection_async(self, active: ActiveConnection=None,
-        cancellable: Gio.Cancellable=None, callback: Gio.AsyncReadyCallback
-        =None, user_data: typing.Any=None) -> None:
+    def deactivate_connection_async(self, active: ActiveConnection | None = None,
+        cancellable: Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback
+        =None, user_data: typing.Any | None = None) -> None:
         """Asynchronously deactivates an active #NMActiveConnection.
 
 :param self: a #NMClient
@@ -4473,7 +4473,7 @@ D-Bus interface.
 :return: """
         pass
 
-    def deactivate_connection_finish(self, result: Gio.AsyncResult=None
+    def deactivate_connection_finish(self, result: Gio.AsyncResult | None = None
         ) -> bool:
         """Gets the result of a call to nm_client_deactivate_connection_async().
 
@@ -4513,7 +4513,7 @@ use device-specific methods such as nm_device_ethernet_get_hw_address().
 :return: a #GPtrArray containing all the #NMDevices.  The returned array is owned by the #NMClient object and should not be modified."""
         pass
 
-    def get_capabilities(self, length: int=None) -> typing.Any:
+    def get_capabilities(self, length: int | None = None) -> typing.Any:
         """
 
 :param self: the #NMClient instance
@@ -4533,7 +4533,7 @@ use device-specific methods such as nm_device_ethernet_get_hw_address().
 :return: a #GPtrArray containing all the #NMCheckpoint.  The returned array is owned by the #NMClient object and should not be modified."""
         pass
 
-    def get_connection_by_id(self, id: str=None) -> RemoteConnection:
+    def get_connection_by_id(self, id: str | None = None) -> RemoteConnection:
         """Returns the first matching %NMRemoteConnection matching a given @id.
 
 :param self: the %NMClient
@@ -4541,7 +4541,7 @@ use device-specific methods such as nm_device_ethernet_get_hw_address().
 :return: the remote connection object on success, or %NULL if no  matching object was found.  The connection is as received from D-Bus and might not validate according to nm_connection_verify()."""
         pass
 
-    def get_connection_by_path(self, path: str=None) -> RemoteConnection:
+    def get_connection_by_path(self, path: str | None = None) -> RemoteConnection:
         """Returns the %NMRemoteConnection representing the connection at @path.
 
 :param self: the %NMClient
@@ -4549,7 +4549,7 @@ use device-specific methods such as nm_device_ethernet_get_hw_address().
 :return: the remote connection object on success, or %NULL if the object was  not known  The connection is as received from D-Bus and might not validate according to nm_connection_verify()."""
         pass
 
-    def get_connection_by_uuid(self, uuid: str=None) -> RemoteConnection:
+    def get_connection_by_uuid(self, uuid: str | None = None) -> RemoteConnection:
         """Returns the %NMRemoteConnection identified by @uuid.
 
 :param self: the %NMClient
@@ -4598,7 +4598,7 @@ automatically initialized during async/sync init.
 :return: the current name owner of the D-Bus service of NetworkManager."""
         pass
 
-    def get_device_by_iface(self, iface: str=None) -> Device:
+    def get_device_by_iface(self, iface: str | None = None) -> Device:
         """Gets a #NMDevice from a #NMClient.
 
 :param self: a #NMClient
@@ -4606,7 +4606,7 @@ automatically initialized during async/sync init.
 :return: the #NMDevice for the given @iface or %NULL if none is found."""
         pass
 
-    def get_device_by_path(self, object_path: str=None) -> Device:
+    def get_device_by_path(self, object_path: str | None = None) -> Device:
         """Gets a #NMDevice from a #NMClient.
 
 :param self: a #NMClient
@@ -4654,7 +4654,7 @@ methods such as nm_device_ethernet_get_hw_address().
 :return: the #NMClientInstanceFlags flags."""
         pass
 
-    def get_logging(self, level: str=None, domains: str=None) -> bool:
+    def get_logging(self, level: str | None = None, domains: str | None = None) -> bool:
         """Gets NetworkManager current logging level and domains.
 
 :param self: a #NMClient
@@ -4692,7 +4692,7 @@ the nm_client_get_context_busy_watcher() object is alive.
 :return: %TRUE if the daemon is running"""
         pass
 
-    def get_object_by_path(self, dbus_path: str=None) -> Object:
+    def get_object_by_path(self, dbus_path: str | None = None) -> Object:
         """
 
 :param self: the #NMClient instance
@@ -4701,7 +4701,7 @@ the nm_client_get_context_busy_watcher() object is alive.
    cached under @dbus_path, or %NULL if no such object exists."""
         pass
 
-    def get_permission_result(self, permission: ClientPermission=None
+    def get_permission_result(self, permission: ClientPermission | None = None
         ) -> ClientPermissionResult:
         """Requests the result of a specific permission, which indicates whether the
 client can or cannot perform the action the permission represents
@@ -4769,7 +4769,7 @@ connections at startup.
 :return: string with the version (or %NULL if NetworkManager is not running)"""
         pass
 
-    def get_version_info(self, length: int=None) -> typing.Any:
+    def get_version_info(self, length: int | None = None) -> typing.Any:
         """If available, the first element in the array is NM_VERSION which
 encodes the daemon version as "(major << 16 | minor << 8 | micro)".
 The following elements are a bitfield of %NMVersionInfoCapability
@@ -4782,8 +4782,8 @@ that indicate that the daemon supports a certain capability.
    if the capabilities are unknown."""
         pass
 
-    def load_connections(self, filenames: typing.Any=None, failures: str=
-        None, cancellable: Gio.Cancellable=None) -> bool:
+    def load_connections(self, filenames: typing.Any | None = None, failures: str=
+        None, cancellable: Gio.Cancellable | None = None) -> bool:
         """Requests that the remote settings service load or reload the given files,
 adding or updating the connections described within.
 
@@ -4810,9 +4810,9 @@ filenames that failed to load.
    With 1.22, the return value is consistent with nm_client_load_connections_finish()."""
         pass
 
-    def load_connections_async(self, filenames: typing.Any=None,
-        cancellable: Gio.Cancellable=None, callback: Gio.AsyncReadyCallback
-        =None, user_data: typing.Any=None) -> None:
+    def load_connections_async(self, filenames: typing.Any | None = None,
+        cancellable: Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback
+        =None, user_data: typing.Any | None = None) -> None:
         """Requests that the remote settings service asynchronously load or reload the
 given files, adding or updating the connections described within.
 
@@ -4826,8 +4826,8 @@ See nm_client_load_connections() for more details.
 :return: """
         pass
 
-    def load_connections_finish(self, failures: typing.Any=None, result:
-        Gio.AsyncResult=None) -> bool:
+    def load_connections_finish(self, failures: typing.Any | None = None, result:
+        Gio.AsyncResult | None = None) -> bool:
         """Gets the result of an nm_client_load_connections_async() call.
 
 See nm_client_load_connections() for more details.
@@ -4846,7 +4846,7 @@ See nm_client_load_connections() for more details.
 :return: %TRUE if networking is enabled, %FALSE if networking is disabled"""
         pass
 
-    def networking_set_enabled(self, enabled: bool=None) -> bool:
+    def networking_set_enabled(self, enabled: bool | None = None) -> bool:
         """Enables or disables networking.  When networking is disabled, all controlled
 interfaces are disconnected and deactivated.  When networking is enabled,
 all controlled interfaces are available for activation.
@@ -4856,9 +4856,9 @@ all controlled interfaces are available for activation.
 :return: %TRUE on success, %FALSE otherwise"""
         pass
 
-    def reload(self, flags: ManagerReloadFlags=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def reload(self, flags: ManagerReloadFlags | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Reload NetworkManager's configuration and perform certain updates, like
 flushing caches or rewriting external state to disk. This is similar to
 sending SIGHUP to NetworkManager but it allows for more fine-grained control
@@ -4873,7 +4873,7 @@ PolicyKit and contrary to signals it is synchronous.
 :return: """
         pass
 
-    def reload_connections(self, cancellable: Gio.Cancellable=None) -> bool:
+    def reload_connections(self, cancellable: Gio.Cancellable | None = None) -> bool:
         """Requests that the remote settings service reload all connection
 files from disk, adding, updating, and removing connections until
 the in-memory state matches the on-disk state.
@@ -4883,8 +4883,8 @@ the in-memory state matches the on-disk state.
 :return: %TRUE on success, %FALSE on failure"""
         pass
 
-    def reload_connections_async(self, cancellable: Gio.Cancellable=None,
-        callback: Gio.AsyncReadyCallback=None, user_data: typing.Any=None
+    def reload_connections_async(self, cancellable: Gio.Cancellable | None = None,
+        callback: Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None
         ) -> None:
         """Requests that the remote settings service begin reloading all connection
 files from disk, adding, updating, and removing connections until the
@@ -4897,7 +4897,7 @@ in-memory state matches the on-disk state.
 :return: """
         pass
 
-    def reload_connections_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def reload_connections_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of an nm_client_reload_connections_async() call.
 
 :param self: the #NMClient
@@ -4905,7 +4905,7 @@ in-memory state matches the on-disk state.
 :return: %TRUE on success, %FALSE on failure"""
         pass
 
-    def reload_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def reload_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_client_reload().
 
 :param self: an #NMClient
@@ -4913,8 +4913,8 @@ in-memory state matches the on-disk state.
 :return: %TRUE on success or %FALSE on failure."""
         pass
 
-    def save_hostname(self, hostname: str=None, cancellable:
-        Gio.Cancellable=None) -> bool:
+    def save_hostname(self, hostname: str | None = None, cancellable:
+        Gio.Cancellable | None = None) -> bool:
         """Requests that the machine's persistent hostname be set to the specified value
 or cleared.
 
@@ -4924,9 +4924,9 @@ or cleared.
 :return: %TRUE if the request was successful, %FALSE if it failed"""
         pass
 
-    def save_hostname_async(self, hostname: str=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def save_hostname_async(self, hostname: str | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Requests that the machine's persistent hostname be set to the specified value
 or cleared.
 
@@ -4938,7 +4938,7 @@ or cleared.
 :return: """
         pass
 
-    def save_hostname_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def save_hostname_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of an nm_client_save_hostname_async() call.
 
 :param self: the %NMClient
@@ -4946,7 +4946,7 @@ or cleared.
 :return: %TRUE if the request was successful, %FALSE if it failed"""
         pass
 
-    def set_logging(self, level: str=None, domains: str=None) -> bool:
+    def set_logging(self, level: str | None = None, domains: str | None = None) -> bool:
         """Sets NetworkManager logging level and/or domains.
 
 :param self: a #NMClient
@@ -4955,9 +4955,9 @@ or cleared.
 :return: %TRUE on success, %FALSE otherwise"""
         pass
 
-    def wait_shutdown(self, integrate_maincontext: bool=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def wait_shutdown(self, integrate_maincontext: bool | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """The way to stop #NMClient is by unrefing it. That will cancel all
 internally pending async operations. However, as async operations in
 NMClient use GTask, hence they cannot complete right away. Instead,
@@ -5028,7 +5028,7 @@ a callback to know when shutdown completed.
 :return: %TRUE if the WiMAX hardware is enabled"""
         pass
 
-    def wimax_set_enabled(self, enabled: bool=None) -> None:
+    def wimax_set_enabled(self, enabled: bool | None = None) -> None:
         """Enables or disables WiMAX devices.
 
 :param self: a #NMClient
@@ -5050,7 +5050,7 @@ a callback to know when shutdown completed.
 :return: %TRUE if the wireless hardware is enabled"""
         pass
 
-    def wireless_set_enabled(self, enabled: bool=None) -> None:
+    def wireless_set_enabled(self, enabled: bool | None = None) -> None:
         """Enables or disables wireless devices.
 
 :param self: a #NMClient
@@ -5072,7 +5072,7 @@ a callback to know when shutdown completed.
 :return: %TRUE if the WWAN hardware is enabled"""
         pass
 
-    def wwan_set_enabled(self, enabled: bool=None) -> None:
+    def wwan_set_enabled(self, enabled: bool | None = None) -> None:
         """Enables or disables WWAN devices.
 
 :param self: a #NMClient
@@ -5103,7 +5103,7 @@ client side, and #NMSettingsConnection on the daemon side."""
 :return: """
         pass
 
-    def secrets_updated(self, setting: str=None) -> None:
+    def secrets_updated(self, setting: str | None = None) -> None:
         """emitted when the connection's secrets are updated
 
 :param self: 
@@ -5111,7 +5111,7 @@ client side, and #NMSettingsConnection on the daemon side."""
 :return: """
         pass
 
-    def add_setting(self, setting: Setting=None) -> None:
+    def add_setting(self, setting: Setting | None = None) -> None:
         """Adds a #NMSetting to the connection, replacing any previous #NMSetting of the
 same name which has previously been added to the #NMConnection.  The
 connection takes ownership of the #NMSetting object and does not increase
@@ -5131,7 +5131,7 @@ keeping secret data in memory when not needed.
         pass
 
     def clear_secrets_with_flags(self, func: SettingClearSecretsWithFlagsFn
-        =None, user_data: typing.Any=None) -> None:
+        =None, user_data: typing.Any | None = None) -> None:
         """Clears and frees secrets determined by @func.
 
 :param self: the #NMConnection
@@ -5147,7 +5147,7 @@ keeping secret data in memory when not needed.
 :return: """
         pass
 
-    def compare(self, b: Connection=None, flags: SettingCompareFlags=None
+    def compare(self, b: Connection | None = None, flags: SettingCompareFlags | None = None
         ) -> bool:
         """Compares two #NMConnection objects for similarity, with comparison behavior
 modified by a set of flags.  See nm_setting_compare() for a description of
@@ -5159,8 +5159,8 @@ each flag's behavior.
 :return: %TRUE if the comparison succeeds, %FALSE if it does not"""
         pass
 
-    def diff(self, b: Connection=None, flags: SettingCompareFlags=None,
-        out_settings: GLib.HashTable=None) -> bool:
+    def diff(self, b: Connection | None = None, flags: SettingCompareFlags | None = None,
+        out_settings: GLib.HashTable | None = None) -> bool:
         """Compares two #NMConnection objects for similarity, with comparison behavior
 modified by a set of flags.  See nm_setting_compare() for a description of
 each flag's behavior.  If the connections differ, settings and keys within
@@ -5184,8 +5184,8 @@ be stable and may change at any time.
 :return: """
         pass
 
-    def for_each_setting_value(self, func: SettingValueIterFn=None,
-        user_data: typing.Any=None) -> None:
+    def for_each_setting_value(self, func: SettingValueIterFn | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Iterates over the properties of each #NMSetting object in the #NMConnection,
 calling the supplied user function for each property.
 
@@ -5228,7 +5228,7 @@ NetworkManager, this is the name of the created interface.
 :return: the D-Bus path of the connection, previously set by a call to nm_connection_set_path()."""
         pass
 
-    def get_setting(self, setting_type: GType=None) -> Setting:
+    def get_setting(self, setting_type: GType | None = None) -> Setting:
         """Gets the #NMSetting with the given #GType, if one has been previously added
 to the #NMConnection.
 
@@ -5279,7 +5279,7 @@ to the #NMConnection.
 :return: an #NMSettingBridgePort if the connection contains one, otherwise %NULL"""
         pass
 
-    def get_setting_by_name(self, name: str=None) -> Setting:
+    def get_setting_by_name(self, name: str | None = None) -> Setting:
         """Gets the #NMSetting with the given name, if one has been previously added
 the #NMConnection.
 
@@ -5520,7 +5520,7 @@ majority of IPv6-setting-related methods are on that type, not
 :return: an #NMSettingWirelessSecurity if the connection contains one, otherwise %NULL"""
         pass
 
-    def get_settings(self, out_length: int=None) -> typing.Any:
+    def get_settings(self, out_length: int | None = None) -> typing.Any:
         """Retrieves the settings in @connection.
 
 The returned array is %NULL-terminated.
@@ -5549,7 +5549,7 @@ Eg, "VLAN (eth1.1)".
    or %NULL if @connection is not a virtual connection type"""
         pass
 
-    def is_type(self, type: str=None) -> bool:
+    def is_type(self, type: str | None = None) -> bool:
         """A convenience function to check if the given @connection is a particular
 type (ie wired, Wi-Fi, ppp, etc). Checks the #NMSettingConnection:type
 property of the connection and matches that against @type.
@@ -5567,7 +5567,7 @@ activated even if the device it refers to doesn't exist).
 :return: whether @connection refers to a virtual device"""
         pass
 
-    def need_secrets(self, hints: typing.Any=None) -> str:
+    def need_secrets(self, hints: typing.Any | None = None) -> str:
         """Returns the name of the first setting object in the connection which would
 need secrets to make a successful connection.  The returned hints are only
 intended as a guide to what secrets may be required, because in some
@@ -5580,7 +5580,7 @@ secrets are needed.
    invalid or missing secrets"""
         pass
 
-    def normalize(self, parameters: GLib.HashTable=None, modified: bool=None
+    def normalize(self, parameters: GLib.HashTable | None = None, modified: bool | None = None
         ) -> bool:
         """Does some basic normalization and fixup of well known inconsistencies
 and deprecated fields. If the connection was modified in any way,
@@ -5597,7 +5597,7 @@ cannot be normalized, the connection will not be modified.
 :return: %TRUE if the connection is valid, %FALSE if it is not"""
         pass
 
-    def remove_setting(self, setting_type: GType=None) -> None:
+    def remove_setting(self, setting_type: GType | None = None) -> None:
         """Removes the #NMSetting with the given #GType from the #NMConnection.  This
 operation dereferences the #NMSetting object.
 
@@ -5606,7 +5606,7 @@ operation dereferences the #NMSetting object.
 :return: """
         pass
 
-    def replace_settings(self, new_settings: GLib.Variant=None) -> bool:
+    def replace_settings(self, new_settings: GLib.Variant | None = None) -> bool:
         """Replaces @connection's settings with @new_settings (which must be
 syntactically valid, and describe a known type of connection, but does not
 need to result in a connection that passes nm_connection_verify()).
@@ -5617,7 +5617,7 @@ need to result in a connection that passes nm_connection_verify()).
    be deserialized (in which case @connection will be unchanged)."""
         pass
 
-    def replace_settings_from_connection(self, new_connection: Connection=None
+    def replace_settings_from_connection(self, new_connection: Connection | None = None
         ) -> None:
         """Deep-copies the settings of @new_connection and replaces the settings of @connection
 with the copied settings.
@@ -5627,7 +5627,7 @@ with the copied settings.
 :return: """
         pass
 
-    def set_path(self, path: str=None) -> None:
+    def set_path(self, path: str | None = None) -> None:
         """Sets the D-Bus path of the connection.  This property is not serialized, and
 is only for the reference of the caller.  Sets the #NMConnection:path
 property.
@@ -5637,7 +5637,7 @@ property.
 :return: """
         pass
 
-    def to_dbus(self, flags: ConnectionSerializationFlags=None
+    def to_dbus(self, flags: ConnectionSerializationFlags | None = None
         ) -> GLib.Variant:
         """Converts the #NMConnection into a #GVariant of type
 %NM_VARIANT_TYPE_CONNECTION describing the connection, suitable for
@@ -5648,7 +5648,7 @@ marshalling over D-Bus or otherwise serializing.
 :return: a new floating #GVariant describing the connection, its settings, and each setting's properties."""
         pass
 
-    def update_secrets(self, setting_name: str=None, secrets: GLib.Variant=None
+    def update_secrets(self, setting_name: str | None = None, secrets: GLib.Variant | None = None
         ) -> bool:
         """Update the specified setting's secrets, given a dictionary of secrets
 intended for that setting (deserialized from D-Bus for example).  Will also
@@ -5880,7 +5880,7 @@ reaches zero, the object will be destroyed.
 class IPAddress:
     """"""
 
-    def __init__(self, family: int=None, addr: str=None, prefix: int=None
+    def __init__(self, family: int | None = None, addr: str | None = None, prefix: int | None = None
         ) -> None:
         """Creates a new #NMIPAddress object.
 
@@ -5892,7 +5892,7 @@ class IPAddress:
         pass
 
     @staticmethod
-    def new(family: int=None, addr: str=None, prefix: int=None) -> IPAddress:
+    def new(family: int | None = None, addr: str | None = None, prefix: int | None = None) -> IPAddress:
         """Creates a new #NMIPAddress object.
 
 :param family: the IP address family (<literal>AF_INET</literal> or   <literal>AF_INET6</literal>)
@@ -5902,7 +5902,7 @@ class IPAddress:
         pass
 
     @staticmethod
-    def new_binary(family: int=None, addr: typing.Any=None, prefix: int=None
+    def new_binary(family: int | None = None, addr: typing.Any | None = None, prefix: int | None = None
         ) -> IPAddress:
         """Creates a new #NMIPAddress object. @addr must point to a buffer of the
 correct size for @family.
@@ -5913,7 +5913,7 @@ correct size for @family.
 :return: the new #NMIPAddress object, or %NULL on error"""
         pass
 
-    def cmp_full(self, b: IPAddress=None, cmp_flags: IPAddressCmpFlags=None
+    def cmp_full(self, b: IPAddress | None = None, cmp_flags: IPAddressCmpFlags | None = None
         ) -> int:
         """Note that with @cmp_flags #NM_IP_ADDRESS_CMP_FLAGS_WITH_ATTRS, there
 is no total order for comparing GVariant. That means, if the two addresses
@@ -5934,7 +5934,7 @@ value only indicates equality.
 :return: a copy of @address  This API was part of public headers before 1.32.0 but was erroneously not exported in the ABI. It is thus only usable since 1.32.0."""
         pass
 
-    def equal(self, other: IPAddress=None) -> bool:
+    def equal(self, other: IPAddress | None = None) -> bool:
         """Determines if two #NMIPAddress objects contain the same address and prefix
 (attributes are not compared).
 
@@ -5950,7 +5950,7 @@ value only indicates equality.
 :return: the IP address"""
         pass
 
-    def get_address_binary(self, addr: typing.Any=None) -> None:
+    def get_address_binary(self, addr: typing.Any | None = None) -> None:
         """Gets the IP address property of this address object.
 
 @addr must point to a buffer that is the correct size for @address's family.
@@ -5960,7 +5960,7 @@ value only indicates equality.
 :return: """
         pass
 
-    def get_attribute(self, name: str=None) -> GLib.Variant:
+    def get_attribute(self, name: str | None = None) -> GLib.Variant:
         """Gets the value of the attribute with name @name on @address
 
 :param self: the #NMIPAddress
@@ -5999,7 +5999,7 @@ object.
 :return: """
         pass
 
-    def set_address(self, addr: str=None) -> None:
+    def set_address(self, addr: str | None = None) -> None:
         """Sets the IP address property of this address object.
 
 @addr must be a valid address of @address's family. If you aren't sure you
@@ -6010,7 +6010,7 @@ have a valid address, use nm_utils_ipaddr_valid() to check it.
 :return: """
         pass
 
-    def set_address_binary(self, addr: typing.Any=None) -> None:
+    def set_address_binary(self, addr: typing.Any | None = None) -> None:
         """Sets the IP address property of this address object.
 
 @addr must point to a buffer that is the correct size for @address's family.
@@ -6020,7 +6020,7 @@ have a valid address, use nm_utils_ipaddr_valid() to check it.
 :return: """
         pass
 
-    def set_attribute(self, name: str=None, value: GLib.Variant=None) -> None:
+    def set_attribute(self, name: str | None = None, value: GLib.Variant | None = None) -> None:
         """Sets or clears the named attribute on @address to the given value.
 
 :param self: the #NMIPAddress
@@ -6029,7 +6029,7 @@ have a valid address, use nm_utils_ipaddr_valid() to check it.
 :return: """
         pass
 
-    def set_prefix(self, prefix: int=None) -> None:
+    def set_prefix(self, prefix: int | None = None) -> None:
         """Sets the IP address prefix property of this address object.
 
 :param self: the #NMIPAddress
@@ -6053,8 +6053,8 @@ class IPConfigClass:
 class IPRoute:
     """"""
 
-    def __init__(self, family: int=None, dest: str=None, prefix: int=None,
-        next_hop: str=None, metric: int=None) -> None:
+    def __init__(self, family: int | None = None, dest: str | None = None, prefix: int | None = None,
+        next_hop: str | None = None, metric: int | None = None) -> None:
         """Creates a new #NMIPRoute object.
 
 :param self: 
@@ -6067,8 +6067,8 @@ class IPRoute:
         pass
 
     @staticmethod
-    def new(family: int=None, dest: str=None, prefix: int=None, next_hop:
-        str=None, metric: int=None) -> IPRoute:
+    def new(family: int | None = None, dest: str | None = None, prefix: int | None = None, next_hop:
+        str | None = None, metric: int | None = None) -> IPRoute:
         """Creates a new #NMIPRoute object.
 
 :param family: the IP address family (<literal>AF_INET</literal> or   <literal>AF_INET6</literal>)
@@ -6080,8 +6080,8 @@ class IPRoute:
         pass
 
     @staticmethod
-    def new_binary(family: int=None, dest: typing.Any=None, prefix: int=
-        None, next_hop: typing.Any=None, metric: int=None) -> IPRoute:
+    def new_binary(family: int | None = None, dest: typing.Any | None = None, prefix: int=
+        None, next_hop: typing.Any | None = None, metric: int | None = None) -> IPRoute:
         """Creates a new #NMIPRoute object. @dest and @next_hop (if non-%NULL) must
 point to buffers of the correct size for @family.
 
@@ -6100,7 +6100,7 @@ point to buffers of the correct size for @family.
 :return: a copy of @route  This API was part of public headers before 1.32.0 but was erroneously not exported in the ABI. It is thus only usable since 1.32.0."""
         pass
 
-    def equal(self, other: IPRoute=None) -> bool:
+    def equal(self, other: IPRoute | None = None) -> bool:
         """Determines if two #NMIPRoute objects contain the same destination, prefix,
 next hop, and metric. (Attributes are not compared.)
 
@@ -6109,7 +6109,7 @@ next hop, and metric. (Attributes are not compared.)
 :return: %TRUE if the objects contain the same values, %FALSE if they do not."""
         pass
 
-    def equal_full(self, other: IPRoute=None, cmp_flags: int=None) -> bool:
+    def equal_full(self, other: IPRoute | None = None, cmp_flags: int | None = None) -> bool:
         """Determines if two #NMIPRoute objects contain the same destination, prefix,
 next hop, and metric.
 
@@ -6119,7 +6119,7 @@ next hop, and metric.
 :return: %TRUE if the objects contain the same values, %FALSE if they do not."""
         pass
 
-    def get_attribute(self, name: str=None) -> GLib.Variant:
+    def get_attribute(self, name: str | None = None) -> GLib.Variant:
         """Gets the value of the attribute with name @name on @route
 
 :param self: the #NMIPRoute
@@ -6142,7 +6142,7 @@ next hop, and metric.
 :return: the IP address of the route's destination"""
         pass
 
-    def get_dest_binary(self, dest: typing.Any=None) -> None:
+    def get_dest_binary(self, dest: typing.Any | None = None) -> None:
         """Gets the destination property of this route object.
 
 @dest must point to a buffer that is the correct size for @route's family.
@@ -6177,7 +6177,7 @@ route has no next hop.
 :return: the IP address of the next hop, or %NULL if this is a device route."""
         pass
 
-    def get_next_hop_binary(self, next_hop: typing.Any=None) -> bool:
+    def get_next_hop_binary(self, next_hop: typing.Any | None = None) -> bool:
         """Gets the next hop property of this route object.
 
 @next_hop must point to a buffer that is the correct size for @route's family.
@@ -6201,7 +6201,7 @@ route has no next hop.
 :return: """
         pass
 
-    def set_attribute(self, name: str=None, value: GLib.Variant=None) -> None:
+    def set_attribute(self, name: str | None = None, value: GLib.Variant | None = None) -> None:
         """Sets the named attribute on @route to the given value.
 
 :param self: the #NMIPRoute
@@ -6210,7 +6210,7 @@ route has no next hop.
 :return: """
         pass
 
-    def set_dest(self, dest: str=None) -> None:
+    def set_dest(self, dest: str | None = None) -> None:
         """Sets the destination property of this route object.
 
 @dest must be a valid address of @route's family. If you aren't sure you
@@ -6221,7 +6221,7 @@ have a valid address, use nm_inet_is_valid() to check it.
 :return: """
         pass
 
-    def set_dest_binary(self, dest: typing.Any=None) -> None:
+    def set_dest_binary(self, dest: typing.Any | None = None) -> None:
         """Sets the destination property of this route object.
 
 @dest must point to a buffer that is the correct size for @route's family.
@@ -6231,7 +6231,7 @@ have a valid address, use nm_inet_is_valid() to check it.
 :return: """
         pass
 
-    def set_metric(self, metric: int=None) -> None:
+    def set_metric(self, metric: int | None = None) -> None:
         """Sets the metric property of this route object.
 
 :param self: the #NMIPRoute
@@ -6239,7 +6239,7 @@ have a valid address, use nm_inet_is_valid() to check it.
 :return: """
         pass
 
-    def set_next_hop(self, next_hop: str=None) -> None:
+    def set_next_hop(self, next_hop: str | None = None) -> None:
         """Sets the next-hop property of this route object.
 
 @next_hop (if non-%NULL) must be a valid address of @route's family. If you
@@ -6251,7 +6251,7 @@ it.
 :return: """
         pass
 
-    def set_next_hop_binary(self, next_hop: typing.Any=None) -> None:
+    def set_next_hop_binary(self, next_hop: typing.Any | None = None) -> None:
         """Sets the destination property of this route object.
 
 @next_hop (if non-%NULL) must point to a buffer that is the correct size for
@@ -6262,7 +6262,7 @@ it.
 :return: """
         pass
 
-    def set_prefix(self, prefix: int=None) -> None:
+    def set_prefix(self, prefix: int | None = None) -> None:
         """Sets the prefix property of this route object.
 
 :param self: the #NMIPRoute
@@ -6279,8 +6279,8 @@ reaches zero, the object will be destroyed.
         pass
 
     @staticmethod
-    def attribute_validate(name: str=None, value: GLib.Variant=None, family:
-        int=None, known: bool=None) -> bool:
+    def attribute_validate(name: str | None = None, value: GLib.Variant | None = None, family:
+        int | None = None, known: bool | None = None) -> bool:
         """Validates a route attribute, i.e. checks that the attribute is a known one
 and the value is of the correct type and well-formed.
 
@@ -6302,7 +6302,7 @@ and the value is of the correct type and well-formed.
 class IPRoutingRule:
     """"""
 
-    def __init__(self, addr_family: int=None) -> None:
+    def __init__(self, addr_family: int | None = None) -> None:
         """
 
 :param self: 
@@ -6311,7 +6311,7 @@ class IPRoutingRule:
         pass
 
     @staticmethod
-    def new(addr_family: int=None) -> IPRoutingRule:
+    def new(addr_family: int | None = None) -> IPRoutingRule:
         """
 
 :param addr_family: the address family of the routing rule. Must be either   %AF_INET (2) or %AF_INET6 (10).
@@ -6319,7 +6319,7 @@ class IPRoutingRule:
    provided address family. The instance is unsealed."""
         pass
 
-    def cmp(self, other: IPRoutingRule=None) -> int:
+    def cmp(self, other: IPRoutingRule | None = None) -> int:
         """
 
 :param self: the #NMIPRoutingRule instance to compare
@@ -6471,7 +6471,7 @@ class IPRoutingRule:
 :return: the tos of the rule."""
         pass
 
-    def get_uid_range(self, out_range_start: int=None, out_range_end: int=None
+    def get_uid_range(self, out_range_start: int | None = None, out_range_end: int | None = None
         ) -> bool:
         """
 
@@ -6514,7 +6514,7 @@ modify the rule. If @self was already sealed, this has no effect.
 :return: """
         pass
 
-    def set_action(self, action: int=None) -> None:
+    def set_action(self, action: int | None = None) -> None:
         """Note that currently only certain actions are allowed. nm_ip_routing_rule_validate()
 will reject unsupported actions as invalid.
 
@@ -6523,7 +6523,7 @@ will reject unsupported actions as invalid.
 :return: """
         pass
 
-    def set_destination_port(self, start: int=None, end: int=None) -> None:
+    def set_destination_port(self, start: int | None = None, end: int | None = None) -> None:
         """
 
 :param self: the #NMIPRoutingRule instance
@@ -6532,7 +6532,7 @@ will reject unsupported actions as invalid.
 :return: """
         pass
 
-    def set_from(self, _from: str=None, len: int=None) -> None:
+    def set_from(self, _from: str | None = None, len: int | None = None) -> None:
         """Setting invalid values is accepted, but will later fail
 during nm_ip_routing_rule_validate().
 
@@ -6542,7 +6542,7 @@ during nm_ip_routing_rule_validate().
 :return: """
         pass
 
-    def set_fwmark(self, fwmark: int=None, fwmask: int=None) -> None:
+    def set_fwmark(self, fwmark: int | None = None, fwmask: int | None = None) -> None:
         """
 
 :param self: the #NMIPRoutingRule instance
@@ -6551,7 +6551,7 @@ during nm_ip_routing_rule_validate().
 :return: """
         pass
 
-    def set_iifname(self, iifname: str=None) -> None:
+    def set_iifname(self, iifname: str | None = None) -> None:
         """The name supports C backslash escaping for non-UTF-8 characters.
 Note that nm_ip_routing_rule_from_string() too uses backslash
 escaping when tokenizing the words by whitespace. So, in string
@@ -6562,7 +6562,7 @@ representation you'd get double backslashes.
 :return: """
         pass
 
-    def set_invert(self, invert: bool=None) -> None:
+    def set_invert(self, invert: bool | None = None) -> None:
         """
 
 :param self: the #NMIPRoutingRule instance
@@ -6570,7 +6570,7 @@ representation you'd get double backslashes.
 :return: """
         pass
 
-    def set_ipproto(self, ipproto: int=None) -> None:
+    def set_ipproto(self, ipproto: int | None = None) -> None:
         """
 
 :param self: the #NMIPRoutingRule instance
@@ -6578,7 +6578,7 @@ representation you'd get double backslashes.
 :return: """
         pass
 
-    def set_oifname(self, oifname: str=None) -> None:
+    def set_oifname(self, oifname: str | None = None) -> None:
         """The name supports C backslash escaping for non-UTF-8 characters.
 Note that nm_ip_routing_rule_from_string() too uses backslash
 escaping when tokenizing the words by whitespace. So, in string
@@ -6589,7 +6589,7 @@ representation you'd get double backslashes.
 :return: """
         pass
 
-    def set_priority(self, priority: int=None) -> None:
+    def set_priority(self, priority: int | None = None) -> None:
         """A valid priority ranges from 0 to %G_MAXUINT32. "-1" is also allowed
 to reset the priority. It is a bug calling this function with any
 other value.
@@ -6599,7 +6599,7 @@ other value.
 :return: """
         pass
 
-    def set_source_port(self, start: int=None, end: int=None) -> None:
+    def set_source_port(self, start: int | None = None, end: int | None = None) -> None:
         """
 
 :param self: the #NMIPRoutingRule instance
@@ -6608,7 +6608,7 @@ other value.
 :return: """
         pass
 
-    def set_suppress_prefixlength(self, suppress_prefixlength: int=None
+    def set_suppress_prefixlength(self, suppress_prefixlength: int | None = None
         ) -> None:
         """
 
@@ -6617,7 +6617,7 @@ other value.
 :return: """
         pass
 
-    def set_table(self, table: int=None) -> None:
+    def set_table(self, table: int | None = None) -> None:
         """
 
 :param self: the #NMIPRoutingRule instance
@@ -6625,7 +6625,7 @@ other value.
 :return: """
         pass
 
-    def set_to(self, to: str=None, len: int=None) -> None:
+    def set_to(self, to: str | None = None, len: int | None = None) -> None:
         """Setting invalid values is accepted, but will later fail
 during nm_ip_routing_rule_validate().
 
@@ -6635,7 +6635,7 @@ during nm_ip_routing_rule_validate().
 :return: """
         pass
 
-    def set_tos(self, tos: int=None) -> None:
+    def set_tos(self, tos: int | None = None) -> None:
         """
 
 :param self: the #NMIPRoutingRule instance
@@ -6643,7 +6643,7 @@ during nm_ip_routing_rule_validate().
 :return: """
         pass
 
-    def set_uid_range(self, uid_range_start: int=None, uid_range_end: int=None
+    def set_uid_range(self, uid_range_start: int | None = None, uid_range_end: int | None = None
         ) -> None:
         """For a valid range, start must be less or equal to end.
 If set to an invalid range, the range gets unset.
@@ -6657,8 +6657,8 @@ symbols were not exported. The API only works since 1.34 and newer.
 :return: """
         pass
 
-    def to_string(self, to_string_flags: IPRoutingRuleAsStringFlags=None,
-        extra_args: GLib.HashTable=None) -> str:
+    def to_string(self, to_string_flags: IPRoutingRuleAsStringFlags | None = None,
+        extra_args: GLib.HashTable | None = None) -> str:
         """
 
 :param self: the #NMIPRoutingRule instance to convert to string.
@@ -6685,8 +6685,8 @@ Since 1.42, ref-counting of #NMIPRoutingRule is thread-safe.
         pass
 
     @staticmethod
-    def from_string(str: str=None, to_string_flags:
-        IPRoutingRuleAsStringFlags=None, extra_args: GLib.HashTable=None
+    def from_string(str: str | None = None, to_string_flags:
+        IPRoutingRuleAsStringFlags | None = None, extra_args: GLib.HashTable | None = None
         ) -> IPRoutingRule:
         """
 
@@ -6701,7 +6701,7 @@ class KeyfileHandlerData:
     """Opaque type with parameters for the callback. The actual content
 depends on the %NMKeyfileHandlerType."""
 
-    def fail_with_error(self, src: GLib.Error=None) -> None:
+    def fail_with_error(self, src: GLib.Error | None = None) -> None:
         """Set the error for the handler. This lets the operation fail
 with the provided error. You may only set the error once.
 
@@ -6716,8 +6716,8 @@ after calling this function on it.
 :return: """
         pass
 
-    def get_context(self, out_kf_group_name: str=None, out_kf_key_name: str
-        =None, out_cur_setting: Setting=None, out_cur_property_name: str=None
+    def get_context(self, out_kf_group_name: str | None = None, out_kf_key_name: str
+        =None, out_cur_setting: Setting | None = None, out_cur_property_name: str | None = None
         ) -> None:
         """Get context information of the current event. This function can be called
 on all events, but the context information may be unset.
@@ -6730,8 +6730,8 @@ on all events, but the context information may be unset.
 :return: """
         pass
 
-    def warn_get(self, out_message: str=None, out_severity:
-        KeyfileWarnSeverity=None) -> None:
+    def warn_get(self, out_message: str | None = None, out_severity:
+        KeyfileWarnSeverity | None = None) -> None:
         """
 
 :param self: the #NMKeyfileHandlerData for a %NM_KEYFILE_HANDLER_TYPE_WARN  event.
@@ -6838,7 +6838,7 @@ actually modify the (empty) instance.
 :return: a %NULL-terminated array of attribute names."""
         pass
 
-    def get_attr_string_value(self, name: str=None, out_value: str=None
+    def get_attr_string_value(self, name: str | None = None, out_value: str | None = None
         ) -> bool:
         """Gets the string value of attribute with name @name on @neighbor
 
@@ -6848,7 +6848,7 @@ actually modify the (empty) instance.
 :return: %TRUE if a string attribute with name @name was found, %FALSE otherwise"""
         pass
 
-    def get_attr_type(self, name: str=None) -> GLib.VariantType:
+    def get_attr_type(self, name: str | None = None) -> GLib.VariantType:
         """Get the type of an attribute.
 
 :param self: the #NMLldpNeighbor
@@ -6856,7 +6856,7 @@ actually modify the (empty) instance.
 :return: the #GVariantType of the attribute with name @name"""
         pass
 
-    def get_attr_uint_value(self, name: str=None, out_value: int=None) -> bool:
+    def get_attr_uint_value(self, name: str | None = None, out_value: int | None = None) -> bool:
         """Gets the uint32 value of attribute with name @name on @neighbor
 
 :param self: the #NMLldpNeighbor
@@ -6865,7 +6865,7 @@ actually modify the (empty) instance.
 :return: %TRUE if a uint32 attribute with name @name was found, %FALSE otherwise"""
         pass
 
-    def get_attr_value(self, name: str=None) -> GLib.Variant:
+    def get_attr_value(self, name: str | None = None) -> GLib.Variant:
         """Gets the value (as a GVariant) of attribute with name @name on @neighbor
 
 :param self: the #NMLldpNeighbor
@@ -6921,7 +6921,7 @@ class ObjectClass:
 class Range:
     """"""
 
-    def __init__(self, start: int=None, end: int=None) -> None:
+    def __init__(self, start: int | None = None, end: int | None = None) -> None:
         """Creates a new #NMRange object for the given range. Setting @end
 equal to @start creates a single-element range.
 
@@ -6932,7 +6932,7 @@ equal to @start creates a single-element range.
         pass
 
     @staticmethod
-    def new(start: int=None, end: int=None) -> Range:
+    def new(start: int | None = None, end: int | None = None) -> Range:
         """Creates a new #NMRange object for the given range. Setting @end
 equal to @start creates a single-element range.
 
@@ -6941,7 +6941,7 @@ equal to @start creates a single-element range.
 :return: the new #NMRange object."""
         pass
 
-    def cmp(self, b: Range=None) -> int:
+    def cmp(self, b: Range | None = None) -> int:
         """Compare two ranges.
 
 :param self: a #NMRange
@@ -6951,7 +6951,7 @@ equal to @start creates a single-element range.
    over the ranges."""
         pass
 
-    def get_range(self, start: int=None, end: int=None) -> bool:
+    def get_range(self, start: int | None = None, end: int | None = None) -> bool:
         """Gets the start and end values for the range.
 
 :param self: the #NMRange
@@ -6985,7 +6985,7 @@ This is thread-safe.
         pass
 
     @staticmethod
-    def from_str(str: str=None) -> Range:
+    def from_str(str: str | None = None) -> Range:
         """Parses the string representation of the range to create a %NMRange
 instance.
 
@@ -6997,8 +6997,8 @@ instance.
 class RemoteConnection(Object, Connection):
     """"""
 
-    def commit_changes(self, save_to_disk: bool=None, cancellable:
-        Gio.Cancellable=None) -> bool:
+    def commit_changes(self, save_to_disk: bool | None = None, cancellable:
+        Gio.Cancellable | None = None) -> bool:
         """Send any local changes to the settings and properties of @connection to
 NetworkManager. If @save_to_disk is %TRUE, the updated connection will be saved to
 disk; if %FALSE, then only the in-memory representation will be changed.
@@ -7009,9 +7009,9 @@ disk; if %FALSE, then only the in-memory representation will be changed.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def commit_changes_async(self, save_to_disk: bool=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def commit_changes_async(self, save_to_disk: bool | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Asynchronously sends any local changes to the settings and properties of
 @connection to NetworkManager. If @save is %TRUE, the updated connection will
 be saved to disk; if %FALSE, then only the in-memory representation will be
@@ -7025,7 +7025,7 @@ changed.
 :return: """
         pass
 
-    def commit_changes_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def commit_changes_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_remote_connection_commit_changes_async().
 
 :param self: the #NMRemoteConnection
@@ -7033,7 +7033,7 @@ changed.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def delete(self, cancellable: Gio.Cancellable=None) -> bool:
+    def delete(self, cancellable: Gio.Cancellable | None = None) -> bool:
         """Deletes the connection.
 
 :param self: the #NMRemoteConnection
@@ -7041,8 +7041,8 @@ changed.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def delete_async(self, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def delete_async(self, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Asynchronously deletes the connection.
 
 :param self: the #NMRemoteConnection
@@ -7052,7 +7052,7 @@ changed.
 :return: """
         pass
 
-    def delete_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def delete_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_remote_connection_delete_async().
 
 :param self: the #NMRemoteConnection
@@ -7074,8 +7074,8 @@ changed.
 :return: the flags of the connection of type #NMSettingsConnectionFlags."""
         pass
 
-    def get_secrets(self, setting_name: str=None, cancellable:
-        Gio.Cancellable=None) -> GLib.Variant:
+    def get_secrets(self, setting_name: str | None = None, cancellable:
+        Gio.Cancellable | None = None) -> GLib.Variant:
         """Request the connection's secrets. Note that this is a blocking D-Bus call,
 not a simple property accessor.
 
@@ -7089,9 +7089,9 @@ not a simple property accessor.
    This function used to be deprecated between 1.22 and 1.38 releases."""
         pass
 
-    def get_secrets_async(self, setting_name: str=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def get_secrets_async(self, setting_name: str | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Asynchronously requests the connection's secrets.
 
 :param self: the #NMRemoteConnection
@@ -7102,7 +7102,7 @@ not a simple property accessor.
 :return: """
         pass
 
-    def get_secrets_finish(self, result: Gio.AsyncResult=None) -> GLib.Variant:
+    def get_secrets_finish(self, result: Gio.AsyncResult | None = None) -> GLib.Variant:
         """Gets the result of a call to nm_remote_connection_get_secrets_async().
 
 :param self: the #NMRemoteConnection
@@ -7140,7 +7140,7 @@ reference to it.)
 :return: %TRUE if the remote connection is visible to the current user, %FALSE if not."""
         pass
 
-    def save(self, cancellable: Gio.Cancellable=None) -> bool:
+    def save(self, cancellable: Gio.Cancellable | None = None) -> bool:
         """Saves the connection to disk if the connection has changes that have not yet
 been written to disk, or if the connection has never been saved.
 
@@ -7149,8 +7149,8 @@ been written to disk, or if the connection has never been saved.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def save_async(self, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def save_async(self, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Saves the connection to disk if the connection has changes that have not yet
 been written to disk, or if the connection has never been saved.
 
@@ -7161,7 +7161,7 @@ been written to disk, or if the connection has never been saved.
 :return: """
         pass
 
-    def save_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def save_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_remote_connection_save_async().
 
 :param self: the #NMRemoteConnection
@@ -7169,10 +7169,10 @@ been written to disk, or if the connection has never been saved.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def update2(self, settings: GLib.Variant=None, flags:
-        SettingsUpdate2Flags=None, args: GLib.Variant=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def update2(self, settings: GLib.Variant | None = None, flags:
+        SettingsUpdate2Flags | None = None, args: GLib.Variant | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Asynchronously calls the Update2() D-Bus method.
 
 :param self: the #NMRemoteConnection
@@ -7185,7 +7185,7 @@ been written to disk, or if the connection has never been saved.
 :return: """
         pass
 
-    def update2_finish(self, result: Gio.AsyncResult=None) -> GLib.Variant:
+    def update2_finish(self, result: Gio.AsyncResult | None = None) -> GLib.Variant:
         """Gets the result of a call to nm_remote_connection_commit_changes_async().
 
 :param self: the #NMRemoteConnection
@@ -7202,8 +7202,8 @@ class RemoteConnectionClass:
 class SecretAgentOld(GObject.Object, Gio.AsyncInitable, Gio.Initable):
     """"""
 
-    def cancel_get_secrets(self, connection_path: str=None, setting_name:
-        str=None) -> None:
+    def cancel_get_secrets(self, connection_path: str | None = None, setting_name:
+        str | None = None) -> None:
         """
 
 :param self: 
@@ -7212,9 +7212,9 @@ class SecretAgentOld(GObject.Object, Gio.AsyncInitable, Gio.Initable):
 :return: """
         pass
 
-    def delete_secrets(self, connection: Connection=None, connection_path:
-        str=None, callback: SecretAgentOldDeleteSecretsFunc=None, user_data:
-        typing.Any=None) -> None:
+    def delete_secrets(self, connection: Connection | None = None, connection_path:
+        str | None = None, callback: SecretAgentOldDeleteSecretsFunc | None = None, user_data:
+        typing.Any | None = None) -> None:
         """Asynchronously asks the agent to delete all saved secrets belonging to
 @connection.
 
@@ -7226,10 +7226,10 @@ class SecretAgentOld(GObject.Object, Gio.AsyncInitable, Gio.Initable):
 :return: """
         pass
 
-    def get_secrets(self, connection: Connection=None, connection_path: str
-        =None, setting_name: str=None, hints: typing.Any=None, flags:
-        SecretAgentGetSecretsFlags=None, callback:
-        SecretAgentOldGetSecretsFunc=None, user_data: typing.Any=None) -> None:
+    def get_secrets(self, connection: Connection | None = None, connection_path: str
+        =None, setting_name: str | None = None, hints: typing.Any | None = None, flags:
+        SecretAgentGetSecretsFlags | None = None, callback:
+        SecretAgentOldGetSecretsFunc | None = None, user_data: typing.Any | None = None) -> None:
         """Asynchronously retrieves secrets belonging to @connection for the
 setting @setting_name.  @flags indicate specific behavior that the secret
 agent should use when performing the request, for example returning only
@@ -7247,9 +7247,9 @@ secrets from the user.
 :return: """
         pass
 
-    def save_secrets(self, connection: Connection=None, connection_path:
-        str=None, callback: SecretAgentOldSaveSecretsFunc=None, user_data:
-        typing.Any=None) -> None:
+    def save_secrets(self, connection: Connection | None = None, connection_path:
+        str | None = None, callback: SecretAgentOldSaveSecretsFunc | None = None, user_data:
+        typing.Any | None = None) -> None:
         """Asynchronously ensures that all secrets inside @connection are stored to
 disk.
 
@@ -7261,8 +7261,8 @@ disk.
 :return: """
         pass
 
-    def delete_secrets(self, connection: Connection=None, callback:
-        SecretAgentOldDeleteSecretsFunc=None, user_data: typing.Any=None
+    def delete_secrets(self, connection: Connection | None = None, callback:
+        SecretAgentOldDeleteSecretsFunc | None = None, user_data: typing.Any | None = None
         ) -> None:
         """Asynchronously asks the agent to delete all saved secrets belonging to
 @connection.
@@ -7291,7 +7291,7 @@ instance becomes defunct and cannot re-register.
 :return: """
         pass
 
-    def enable(self, enable: bool=None) -> None:
+    def enable(self, enable: bool | None = None) -> None:
         """This has the same effect as setting %NM_SECRET_AGENT_OLD_AUTO_REGISTER
 property.
 
@@ -7361,10 +7361,10 @@ with success, you know the instance is registered.
 :return: a %TRUE if the agent is registered, %FALSE if it is not."""
         pass
 
-    def get_secrets(self, connection: Connection=None, setting_name: str=
-        None, hints: typing.Any=None, flags: SecretAgentGetSecretsFlags=
-        None, callback: SecretAgentOldGetSecretsFunc=None, user_data:
-        typing.Any=None) -> None:
+    def get_secrets(self, connection: Connection | None = None, setting_name: str=
+        None, hints: typing.Any | None = None, flags: SecretAgentGetSecretsFlags=
+        None, callback: SecretAgentOldGetSecretsFunc | None = None, user_data:
+        typing.Any | None = None) -> None:
         """Asynchronously retrieves secrets belonging to @connection for the
 setting @setting_name.  @flags indicate specific behavior that the secret
 agent should use when performing the request, for example returning only
@@ -7381,7 +7381,7 @@ secrets from the user.
 :return: """
         pass
 
-    def register(self, cancellable: Gio.Cancellable=None) -> bool:
+    def register(self, cancellable: Gio.Cancellable | None = None) -> bool:
         """Registers the #NMSecretAgentOld with the NetworkManager secret manager,
 indicating to NetworkManager that the agent is able to provide and save
 secrets for connections on behalf of its user.
@@ -7391,8 +7391,8 @@ secrets for connections on behalf of its user.
 :return: %TRUE if registration was successful, %FALSE on error.  Since 1.24, this can no longer fail unless the @cancellable gets cancelled. Contrary to nm_secret_agent_old_register_async(), this also does not wait for the registration to succeed. You cannot synchronously (without iterating the caller's GMainContext) wait for registration.  Since 1.24, registration is idempotent. It has the same effect as setting %NM_SECRET_AGENT_OLD_AUTO_REGISTER to %TRUE or nm_secret_agent_old_enable()."""
         pass
 
-    def register_async(self, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def register_async(self, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Asynchronously registers the #NMSecretAgentOld with the NetworkManager secret
 manager, indicating to NetworkManager that the agent is able to provide and
 save secrets for connections on behalf of its user.
@@ -7415,7 +7415,7 @@ you want to check and ensure that the agent is registered.
 :return: """
         pass
 
-    def register_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def register_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_secret_agent_old_register_async().
 
 :param self: a #NMSecretAgentOld
@@ -7423,8 +7423,8 @@ you want to check and ensure that the agent is registered.
 :return: %TRUE if registration was successful, %FALSE on error.  Since 1.24, registration cannot fail and is idempotent. It has the same effect as setting %NM_SECRET_AGENT_OLD_AUTO_REGISTER to %TRUE or nm_secret_agent_old_enable()."""
         pass
 
-    def save_secrets(self, connection: Connection=None, callback:
-        SecretAgentOldSaveSecretsFunc=None, user_data: typing.Any=None
+    def save_secrets(self, connection: Connection | None = None, callback:
+        SecretAgentOldSaveSecretsFunc | None = None, user_data: typing.Any | None = None
         ) -> None:
         """Asynchronously ensures that all secrets inside @connection are stored to
 disk.
@@ -7436,7 +7436,7 @@ disk.
 :return: """
         pass
 
-    def unregister(self, cancellable: Gio.Cancellable=None) -> bool:
+    def unregister(self, cancellable: Gio.Cancellable | None = None) -> bool:
         """Unregisters the #NMSecretAgentOld with the NetworkManager secret manager,
 indicating to NetworkManager that the agent will no longer provide or
 store secrets on behalf of this user.
@@ -7446,8 +7446,8 @@ store secrets on behalf of this user.
 :return: %TRUE if unregistration was successful, %FALSE on error  Since 1.24, registration cannot fail and is idempotent. It has the same effect as setting %NM_SECRET_AGENT_OLD_AUTO_REGISTER to %FALSE or nm_secret_agent_old_enable()."""
         pass
 
-    def unregister_async(self, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def unregister_async(self, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Asynchronously unregisters the #NMSecretAgentOld with the NetworkManager secret
 manager, indicating to NetworkManager that the agent will no longer provide
 or store secrets on behalf of this user.
@@ -7463,7 +7463,7 @@ or nm_secret_agent_old_enable().
 :return: """
         pass
 
-    def unregister_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def unregister_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_secret_agent_old_unregister_async().
 
 :param self: a #NMSecretAgentOld
@@ -7487,7 +7487,7 @@ class Setting(GObject.Object):
     """"""
 
     @staticmethod
-    def get_enum_property_type(setting_type: GType=None, property_name: str
+    def get_enum_property_type(setting_type: GType | None = None, property_name: str
         =None) -> GType:
         """Get the type of the enum that defines the values that the property accepts. It is only
 useful for properties configured to accept values from certain enum type, otherwise
@@ -7504,7 +7504,7 @@ setting the GObject property.
         pass
 
     @staticmethod
-    def lookup_type(name: str=None) -> GType:
+    def lookup_type(name: str | None = None) -> GType:
         """Returns the #GType of the setting's class for a given setting name.
 
 :param name: a setting name
@@ -7512,7 +7512,7 @@ setting the GObject property.
    @name is not recognized."""
         pass
 
-    def compare(self, b: Setting=None, flags: SettingCompareFlags=None
+    def compare(self, b: Setting | None = None, flags: SettingCompareFlags | None = None
         ) -> bool:
         """Compares two #NMSetting objects for similarity, with comparison behavior
 modified by a set of flags.  See the documentation for #NMSettingCompareFlags
@@ -7524,8 +7524,8 @@ for a description of each flag's behavior.
 :return: %TRUE if the comparison succeeds, %FALSE if it does not"""
         pass
 
-    def diff(self, b: Setting=None, flags: SettingCompareFlags=None,
-        invert_results: bool=None, results: GLib.HashTable=None) -> bool:
+    def diff(self, b: Setting | None = None, flags: SettingCompareFlags | None = None,
+        invert_results: bool | None = None, results: GLib.HashTable | None = None) -> bool:
         """Compares two #NMSetting objects for similarity, with comparison behavior
 modified by a set of flags.  See the documentation for #NMSettingCompareFlags
 for a description of each flag's behavior.  If the settings differ, the keys
@@ -7547,8 +7547,8 @@ one or more #NMSettingDiffResult values.
 :return: a new #NMSetting containing the same properties and values as the source #NMSetting"""
         pass
 
-    def enumerate_values(self, func: SettingValueIterFn=None, user_data:
-        typing.Any=None) -> None:
+    def enumerate_values(self, func: SettingValueIterFn | None = None, user_data:
+        typing.Any | None = None) -> None:
         """Iterates over each property of the #NMSetting object, calling the supplied
 user function for each property.
 
@@ -7558,7 +7558,7 @@ user function for each property.
 :return: """
         pass
 
-    def get_dbus_property_type(self, property_name: str=None
+    def get_dbus_property_type(self, property_name: str | None = None
         ) -> GLib.VariantType:
         """Gets the D-Bus marshalling type of a property. @property_name is a D-Bus
 property name, which may not necessarily be a #GObject property.
@@ -7575,8 +7575,8 @@ property name, which may not necessarily be a #GObject property.
 :return: a string containing the type name of the #NMSetting object, like 'ppp' or 'wireless' or 'wired'."""
         pass
 
-    def get_secret_flags(self, secret_name: str=None, out_flags:
-        SettingSecretFlags=None) -> bool:
+    def get_secret_flags(self, secret_name: str | None = None, out_flags:
+        SettingSecretFlags | None = None) -> bool:
         """For a given secret, retrieves the #NMSettingSecretFlags describing how to
 handle that secret.
 
@@ -7586,7 +7586,7 @@ handle that secret.
 :return: %TRUE on success (if the given secret name was a valid property of this setting, and if that property is secret), %FALSE if not"""
         pass
 
-    def option_clear_by_name(self, predicate: UtilsPredicateStr=None) -> None:
+    def option_clear_by_name(self, predicate: UtilsPredicateStr | None = None) -> None:
         """
 
 :param self: the #NMSetting
@@ -7594,7 +7594,7 @@ handle that secret.
 :return: """
         pass
 
-    def option_get(self, opt_name: str=None) -> GLib.Variant:
+    def option_get(self, opt_name: str | None = None) -> GLib.Variant:
         """
 
 :param self: the #NMSetting
@@ -7603,7 +7603,7 @@ handle that secret.
    is not set."""
         pass
 
-    def option_get_all_names(self, out_len: int=None) -> typing.Any:
+    def option_get_all_names(self, out_len: int | None = None) -> typing.Any:
         """Gives the name of all set options.
 
 :param self: the #NMSetting
@@ -7613,7 +7613,7 @@ handle that secret.
    by the next operation."""
         pass
 
-    def option_get_boolean(self, opt_name: str=None, out_value: bool=None
+    def option_get_boolean(self, opt_name: str | None = None, out_value: bool | None = None
         ) -> bool:
         """
 
@@ -7623,7 +7623,7 @@ handle that secret.
 :return: %TRUE if @opt_name is set to a boolean variant."""
         pass
 
-    def option_get_uint32(self, opt_name: str=None, out_value: int=None
+    def option_get_uint32(self, opt_name: str | None = None, out_value: int | None = None
         ) -> bool:
         """
 
@@ -7633,7 +7633,7 @@ handle that secret.
 :return: %TRUE if @opt_name is set to a uint32 variant."""
         pass
 
-    def option_set(self, opt_name: str=None, variant: GLib.Variant=None
+    def option_set(self, opt_name: str | None = None, variant: GLib.Variant | None = None
         ) -> None:
         """If @variant is %NULL, this clears the option if it is set.
 Otherwise, @variant is set as the option. If @variant is
@@ -7649,7 +7649,7 @@ Currently, only #NMSettingEthtool supports it.
 :return: """
         pass
 
-    def option_set_boolean(self, opt_name: str=None, value: bool=None) -> None:
+    def option_set_boolean(self, opt_name: str | None = None, value: bool | None = None) -> None:
         """Like nm_setting_option_set() to set a boolean GVariant.
 
 :param self: the #NMSetting
@@ -7658,7 +7658,7 @@ Currently, only #NMSettingEthtool supports it.
 :return: """
         pass
 
-    def option_set_uint32(self, opt_name: str=None, value: int=None) -> None:
+    def option_set_uint32(self, opt_name: str | None = None, value: int | None = None) -> None:
         """Like nm_setting_option_set() to set a uint32 GVariant.
 
 :param self: the #NMSetting
@@ -7667,8 +7667,8 @@ Currently, only #NMSettingEthtool supports it.
 :return: """
         pass
 
-    def set_secret_flags(self, secret_name: str=None, flags:
-        SettingSecretFlags=None) -> bool:
+    def set_secret_flags(self, secret_name: str | None = None, flags:
+        SettingSecretFlags | None = None) -> bool:
         """For a given secret, stores the #NMSettingSecretFlags describing how to
 handle that secret.
 
@@ -7688,7 +7688,7 @@ be stable and may change at any time.
 :return: an allocated string containing a textual representation of the setting's properties and values, which the caller should free with g_free()"""
         pass
 
-    def verify(self, connection: Connection=None) -> bool:
+    def verify(self, connection: Connection | None = None) -> bool:
         """Validates the setting.  Each setting's properties have allowed values, and
 some are dependent on other values (hence the need for @connection).  The
 returned #GError contains information about which property of the setting
@@ -7699,7 +7699,7 @@ failed validation, and in what way that property failed validation.
 :return: %TRUE if the setting is valid, %FALSE if it is not"""
         pass
 
-    def verify_secrets(self, connection: Connection=None) -> bool:
+    def verify_secrets(self, connection: Connection | None = None) -> bool:
         """Verifies the secrets in the setting.
 The returned #GError contains information about which secret of the setting
 failed validation, and in what way that secret failed validation.
@@ -7759,7 +7759,7 @@ class Setting8021x(Setting):
         pass
 
     @staticmethod
-    def check_cert_scheme(pdata: typing.Any=None, length: int=None
+    def check_cert_scheme(pdata: typing.Any | None = None, length: int | None = None
         ) -> Setting8021xCKScheme:
         """Determines and verifies the blob type.
 When setting certificate properties of NMSetting8021x
@@ -7770,7 +7770,7 @@ the blob must be not UNKNOWN (or NULL).
 :return: the scheme of the blob or %NM_SETTING_802_1X_CK_SCHEME_UNKNOWN. For NULL it also returns NM_SETTING_802_1X_CK_SCHEME_UNKNOWN."""
         pass
 
-    def add_altsubject_match(self, altsubject_match: str=None) -> bool:
+    def add_altsubject_match(self, altsubject_match: str | None = None) -> bool:
         """Adds an allowed alternate subject name match.  Until at least one
 match is added, the altSubjectName of the remote authentication
 server is not verified.
@@ -7780,7 +7780,7 @@ server is not verified.
 :return: %TRUE if the alternative subject name match was  successfully added, %FALSE if it was already allowed."""
         pass
 
-    def add_eap_method(self, eap: str=None) -> bool:
+    def add_eap_method(self, eap: str | None = None) -> bool:
         """Adds an allowed EAP method.  The setting is not valid until at least one
 EAP method has been added.  See #NMSetting8021x:eap property for a list of
 allowed EAP methods.
@@ -7790,7 +7790,7 @@ allowed EAP methods.
 :return: %TRUE if the EAP method was successfully added, %FALSE if it was  not a valid method or if it was already allowed."""
         pass
 
-    def add_phase2_altsubject_match(self, phase2_altsubject_match: str=None
+    def add_phase2_altsubject_match(self, phase2_altsubject_match: str | None = None
         ) -> bool:
         """Adds an allowed alternate subject name match for "phase 2".  Until
 at least one match is added, the altSubjectName of the "phase 2"
@@ -7822,7 +7822,7 @@ remote authentication server is not verified.
 :return: """
         pass
 
-    def get_altsubject_match(self, i: int=None) -> str:
+    def get_altsubject_match(self, i: int | None = None) -> str:
         """Returns the altSubjectName match at index @i.
 
 :param self: the #NMSettingConnection
@@ -7988,7 +7988,7 @@ for local files and 'data' URIs for inline certificate data).
 :return: the #NMSetting8021x:domain-suffix-match property."""
         pass
 
-    def get_eap_method(self, i: int=None) -> str:
+    def get_eap_method(self, i: int | None = None) -> str:
         """Returns the name of the allowed EAP method at index @i.
 
 :param self: the #NMSetting8021x
@@ -8111,7 +8111,7 @@ allowed EAP methods.
 :return: the "phase 1" PEAP version to be used when authenticating with  EAP-PEAP as contained in the #NMSetting8021x:phase1-peapver property.  Valid  values are %NULL (unset), "0" (PEAP version 0), and "1" (PEAP version 1)."""
         pass
 
-    def get_phase2_altsubject_match(self, i: int=None) -> str:
+    def get_phase2_altsubject_match(self, i: int | None = None) -> str:
         """Returns the "phase 2" altSubjectName match at index @i.
 
 :param self: the #NMSettingConnection
@@ -8461,7 +8461,7 @@ of these properties.
 :return: %TRUE if a system CA certificate path should be used, %FALSE if not"""
         pass
 
-    def remove_altsubject_match(self, i: int=None) -> None:
+    def remove_altsubject_match(self, i: int | None = None) -> None:
         """Removes the allowed altSubjectName at the specified index.
 
 :param self: the #NMSetting8021x
@@ -8469,7 +8469,7 @@ of these properties.
 :return: """
         pass
 
-    def remove_altsubject_match_by_value(self, altsubject_match: str=None
+    def remove_altsubject_match_by_value(self, altsubject_match: str | None = None
         ) -> bool:
         """Removes the allowed altSubjectName @altsubject_match.
 
@@ -8479,7 +8479,7 @@ of these properties.
           %FALSE if it was not."""
         pass
 
-    def remove_eap_method(self, i: int=None) -> None:
+    def remove_eap_method(self, i: int | None = None) -> None:
         """Removes the allowed EAP method at the specified index.
 
 :param self: the #NMSetting8021x
@@ -8487,7 +8487,7 @@ of these properties.
 :return: """
         pass
 
-    def remove_eap_method_by_value(self, eap: str=None) -> bool:
+    def remove_eap_method_by_value(self, eap: str | None = None) -> bool:
         """Removes the allowed EAP method @method.
 
 :param self: the #NMSetting8021x
@@ -8495,7 +8495,7 @@ of these properties.
 :return: %TRUE if the EAP method was founs and removed, %FALSE if it was not."""
         pass
 
-    def remove_phase2_altsubject_match(self, i: int=None) -> None:
+    def remove_phase2_altsubject_match(self, i: int | None = None) -> None:
         """Removes the allowed "phase 2" altSubjectName at the specified index.
 
 :param self: the #NMSetting8021x
@@ -8504,7 +8504,7 @@ of these properties.
         pass
 
     def remove_phase2_altsubject_match_by_value(self,
-        phase2_altsubject_match: str=None) -> bool:
+        phase2_altsubject_match: str | None = None) -> bool:
         """Removes the allowed "phase 2" altSubjectName @phase2_altsubject_match.
 
 :param self: the #NMSetting8021x
@@ -8513,8 +8513,8 @@ of these properties.
           %FALSE if it was not."""
         pass
 
-    def set_ca_cert(self, value: str=None, scheme: Setting8021xCKScheme=
-        None, out_format: Setting8021xCKFormat=None) -> bool:
+    def set_ca_cert(self, value: str | None = None, scheme: Setting8021xCKScheme=
+        None, out_format: Setting8021xCKFormat | None = None) -> bool:
         """Reads a certificate from disk and sets the #NMSetting8021x:ca-cert property
 with the raw certificate data if using the %NM_SETTING_802_1X_CK_SCHEME_BLOB
 scheme, or with the path to the certificate file if using the
@@ -8527,8 +8527,8 @@ scheme, or with the path to the certificate file if using the
 :return: %TRUE if the operation succeeded, %FALSE if it was unsuccessful"""
         pass
 
-    def set_client_cert(self, value: str=None, scheme: Setting8021xCKScheme
-        =None, out_format: Setting8021xCKFormat=None) -> bool:
+    def set_client_cert(self, value: str | None = None, scheme: Setting8021xCKScheme
+        =None, out_format: Setting8021xCKFormat | None = None) -> bool:
         """Reads a certificate from disk and sets the #NMSetting8021x:client-cert
 property with the raw certificate data if using the
 %NM_SETTING_802_1X_CK_SCHEME_BLOB scheme, or with the path to the certificate
@@ -8545,8 +8545,8 @@ authentication method.
 :return: %TRUE if the operation succeeded, %FALSE if it was unsuccessful"""
         pass
 
-    def set_phase2_ca_cert(self, value: str=None, scheme:
-        Setting8021xCKScheme=None, out_format: Setting8021xCKFormat=None
+    def set_phase2_ca_cert(self, value: str | None = None, scheme:
+        Setting8021xCKScheme | None = None, out_format: Setting8021xCKFormat | None = None
         ) -> bool:
         """Reads a certificate from disk and sets the #NMSetting8021x:phase2-ca-cert
 property with the raw certificate data if using the
@@ -8560,8 +8560,8 @@ file if using the %NM_SETTING_802_1X_CK_SCHEME_PATH scheme.
 :return: %TRUE if the operation succeeded, %FALSE if it was unsuccessful"""
         pass
 
-    def set_phase2_client_cert(self, value: str=None, scheme:
-        Setting8021xCKScheme=None, out_format: Setting8021xCKFormat=None
+    def set_phase2_client_cert(self, value: str | None = None, scheme:
+        Setting8021xCKScheme | None = None, out_format: Setting8021xCKFormat | None = None
         ) -> bool:
         """Reads a certificate from disk and sets the #NMSetting8021x:phase2-client-cert
 property with the raw certificate data if using the
@@ -8579,8 +8579,8 @@ authentication method.
 :return: %TRUE if the operation succeeded, %FALSE if it was unsuccessful"""
         pass
 
-    def set_phase2_private_key(self, value: str=None, password: str=None,
-        scheme: Setting8021xCKScheme=None, out_format: Setting8021xCKFormat
+    def set_phase2_private_key(self, value: str | None = None, password: str | None = None,
+        scheme: Setting8021xCKScheme | None = None, out_format: Setting8021xCKFormat
         =None) -> bool:
         """Private keys are used to authenticate the connecting client to the network
 when EAP-TLS is used as either the "phase 1" or "phase 2" 802.1x
@@ -8612,8 +8612,8 @@ key password to prevent unauthorized access to unencrypted private key data.
 :return: %TRUE if the operation succeeded, %FALSE if it was unsuccessful"""
         pass
 
-    def set_private_key(self, value: str=None, password: str=None, scheme:
-        Setting8021xCKScheme=None, out_format: Setting8021xCKFormat=None
+    def set_private_key(self, value: str | None = None, password: str | None = None, scheme:
+        Setting8021xCKScheme | None = None, out_format: Setting8021xCKFormat | None = None
         ) -> bool:
         """Private keys are used to authenticate the connecting client to the network
 when EAP-TLS is used as either the "phase 1" or "phase 2" 802.1x
@@ -8777,7 +8777,7 @@ class SettingBond(Setting):
         pass
 
     @staticmethod
-    def validate_option(name: str=None, value: str=None) -> bool:
+    def validate_option(name: str | None = None, value: str | None = None) -> bool:
         """Checks whether @name is a valid bond option and @value is a valid value for
 the @name. If @value is %NULL, the function only validates the option name.
 
@@ -8786,7 +8786,7 @@ the @name. If @value is %NULL, the function only validates the option name.
 :return: %TRUE, if the @value is valid for the given name. If the @name is not a valid option, %FALSE will be returned."""
         pass
 
-    def add_option(self, name: str=None, value: str=None) -> bool:
+    def add_option(self, name: str | None = None, value: str | None = None) -> bool:
         """Add an option to the table. Adding a new name replaces any existing name/value pair
 that may already exist.
 
@@ -8805,7 +8805,7 @@ using nm_setting_bond_get_option().
 :return: the number of bonding options"""
         pass
 
-    def get_option(self, idx: int=None, out_name: str=None, out_value: str=None
+    def get_option(self, idx: int | None = None, out_name: str | None = None, out_value: str | None = None
         ) -> bool:
         """Given an index, return the value of the bonding option at that index.  Indexes
 are *not* guaranteed to be static across modifications to options done by
@@ -8820,7 +8820,7 @@ such as during option iteration.
 :return: %TRUE on success if the index was valid and an option was found, %FALSE if the index was invalid (ie, greater than the number of options currently held by the setting)"""
         pass
 
-    def get_option_by_name(self, name: str=None) -> str:
+    def get_option_by_name(self, name: str | None = None) -> str:
         """Returns the value associated with the bonding option specified by
 @name, if it exists.
 
@@ -8829,7 +8829,7 @@ such as during option iteration.
 :return: the value, or %NULL if the key/value pair was never added to the setting; the value is owned by the setting and must not be modified"""
         pass
 
-    def get_option_default(self, name: str=None) -> str:
+    def get_option_default(self, name: str | None = None) -> str:
         """
 
 :param self: the #NMSettingBond
@@ -8838,7 +8838,7 @@ such as during option iteration.
    the #NMSettingBond:options property."""
         pass
 
-    def get_option_normalized(self, name: str=None) -> str:
+    def get_option_normalized(self, name: str | None = None) -> str:
         """
 
 :param self: the #NMSettingBond
@@ -8857,7 +8857,7 @@ The @setting argument is unused and may be passed as %NULL.
 :return: a %NULL-terminated array of strings of valid bond options."""
         pass
 
-    def remove_option(self, name: str=None) -> bool:
+    def remove_option(self, name: str | None = None) -> bool:
         """Remove the bonding option referenced by @name from the internal option
 list.
 
@@ -8924,7 +8924,7 @@ class SettingBridge(Setting):
 :return: the new empty #NMSettingBridge object"""
         pass
 
-    def add_vlan(self, vlan: BridgeVlan=None) -> None:
+    def add_vlan(self, vlan: BridgeVlan | None = None) -> None:
         """Appends a new vlan and associated information to the setting.  The
 given vlan gets sealed and a reference to it is added.
 
@@ -9101,7 +9101,7 @@ given vlan gets sealed and a reference to it is added.
 :return: the #NMSettingBridge:stp property of the setting"""
         pass
 
-    def get_vlan(self, idx: int=None) -> BridgeVlan:
+    def get_vlan(self, idx: int | None = None) -> BridgeVlan:
         """
 
 :param self: the #NMSettingBridge
@@ -9137,7 +9137,7 @@ given vlan gets sealed and a reference to it is added.
 :return: the #NMSettingBridge:vlan-stats-enabled property of the setting"""
         pass
 
-    def remove_vlan(self, idx: int=None) -> None:
+    def remove_vlan(self, idx: int | None = None) -> None:
         """Removes the vlan at index @idx.
 
 :param self: the #NMSettingBridge
@@ -9145,7 +9145,7 @@ given vlan gets sealed and a reference to it is added.
 :return: """
         pass
 
-    def remove_vlan_by_vid(self, vid_start: int=None, vid_end: int=None
+    def remove_vlan_by_vid(self, vid_start: int | None = None, vid_end: int | None = None
         ) -> bool:
         """Remove the VLAN with range @vid_start to @vid_end.
 If @vid_end is zero, it is assumed to be equal to @vid_start
@@ -9179,7 +9179,7 @@ class SettingBridgePort(Setting):
 :return: the new empty #NMSettingBridgePort object"""
         pass
 
-    def add_vlan(self, vlan: BridgeVlan=None) -> None:
+    def add_vlan(self, vlan: BridgeVlan | None = None) -> None:
         """Appends a new vlan and associated information to the setting.  The
 given vlan gets sealed and a reference to it is added.
 
@@ -9223,7 +9223,7 @@ given vlan gets sealed and a reference to it is added.
 :return: the #NMSettingBridgePort:priority property of the setting"""
         pass
 
-    def get_vlan(self, idx: int=None) -> BridgeVlan:
+    def get_vlan(self, idx: int | None = None) -> BridgeVlan:
         """
 
 :param self: the #NMSettingBridgePort
@@ -9231,7 +9231,7 @@ given vlan gets sealed and a reference to it is added.
 :return: the VLAN at index @idx"""
         pass
 
-    def remove_vlan(self, idx: int=None) -> None:
+    def remove_vlan(self, idx: int | None = None) -> None:
         """Removes the vlan at index @idx.
 
 :param self: the #NMSettingBridgePort
@@ -9239,7 +9239,7 @@ given vlan gets sealed and a reference to it is added.
 :return: """
         pass
 
-    def remove_vlan_by_vid(self, vid_start: int=None, vid_end: int=None
+    def remove_vlan_by_vid(self, vid_start: int | None = None, vid_end: int | None = None
         ) -> bool:
         """Remove the VLAN with range @vid_start to @vid_end.
 If @vid_end is zero, it is assumed to be equal to @vid_start
@@ -9334,7 +9334,7 @@ class SettingConnection(Setting):
 :return: the new empty #NMSettingConnection object"""
         pass
 
-    def add_ip_ping_address(self, address: str=None) -> bool:
+    def add_ip_ping_address(self, address: str | None = None) -> bool:
         """Adds a new IP address string to the ip-ping-addresses.
 
 :param self: the #NMSettingConnection
@@ -9342,7 +9342,7 @@ class SettingConnection(Setting):
 :return: %TRUE if the new IP address was added; %FALSE if the IP address was already present"""
         pass
 
-    def add_permission(self, ptype: str=None, pitem: str=None, detail: str=None
+    def add_permission(self, ptype: str | None = None, pitem: str | None = None, detail: str | None = None
         ) -> bool:
         """Adds a permission to the connection's permission list.  At this time, only
 the "user" permission type is supported, and @pitem must be a username. See
@@ -9355,7 +9355,7 @@ the "user" permission type is supported, and @pitem must be a username. See
 :return: %TRUE if the permission was unique and was successfully added to the list, %FALSE if @ptype or @pitem was invalid. If the permission was already present in the list, it will not be added a second time but %TRUE will be returned. Note that before 1.28, in this case %FALSE would be returned."""
         pass
 
-    def add_secondary(self, sec_uuid: str=None) -> bool:
+    def add_secondary(self, sec_uuid: str | None = None) -> bool:
         """Adds a new secondary connection UUID to the setting.
 
 :param self: the #NMSettingConnection
@@ -9472,7 +9472,7 @@ Zero means infinite, -1 means the global default value.
 :return: the connection's interface name"""
         pass
 
-    def get_ip_ping_address(self, idx: int=None) -> str:
+    def get_ip_ping_address(self, idx: int | None = None) -> str:
         """
 
 :param self: the #NMSettingConnection
@@ -9567,8 +9567,8 @@ property of this setting.
 :return: the number of configured secondary connection UUIDs"""
         pass
 
-    def get_permission(self, idx: int=None, out_ptype: str=None, out_pitem:
-        str=None, out_detail: str=None) -> bool:
+    def get_permission(self, idx: int | None = None, out_ptype: str | None = None, out_pitem:
+        str | None = None, out_detail: str | None = None) -> bool:
         """Retrieve one of the entries of the #NMSettingConnection:permissions property
 of this setting.
 
@@ -9594,7 +9594,7 @@ of this setting.
 :return: %TRUE if the connection is read-only, %FALSE if it is not"""
         pass
 
-    def get_secondary(self, idx: int=None) -> str:
+    def get_secondary(self, idx: int | None = None) -> str:
         """
 
 :param self: the #NMSettingConnection
@@ -9654,7 +9654,7 @@ of this setting.
 :return: the trust level of a connection"""
         pass
 
-    def is_slave_type(self, type: str=None) -> bool:
+    def is_slave_type(self, type: str | None = None) -> bool:
         """
 
 :param self: the #NMSettingConnection
@@ -9662,7 +9662,7 @@ of this setting.
 :return: %TRUE if connection is of the given port @type"""
         pass
 
-    def permissions_user_allowed(self, uname: str=None) -> bool:
+    def permissions_user_allowed(self, uname: str | None = None) -> bool:
         """Checks whether the given username is allowed to view/access this connection.
 
 :param self: the #NMSettingConnection
@@ -9670,7 +9670,7 @@ of this setting.
 :return: %TRUE if the requested user is allowed to view this connection, %FALSE if the given user is not allowed to view this connection"""
         pass
 
-    def remove_ip_ping_address(self, idx: int=None) -> None:
+    def remove_ip_ping_address(self, idx: int | None = None) -> None:
         """Removes the IP address at index @idx.
 
 :param self: the #NMSettingConnection
@@ -9678,7 +9678,7 @@ of this setting.
 :return: """
         pass
 
-    def remove_ip_ping_address_by_value(self, address: str=None) -> bool:
+    def remove_ip_ping_address_by_value(self, address: str | None = None) -> bool:
         """Removes the IP address @address from ip-ping-addresses.
 
 :param self: the #NMSettingConnection
@@ -9686,7 +9686,7 @@ of this setting.
 :return: %TRUE if the IP address was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_permission(self, idx: int=None) -> None:
+    def remove_permission(self, idx: int | None = None) -> None:
         """Removes the permission at index @idx from the connection.
 
 :param self: the #NMSettingConnection
@@ -9694,8 +9694,8 @@ of this setting.
 :return: """
         pass
 
-    def remove_permission_by_value(self, ptype: str=None, pitem: str=None,
-        detail: str=None) -> bool:
+    def remove_permission_by_value(self, ptype: str | None = None, pitem: str | None = None,
+        detail: str | None = None) -> bool:
         """Removes the permission from the connection.
 At this time, only the "user" permission type is supported, and @pitem must
 be a username. See #NMSettingConnection:permissions: for more details.
@@ -9707,7 +9707,7 @@ be a username. See #NMSettingConnection:permissions: for more details.
 :return: %TRUE if the permission was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_secondary(self, idx: int=None) -> None:
+    def remove_secondary(self, idx: int | None = None) -> None:
         """Removes the secondary connection UUID at index @idx.
 
 :param self: the #NMSettingConnection
@@ -9715,7 +9715,7 @@ be a username. See #NMSettingConnection:permissions: for more details.
 :return: """
         pass
 
-    def remove_secondary_by_value(self, sec_uuid: str=None) -> bool:
+    def remove_secondary_by_value(self, sec_uuid: str | None = None) -> bool:
         """Removes the secondary connection UUID @sec_uuid.
 
 :param self: the #NMSettingConnection
@@ -9794,7 +9794,7 @@ class SettingDcb(Setting):
 :return: the #NMSettingDcb:app-iscsi-priority property of the setting"""
         pass
 
-    def get_priority_bandwidth(self, user_priority: int=None) -> int:
+    def get_priority_bandwidth(self, user_priority: int | None = None) -> int:
         """
 
 :param self: the #NMSettingDcb
@@ -9802,7 +9802,7 @@ class SettingDcb(Setting):
 :return: the allowed bandwidth percentage of @user_priority in its priority group. These values are only valid when #NMSettingDcb:priority-group-flags includes the %NM_SETTING_DCB_FLAG_ENABLE flag."""
         pass
 
-    def get_priority_flow_control(self, user_priority: int=None) -> bool:
+    def get_priority_flow_control(self, user_priority: int | None = None) -> bool:
         """
 
 :param self: the #NMSettingDcb
@@ -9817,7 +9817,7 @@ class SettingDcb(Setting):
 :return: the #NMSettingDcb:priority-flow-control-flags property of the setting"""
         pass
 
-    def get_priority_group_bandwidth(self, group_id: int=None) -> int:
+    def get_priority_group_bandwidth(self, group_id: int | None = None) -> int:
         """
 
 :param self: the #NMSettingDcb
@@ -9832,7 +9832,7 @@ class SettingDcb(Setting):
 :return: the #NMSettingDcb:priority-group-flags property of the setting"""
         pass
 
-    def get_priority_group_id(self, user_priority: int=None) -> int:
+    def get_priority_group_id(self, user_priority: int | None = None) -> int:
         """
 
 :param self: the #NMSettingDcb
@@ -9840,7 +9840,7 @@ class SettingDcb(Setting):
 :return: the group number @user_priority is assigned to.  These values are only valid when #NMSettingDcb:priority-group-flags includes the %NM_SETTING_DCB_FLAG_ENABLE flag."""
         pass
 
-    def get_priority_strict_bandwidth(self, user_priority: int=None) -> bool:
+    def get_priority_strict_bandwidth(self, user_priority: int | None = None) -> bool:
         """
 
 :param self: the #NMSettingDcb
@@ -9848,7 +9848,7 @@ class SettingDcb(Setting):
 :return: %TRUE if @user_priority may use all of the bandwidth allocated to its assigned group, or %FALSE if not. These values are only valid when #NMSettingDcb:priority-group-flags includes the %NM_SETTING_DCB_FLAG_ENABLE flag."""
         pass
 
-    def get_priority_traffic_class(self, user_priority: int=None) -> int:
+    def get_priority_traffic_class(self, user_priority: int | None = None) -> int:
         """
 
 :param self: the #NMSettingDcb
@@ -9856,8 +9856,8 @@ class SettingDcb(Setting):
 :return: the traffic class assigned to @user_priority. These values are only valid when #NMSettingDcb:priority-group-flags includes the %NM_SETTING_DCB_FLAG_ENABLE flag."""
         pass
 
-    def set_priority_bandwidth(self, user_priority: int=None,
-        bandwidth_percent: int=None) -> None:
+    def set_priority_bandwidth(self, user_priority: int | None = None,
+        bandwidth_percent: int | None = None) -> None:
         """These values are only valid when #NMSettingDcb:priority-group-flags includes
 the %NM_SETTING_DCB_FLAG_ENABLE flag.
 
@@ -9867,8 +9867,8 @@ the %NM_SETTING_DCB_FLAG_ENABLE flag.
 :return: """
         pass
 
-    def set_priority_flow_control(self, user_priority: int=None, enabled:
-        bool=None) -> None:
+    def set_priority_flow_control(self, user_priority: int | None = None, enabled:
+        bool | None = None) -> None:
         """These values are only valid when #NMSettingDcb:priority-flow-control includes
 the %NM_SETTING_DCB_FLAG_ENABLE flag.
 
@@ -9878,8 +9878,8 @@ the %NM_SETTING_DCB_FLAG_ENABLE flag.
 :return: """
         pass
 
-    def set_priority_group_bandwidth(self, group_id: int=None,
-        bandwidth_percent: int=None) -> None:
+    def set_priority_group_bandwidth(self, group_id: int | None = None,
+        bandwidth_percent: int | None = None) -> None:
         """These values are only valid when #NMSettingDcb:priority-group-flags includes
 the %NM_SETTING_DCB_FLAG_ENABLE flag.
 
@@ -9889,7 +9889,7 @@ the %NM_SETTING_DCB_FLAG_ENABLE flag.
 :return: """
         pass
 
-    def set_priority_group_id(self, user_priority: int=None, group_id: int=None
+    def set_priority_group_id(self, user_priority: int | None = None, group_id: int | None = None
         ) -> None:
         """These values are only valid when #NMSettingDcb:priority-group-flags includes
 the %NM_SETTING_DCB_FLAG_ENABLE flag.
@@ -9900,8 +9900,8 @@ the %NM_SETTING_DCB_FLAG_ENABLE flag.
 :return: """
         pass
 
-    def set_priority_strict_bandwidth(self, user_priority: int=None, strict:
-        bool=None) -> None:
+    def set_priority_strict_bandwidth(self, user_priority: int | None = None, strict:
+        bool | None = None) -> None:
         """These values are only valid when #NMSettingDcb:priority-group-flags includes
 the %NM_SETTING_DCB_FLAG_ENABLE flag.
 
@@ -9911,8 +9911,8 @@ the %NM_SETTING_DCB_FLAG_ENABLE flag.
 :return: """
         pass
 
-    def set_priority_traffic_class(self, user_priority: int=None,
-        traffic_class: int=None) -> None:
+    def set_priority_traffic_class(self, user_priority: int | None = None,
+        traffic_class: int | None = None) -> None:
         """
 
 :param self: 
@@ -9972,7 +9972,7 @@ class SettingEthtool(Setting):
 :return: """
         pass
 
-    def get_feature(self, optname: str=None) -> Ternary:
+    def get_feature(self, optname: str | None = None) -> Ternary:
         """Gets and offload feature setting. Returns %NM_TERNARY_DEFAULT if the
 feature is not set.
 
@@ -9985,7 +9985,7 @@ nm_ethtool_optname_is_feature().
    is enabled, disabled, or left untouched."""
         pass
 
-    def get_optnames(self, out_length: int=None) -> typing.Any:
+    def get_optnames(self, out_length: int | None = None) -> typing.Any:
         """This returns all options names that are set. This includes the feature names
 like %NM_ETHTOOL_OPTNAME_FEATURE_GRO. See nm_ethtool_optname_is_feature() to
 check whether the option name is valid for offload features.
@@ -9997,7 +9997,7 @@ check whether the option name is valid for offload features.
    @setting and may get invalidated when @setting gets modified."""
         pass
 
-    def set_feature(self, optname: str=None, value: Ternary=None) -> None:
+    def set_feature(self, optname: str | None = None, value: Ternary | None = None) -> None:
         """Sets and offload feature setting.
 
 Note that @optname must be a valid name for a feature, according to
@@ -10369,7 +10369,7 @@ class SettingIP6ConfigClass:
 class SettingIPConfig(Setting):
     """"""
 
-    def add_address(self, address: IPAddress=None) -> bool:
+    def add_address(self, address: IPAddress | None = None) -> bool:
         """Adds a new IP address and associated information to the setting.  The
 given address is duplicated internally and is not changed by this function.
 
@@ -10378,7 +10378,7 @@ given address is duplicated internally and is not changed by this function.
 :return: %TRUE if the address was added; %FALSE if the address was already known."""
         pass
 
-    def add_dhcp_reject_server(self, server: str=None) -> None:
+    def add_dhcp_reject_server(self, server: str | None = None) -> None:
         """Adds a new DHCP reject server to the setting.
 
 :param self: the #NMSettingIPConfig
@@ -10386,7 +10386,7 @@ given address is duplicated internally and is not changed by this function.
 :return: """
         pass
 
-    def add_dns(self, dns: str=None) -> bool:
+    def add_dns(self, dns: str | None = None) -> bool:
         """Adds a new DNS server to the setting.
 
 :param self: the #NMSettingIPConfig
@@ -10394,7 +10394,7 @@ given address is duplicated internally and is not changed by this function.
 :return: %TRUE if the DNS server was added; %FALSE if the server was already known  Before 1.42, setting @dns to an invalid string was treated as user-error. Now, also invalid DNS values can be set, but will be rejected later during nm_connection_verify()."""
         pass
 
-    def add_dns_option(self, dns_option: str=None) -> bool:
+    def add_dns_option(self, dns_option: str | None = None) -> bool:
         """Adds a new DNS option to the setting.
 
 :param self: the #NMSettingIPConfig
@@ -10402,7 +10402,7 @@ given address is duplicated internally and is not changed by this function.
 :return: %TRUE if the DNS option was added; %FALSE otherwise"""
         pass
 
-    def add_dns_search(self, dns_search: str=None) -> bool:
+    def add_dns_search(self, dns_search: str | None = None) -> bool:
         """Adds a new DNS search domain to the setting.
 
 :param self: the #NMSettingIPConfig
@@ -10410,7 +10410,7 @@ given address is duplicated internally and is not changed by this function.
 :return: %TRUE if the DNS search domain was added; %FALSE if the search domain was already known"""
         pass
 
-    def add_route(self, route: IPRoute=None) -> bool:
+    def add_route(self, route: IPRoute | None = None) -> bool:
         """Appends a new route and associated information to the setting.  The
 given route is duplicated internally and is not changed by this function.
 If an identical route (considering attributes as well) already exists, the
@@ -10425,7 +10425,7 @@ parameters.
 :return: %TRUE if the route was added; %FALSE if the route was already known."""
         pass
 
-    def add_routing_rule(self, routing_rule: IPRoutingRule=None) -> None:
+    def add_routing_rule(self, routing_rule: IPRoutingRule | None = None) -> None:
         """Appends a new routing-rule and associated information to the setting. The
 given routing rules gets sealed and the reference count is incremented.
 The function does not check whether an identical rule already exists
@@ -10457,7 +10457,7 @@ and always appends the rule to the end of the list.
 :return: """
         pass
 
-    def clear_dns_options(self, is_set: bool=None) -> None:
+    def clear_dns_options(self, is_set: bool | None = None) -> None:
         """Removes all configured DNS options.
 
 :param self: the #NMSettingIPConfig
@@ -10486,7 +10486,7 @@ and always appends the rule to the end of the list.
 :return: """
         pass
 
-    def get_address(self, idx: int=None) -> IPAddress:
+    def get_address(self, idx: int | None = None) -> IPAddress:
         """
 
 :param self: the #NMSettingIPConfig
@@ -10540,7 +10540,7 @@ property.
 :return: the configured DHCP IAID (Identity Association Identifier)"""
         pass
 
-    def get_dhcp_reject_servers(self, out_len: int=None) -> typing.Any:
+    def get_dhcp_reject_servers(self, out_len: int | None = None) -> typing.Any:
         """
 
 :param self: the #NMSettingIPConfig
@@ -10580,7 +10580,7 @@ property.
 :return: the configured DHCP timeout in seconds. 0 = default for the particular kind of device."""
         pass
 
-    def get_dns(self, idx: int=None) -> str:
+    def get_dns(self, idx: int | None = None) -> str:
         """
 
 :param self: the #NMSettingIPConfig
@@ -10588,7 +10588,7 @@ property.
 :return: the IP address of the DNS server at index @idx"""
         pass
 
-    def get_dns_option(self, idx: int=None) -> str:
+    def get_dns_option(self, idx: int | None = None) -> str:
         """Since 1.46, access at index "len" is allowed and returns NULL.
 
 :param self: the #NMSettingIPConfig
@@ -10603,7 +10603,7 @@ property.
 :return: the priority of DNS servers"""
         pass
 
-    def get_dns_search(self, idx: int=None) -> str:
+    def get_dns_search(self, idx: int | None = None) -> str:
         """Since 1.46, access at index "len" is allowed and returns NULL.
 
 :param self: the #NMSettingIPConfig
@@ -10722,7 +10722,7 @@ property.
 :return: the required timeout for the address family"""
         pass
 
-    def get_route(self, idx: int=None) -> IPRoute:
+    def get_route(self, idx: int | None = None) -> IPRoute:
         """
 
 :param self: the #NMSettingIPConfig
@@ -10753,7 +10753,7 @@ property.
 :return: the #NMSettingIPConfig:routed-dns property of the setting"""
         pass
 
-    def get_routing_rule(self, idx: int=None) -> IPRoutingRule:
+    def get_routing_rule(self, idx: int | None = None) -> IPRoutingRule:
         """
 
 :param self: the #NMSettingIPConfig
@@ -10788,7 +10788,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: whether DNS options are initialized or left unset (the default)."""
         pass
 
-    def remove_address(self, idx: int=None) -> None:
+    def remove_address(self, idx: int | None = None) -> None:
         """Removes the address at index @idx.
 
 :param self: the #NMSettingIPConfig
@@ -10796,7 +10796,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: """
         pass
 
-    def remove_address_by_value(self, address: IPAddress=None) -> bool:
+    def remove_address_by_value(self, address: IPAddress | None = None) -> bool:
         """Removes the address @address.
 
 :param self: the #NMSettingIPConfig
@@ -10804,7 +10804,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: %TRUE if the address was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_dhcp_reject_server(self, idx: int=None) -> None:
+    def remove_dhcp_reject_server(self, idx: int | None = None) -> None:
         """Removes the DHCP reject server at index @idx.
 
 :param self: the #NMSettingIPConfig
@@ -10812,7 +10812,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: """
         pass
 
-    def remove_dns(self, idx: int=None) -> None:
+    def remove_dns(self, idx: int | None = None) -> None:
         """Removes the DNS server at index @idx.
 
 :param self: the #NMSettingIPConfig
@@ -10820,7 +10820,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: """
         pass
 
-    def remove_dns_by_value(self, dns: str=None) -> bool:
+    def remove_dns_by_value(self, dns: str | None = None) -> bool:
         """Removes the DNS server @dns.
 
 :param self: the #NMSettingIPConfig
@@ -10828,7 +10828,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: %TRUE if the DNS server was found and removed; %FALSE if it was not.  Before 1.42, setting @dns to an invalid string was treated as user-error."""
         pass
 
-    def remove_dns_option(self, idx: int=None) -> None:
+    def remove_dns_option(self, idx: int | None = None) -> None:
         """Removes the DNS option at index @idx.
 
 :param self: the #NMSettingIPConfig
@@ -10836,7 +10836,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: """
         pass
 
-    def remove_dns_option_by_value(self, dns_option: str=None) -> bool:
+    def remove_dns_option_by_value(self, dns_option: str | None = None) -> bool:
         """Removes the DNS option @dns_option.
 
 :param self: the #NMSettingIPConfig
@@ -10844,7 +10844,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: %TRUE if the DNS option was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_dns_search(self, idx: int=None) -> None:
+    def remove_dns_search(self, idx: int | None = None) -> None:
         """Removes the DNS search domain at index @idx.
 
 :param self: the #NMSettingIPConfig
@@ -10852,7 +10852,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: """
         pass
 
-    def remove_dns_search_by_value(self, dns_search: str=None) -> bool:
+    def remove_dns_search_by_value(self, dns_search: str | None = None) -> bool:
         """Removes the DNS search domain @dns_search.
 
 :param self: the #NMSettingIPConfig
@@ -10860,7 +10860,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: %TRUE if the DNS search domain was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_route(self, idx: int=None) -> None:
+    def remove_route(self, idx: int | None = None) -> None:
         """Removes the route at index @idx.
 
 :param self: the #NMSettingIPConfig
@@ -10868,7 +10868,7 @@ a default configuration, while the former explicitly means "no-options".
 :return: """
         pass
 
-    def remove_route_by_value(self, route: IPRoute=None) -> bool:
+    def remove_route_by_value(self, route: IPRoute | None = None) -> bool:
         """Removes the first matching route that matches @route.
 Note that before 1.10, this function would only compare dest/prefix,next_hop,metric
 and ignore route attributes. Now, @route must match exactly.
@@ -10878,7 +10878,7 @@ and ignore route attributes. Now, @route must match exactly.
 :return: %TRUE if the route was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_routing_rule(self, idx: int=None) -> None:
+    def remove_routing_rule(self, idx: int | None = None) -> None:
         """Removes the routing_rule at index @idx.
 
 :param self: the #NMSettingIPConfig
@@ -11372,7 +11372,7 @@ class SettingMatch(Setting):
 :return: the new empty #NMSettingMatch object  Note that this function was present in header files since version 1.14. But due to a bug the symbol is only exposed and usable since version 1.32. As workaround, use g_object_new(NM_TYPE_SETTING_MATCH) which works with all versions since 1.14."""
         pass
 
-    def add_driver(self, driver: str=None) -> None:
+    def add_driver(self, driver: str | None = None) -> None:
         """Adds a new driver to the setting.
 
 :param self: the #NMSettingMatch
@@ -11380,7 +11380,7 @@ class SettingMatch(Setting):
 :return: """
         pass
 
-    def add_interface_name(self, interface_name: str=None) -> None:
+    def add_interface_name(self, interface_name: str | None = None) -> None:
         """Adds a new interface name to the setting.
 
 :param self: the #NMSettingMatch
@@ -11388,7 +11388,7 @@ class SettingMatch(Setting):
 :return: """
         pass
 
-    def add_kernel_command_line(self, kernel_command_line: str=None) -> None:
+    def add_kernel_command_line(self, kernel_command_line: str | None = None) -> None:
         """Adds a new kernel command line argument to the setting.
 
 :param self: the #NMSettingMatch
@@ -11396,7 +11396,7 @@ class SettingMatch(Setting):
 :return: """
         pass
 
-    def add_path(self, path: str=None) -> None:
+    def add_path(self, path: str | None = None) -> None:
         """Adds a new path to the setting.
 
 :param self: the #NMSettingMatch
@@ -11432,7 +11432,7 @@ class SettingMatch(Setting):
 :return: """
         pass
 
-    def get_driver(self, idx: int=None) -> str:
+    def get_driver(self, idx: int | None = None) -> str:
         """Since 1.46, access at index "len" is allowed and returns NULL.
 
 :param self: the #NMSettingMatch
@@ -11440,7 +11440,7 @@ class SettingMatch(Setting):
 :return: the driver at index @idx"""
         pass
 
-    def get_drivers(self, length: int=None) -> typing.Any:
+    def get_drivers(self, length: int | None = None) -> typing.Any:
         """Returns all the drivers.
 
 :param self: the #NMSettingMatch
@@ -11448,7 +11448,7 @@ class SettingMatch(Setting):
 :return: the configured drivers."""
         pass
 
-    def get_interface_name(self, idx: int=None) -> str:
+    def get_interface_name(self, idx: int | None = None) -> str:
         """Since 1.46, access at index "len" is allowed and returns NULL.
 
 :param self: the #NMSettingMatch
@@ -11456,7 +11456,7 @@ class SettingMatch(Setting):
 :return: the interface name at index @idx"""
         pass
 
-    def get_interface_names(self, length: int=None) -> typing.Any:
+    def get_interface_names(self, length: int | None = None) -> typing.Any:
         """Returns all the interface names.
 
 :param self: the #NMSettingMatch
@@ -11465,7 +11465,7 @@ class SettingMatch(Setting):
    configured interface names.  Before 1.26, the returned array was not %NULL terminated and you MUST provide a length."""
         pass
 
-    def get_kernel_command_line(self, idx: int=None) -> str:
+    def get_kernel_command_line(self, idx: int | None = None) -> str:
         """Since 1.46, access at index "len" is allowed and returns NULL.
 
 :param self: the #NMSettingMatch
@@ -11473,7 +11473,7 @@ class SettingMatch(Setting):
 :return: the kernel command line argument at index @idx"""
         pass
 
-    def get_kernel_command_lines(self, length: int=None) -> typing.Any:
+    def get_kernel_command_lines(self, length: int | None = None) -> typing.Any:
         """Returns all the kernel command line arguments.
 
 :param self: the #NMSettingMatch
@@ -11510,7 +11510,7 @@ class SettingMatch(Setting):
 :return: the number of configured paths"""
         pass
 
-    def get_path(self, idx: int=None) -> str:
+    def get_path(self, idx: int | None = None) -> str:
         """Since 1.46, access at index "len" is allowed and returns NULL.
 
 :param self: the #NMSettingMatch
@@ -11518,7 +11518,7 @@ class SettingMatch(Setting):
 :return: the path at index @idx"""
         pass
 
-    def get_paths(self, length: int=None) -> typing.Any:
+    def get_paths(self, length: int | None = None) -> typing.Any:
         """Returns all the paths.
 
 :param self: the #NMSettingMatch
@@ -11526,7 +11526,7 @@ class SettingMatch(Setting):
 :return: the configured paths."""
         pass
 
-    def remove_driver(self, idx: int=None) -> None:
+    def remove_driver(self, idx: int | None = None) -> None:
         """Removes the driver at index @idx.
 
 :param self: the #NMSettingMatch
@@ -11534,7 +11534,7 @@ class SettingMatch(Setting):
 :return: """
         pass
 
-    def remove_driver_by_value(self, driver: str=None) -> bool:
+    def remove_driver_by_value(self, driver: str | None = None) -> bool:
         """Removes @driver.
 
 :param self: the #NMSettingMatch
@@ -11542,7 +11542,7 @@ class SettingMatch(Setting):
 :return: %TRUE if the driver was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_interface_name(self, idx: int=None) -> None:
+    def remove_interface_name(self, idx: int | None = None) -> None:
         """Removes the interface name at index @idx.
 
 :param self: the #NMSettingMatch
@@ -11550,7 +11550,7 @@ class SettingMatch(Setting):
 :return: """
         pass
 
-    def remove_interface_name_by_value(self, interface_name: str=None) -> bool:
+    def remove_interface_name_by_value(self, interface_name: str | None = None) -> bool:
         """Removes @interface_name.
 
 :param self: the #NMSettingMatch
@@ -11558,7 +11558,7 @@ class SettingMatch(Setting):
 :return: %TRUE if the interface name was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_kernel_command_line(self, idx: int=None) -> None:
+    def remove_kernel_command_line(self, idx: int | None = None) -> None:
         """Removes the kernel command line argument at index @idx.
 
 :param self: the #NMSettingMatch
@@ -11566,7 +11566,7 @@ class SettingMatch(Setting):
 :return: """
         pass
 
-    def remove_kernel_command_line_by_value(self, kernel_command_line: str=None
+    def remove_kernel_command_line_by_value(self, kernel_command_line: str | None = None
         ) -> bool:
         """Removes @kernel_command_line.
 
@@ -11575,7 +11575,7 @@ class SettingMatch(Setting):
 :return: %TRUE if the kernel command line argument was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_path(self, idx: int=None) -> None:
+    def remove_path(self, idx: int | None = None) -> None:
         """Removes the path at index @idx.
 
 :param self: the #NMSettingMatch
@@ -11583,7 +11583,7 @@ class SettingMatch(Setting):
 :return: """
         pass
 
-    def remove_path_by_value(self, path: str=None) -> bool:
+    def remove_path_by_value(self, path: str | None = None) -> bool:
         """Removes @path.
 
 :param self: the #NMSettingMatch
@@ -11771,7 +11771,7 @@ class SettingOvsExternalIDs(Setting):
         pass
 
     @staticmethod
-    def check_key(key: str=None) -> bool:
+    def check_key(key: str | None = None) -> bool:
         """Checks whether @key is a valid key for OVS' external-ids.
 This means, the key cannot be %NULL, not too large and valid ASCII.
 Also, only digits and numbers are allowed with a few special
@@ -11782,7 +11782,7 @@ characters. They key must also not start with "NM.".
         pass
 
     @staticmethod
-    def check_val(val: str=None) -> bool:
+    def check_val(val: str | None = None) -> bool:
         """Checks whether @val is a valid user data value. This means,
 value is not %NULL, not too large and valid UTF-8.
 
@@ -11790,7 +11790,7 @@ value is not %NULL, not too large and valid UTF-8.
 :return: %TRUE if @val is a valid user data value."""
         pass
 
-    def get_data(self, key: str=None) -> str:
+    def get_data(self, key: str | None = None) -> str:
         """
 
 :param self: the #NMSettingOvsExternalIDs instance
@@ -11799,7 +11799,7 @@ value is not %NULL, not too large and valid UTF-8.
    value exists."""
         pass
 
-    def get_data_keys(self, out_len: int=None) -> typing.Any:
+    def get_data_keys(self, out_len: int | None = None) -> typing.Any:
         """
 
 :param self: the #NMSettingOvsExternalIDs
@@ -11808,7 +11808,7 @@ value is not %NULL, not too large and valid UTF-8.
    %NULL-terminated array containing each key from the table."""
         pass
 
-    def set_data(self, key: str=None, val: str=None) -> None:
+    def set_data(self, key: str | None = None, val: str | None = None) -> None:
         """
 
 :param self: the #NMSettingOvsExternalIDs instance
@@ -11875,7 +11875,7 @@ class SettingOvsOtherConfig(Setting):
 :return: the new empty #NMSettingOvsOtherConfig object"""
         pass
 
-    def get_data(self, key: str=None) -> str:
+    def get_data(self, key: str | None = None) -> str:
         """
 
 :param self: the #NMSettingOvsOtherConfig instance
@@ -11884,7 +11884,7 @@ class SettingOvsOtherConfig(Setting):
    value exists."""
         pass
 
-    def get_data_keys(self, out_len: int=None) -> typing.Any:
+    def get_data_keys(self, out_len: int | None = None) -> typing.Any:
         """
 
 :param self: the #NMSettingOvsOtherConfig
@@ -11893,7 +11893,7 @@ class SettingOvsOtherConfig(Setting):
    %NULL-terminated array containing each key from the table."""
         pass
 
-    def set_data(self, key: str=None, val: str=None) -> None:
+    def set_data(self, key: str | None = None, val: str | None = None) -> None:
         """
 
 :param self: the #NMSettingOvsOtherConfig instance
@@ -11953,7 +11953,7 @@ class SettingOvsPort(Setting):
 :return: the new empty #NMSettingOvsPort object"""
         pass
 
-    def add_trunk(self, trunk: Range=None) -> None:
+    def add_trunk(self, trunk: Range | None = None) -> None:
         """Appends a new trunk range to the setting.
 This takes a reference to @trunk.
 
@@ -12011,7 +12011,7 @@ This takes a reference to @trunk.
 :return: the #NMSettingOvsPort:tag property of the setting"""
         pass
 
-    def get_trunk(self, idx: int=None) -> Range:
+    def get_trunk(self, idx: int | None = None) -> Range:
         """
 
 :param self: the #NMSettingOvsPort
@@ -12026,7 +12026,7 @@ This takes a reference to @trunk.
 :return: the #NMSettingOvsPort:vlan-mode property of the setting"""
         pass
 
-    def remove_trunk(self, idx: int=None) -> None:
+    def remove_trunk(self, idx: int | None = None) -> None:
         """Removes the trunk range at index @idx.
 
 :param self: the #NMSettingOvsPort
@@ -12034,7 +12034,7 @@ This takes a reference to @trunk.
 :return: """
         pass
 
-    def remove_trunk_by_value(self, start: int=None, end: int=None) -> bool:
+    def remove_trunk_by_value(self, start: int | None = None, end: int | None = None) -> bool:
         """Remove the trunk range with range @start to @end.
 
 :param self: the #NMSettingOvsPort
@@ -12408,7 +12408,7 @@ class SettingSriov(Setting):
 :return: the new empty #NMSettingSriov object"""
         pass
 
-    def add_vf(self, vf: SriovVF=None) -> None:
+    def add_vf(self, vf: SriovVF | None = None) -> None:
         """Appends a new VF and associated information to the setting.  The
 given VF is duplicated internally and is not changed by this function.
 
@@ -12475,7 +12475,7 @@ property.
 :return: the total number of SR-IOV virtual functions to create"""
         pass
 
-    def get_vf(self, idx: int=None) -> SriovVF:
+    def get_vf(self, idx: int | None = None) -> SriovVF:
         """
 
 :param self: the #NMSettingSriov
@@ -12483,7 +12483,7 @@ property.
 :return: the VF at index @idx"""
         pass
 
-    def remove_vf(self, idx: int=None) -> None:
+    def remove_vf(self, idx: int | None = None) -> None:
         """Removes the VF at index @idx.
 
 :param self: the #NMSettingSriov
@@ -12491,7 +12491,7 @@ property.
 :return: """
         pass
 
-    def remove_vf_by_index(self, index: int=None) -> bool:
+    def remove_vf_by_index(self, index: int | None = None) -> bool:
         """Removes the VF with VF index @index.
 
 :param self: the #NMSettingSriov
@@ -12521,7 +12521,7 @@ class SettingTCConfig(Setting):
 :return: the new empty #NMSettingTCConfig object"""
         pass
 
-    def add_qdisc(self, qdisc: TCQdisc=None) -> bool:
+    def add_qdisc(self, qdisc: TCQdisc | None = None) -> bool:
         """Appends a new qdisc and associated information to the setting.  The
 given qdisc is duplicated internally and is not changed by this function.
 If an identical qdisc (considering attributes as well) already exists, the
@@ -12532,7 +12532,7 @@ qdisc is not added and the function returns %FALSE.
 :return: %TRUE if the qdisc was added; %FALSE if the qdisc was already known."""
         pass
 
-    def add_tfilter(self, tfilter: TCTfilter=None) -> bool:
+    def add_tfilter(self, tfilter: TCTfilter | None = None) -> bool:
         """Appends a new tfilter and associated information to the setting.  The
 given tfilter is duplicated internally and is not changed by this function.
 If an identical tfilter (considering attributes as well) already exists, the
@@ -12571,7 +12571,7 @@ tfilter is not added and the function returns %FALSE.
 :return: the number of configured queueing disciplines"""
         pass
 
-    def get_qdisc(self, idx: int=None) -> TCQdisc:
+    def get_qdisc(self, idx: int | None = None) -> TCQdisc:
         """
 
 :param self: the #NMSettingTCConfig
@@ -12579,7 +12579,7 @@ tfilter is not added and the function returns %FALSE.
 :return: the qdisc at index @idx"""
         pass
 
-    def get_tfilter(self, idx: int=None) -> TCTfilter:
+    def get_tfilter(self, idx: int | None = None) -> TCTfilter:
         """
 
 :param self: the #NMSettingTCConfig
@@ -12587,7 +12587,7 @@ tfilter is not added and the function returns %FALSE.
 :return: the tfilter at index @idx"""
         pass
 
-    def remove_qdisc(self, idx: int=None) -> None:
+    def remove_qdisc(self, idx: int | None = None) -> None:
         """Removes the qdisc at index @idx.
 
 :param self: the #NMSettingTCConfig
@@ -12595,7 +12595,7 @@ tfilter is not added and the function returns %FALSE.
 :return: """
         pass
 
-    def remove_qdisc_by_value(self, qdisc: TCQdisc=None) -> bool:
+    def remove_qdisc_by_value(self, qdisc: TCQdisc | None = None) -> bool:
         """Removes the first matching qdisc that matches @qdisc.
 
 :param self: the #NMSettingTCConfig
@@ -12603,7 +12603,7 @@ tfilter is not added and the function returns %FALSE.
 :return: %TRUE if the qdisc was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_tfilter(self, idx: int=None) -> None:
+    def remove_tfilter(self, idx: int | None = None) -> None:
         """Removes the tfilter at index @idx.
 
 :param self: the #NMSettingTCConfig
@@ -12611,7 +12611,7 @@ tfilter is not added and the function returns %FALSE.
 :return: """
         pass
 
-    def remove_tfilter_by_value(self, tfilter: TCTfilter=None) -> bool:
+    def remove_tfilter_by_value(self, tfilter: TCTfilter | None = None) -> bool:
         """Removes the first matching tfilter that matches @tfilter.
 
 :param self: the #NMSettingTCConfig
@@ -12641,7 +12641,7 @@ class SettingTeam(Setting):
 :return: the new empty #NMSettingTeam object"""
         pass
 
-    def add_link_watcher(self, link_watcher: TeamLinkWatcher=None) -> bool:
+    def add_link_watcher(self, link_watcher: TeamLinkWatcher | None = None) -> bool:
         """Appends a new link watcher to the setting.
 
 :param self: the #NMSettingTeam
@@ -12649,7 +12649,7 @@ class SettingTeam(Setting):
 :return: %TRUE if the link watcher is added; %FALSE if an identical link watcher was already there."""
         pass
 
-    def add_runner_tx_hash(self, txhash: str=None) -> bool:
+    def add_runner_tx_hash(self, txhash: str | None = None) -> bool:
         """Adds a new txhash element to the setting.
 
 :param self: the #NMSettingTeam
@@ -12671,7 +12671,7 @@ class SettingTeam(Setting):
 :return: the #NMSettingTeam:config property of the setting"""
         pass
 
-    def get_link_watcher(self, idx: int=None) -> TeamLinkWatcher:
+    def get_link_watcher(self, idx: int | None = None) -> TeamLinkWatcher:
         """
 
 :param self: the #NMSettingTeam
@@ -12784,7 +12784,7 @@ class SettingTeam(Setting):
 :return: the ##NMSettingTeam:runner-tx-balancer_interval property of the setting"""
         pass
 
-    def get_runner_tx_hash(self, idx: int=None) -> str:
+    def get_runner_tx_hash(self, idx: int | None = None) -> str:
         """
 
 :param self: the #NMSettingTeam
@@ -12792,7 +12792,7 @@ class SettingTeam(Setting):
 :return: the txhash element at index @idx"""
         pass
 
-    def remove_link_watcher(self, idx: int=None) -> None:
+    def remove_link_watcher(self, idx: int | None = None) -> None:
         """Removes the link watcher at index #idx.
 
 :param self: the #NMSettingTeam
@@ -12800,7 +12800,7 @@ class SettingTeam(Setting):
 :return: """
         pass
 
-    def remove_link_watcher_by_value(self, link_watcher: TeamLinkWatcher=None
+    def remove_link_watcher_by_value(self, link_watcher: TeamLinkWatcher | None = None
         ) -> bool:
         """Removes the link watcher entry matching link_watcher.
 
@@ -12809,7 +12809,7 @@ class SettingTeam(Setting):
 :return: %TRUE if the link watcher was found and removed, %FALSE otherwise."""
         pass
 
-    def remove_runner_tx_hash(self, idx: int=None) -> None:
+    def remove_runner_tx_hash(self, idx: int | None = None) -> None:
         """Removes the txhash element at index @idx.
 
 :param self: the #NMSettingTeam
@@ -12817,7 +12817,7 @@ class SettingTeam(Setting):
 :return: """
         pass
 
-    def remove_runner_tx_hash_by_value(self, txhash: str=None) -> bool:
+    def remove_runner_tx_hash_by_value(self, txhash: str | None = None) -> bool:
         """Removes the txhash element #txhash
 
 :param self: the #NMSetetingTeam
@@ -12847,7 +12847,7 @@ class SettingTeamPort(Setting):
 :return: the new empty #NMSettingTeamPort object"""
         pass
 
-    def add_link_watcher(self, link_watcher: TeamLinkWatcher=None) -> bool:
+    def add_link_watcher(self, link_watcher: TeamLinkWatcher | None = None) -> bool:
         """Appends a new link watcher to the setting.
 
 :param self: the #NMSettingTeamPort
@@ -12883,7 +12883,7 @@ class SettingTeamPort(Setting):
 :return: the #NMSettingTeamPort:lacp-prio property of the setting"""
         pass
 
-    def get_link_watcher(self, idx: int=None) -> TeamLinkWatcher:
+    def get_link_watcher(self, idx: int | None = None) -> TeamLinkWatcher:
         """
 
 :param self: the #NMSettingTeamPort
@@ -12919,7 +12919,7 @@ class SettingTeamPort(Setting):
 :return: the #NMSettingTeamPort:sticky property of the setting"""
         pass
 
-    def remove_link_watcher(self, idx: int=None) -> None:
+    def remove_link_watcher(self, idx: int | None = None) -> None:
         """Removes the link watcher at index #idx.
 
 :param self: the #NMSettingTeamPort
@@ -12927,7 +12927,7 @@ class SettingTeamPort(Setting):
 :return: """
         pass
 
-    def remove_link_watcher_by_value(self, link_watcher: TeamLinkWatcher=None
+    def remove_link_watcher_by_value(self, link_watcher: TeamLinkWatcher | None = None
         ) -> bool:
         """Removes the link watcher entry matching link_watcher.
 
@@ -13023,7 +13023,7 @@ class SettingUser(Setting):
         pass
 
     @staticmethod
-    def check_key(key: str=None) -> bool:
+    def check_key(key: str | None = None) -> bool:
         """Checks whether @key is a valid user data key. This means,
 key is not %NULL, not too large and valid ASCII. Also,
 only digits and numbers are allowed with a few special
@@ -13035,7 +13035,7 @@ look like a fully qualified DNS name.
         pass
 
     @staticmethod
-    def check_val(val: str=None) -> bool:
+    def check_val(val: str | None = None) -> bool:
         """Checks whether @val is a valid user data value. This means,
 value is not %NULL, not too large and valid UTF-8.
 
@@ -13043,7 +13043,7 @@ value is not %NULL, not too large and valid UTF-8.
 :return: %TRUE if @val is a valid user data value."""
         pass
 
-    def get_data(self, key: str=None) -> str:
+    def get_data(self, key: str | None = None) -> str:
         """
 
 :param self: the #NMSettingUser instance
@@ -13052,7 +13052,7 @@ value is not %NULL, not too large and valid UTF-8.
    value exists."""
         pass
 
-    def get_keys(self, out_len: int=None) -> typing.Any:
+    def get_keys(self, out_len: int | None = None) -> typing.Any:
         """
 
 :param self: the #NMSettingUser
@@ -13061,7 +13061,7 @@ value is not %NULL, not too large and valid UTF-8.
    %NULL-terminated array containing each key from the table."""
         pass
 
-    def set_data(self, key: str=None, val: str=None) -> bool:
+    def set_data(self, key: str | None = None, val: str | None = None) -> bool:
         """
 
 :param self: the #NMSettingUser instance
@@ -13123,8 +13123,8 @@ class SettingVlan(Setting):
 :return: the new empty #NMSettingVlan object"""
         pass
 
-    def add_priority(self, map: VlanPriorityMap=None, _from: int=None, to:
-        int=None) -> bool:
+    def add_priority(self, map: VlanPriorityMap | None = None, _from: int | None = None, to:
+        int | None = None) -> bool:
         """Adds a priority mapping to the #NMSettingVlan:ingress_priority_map or
 #NMSettingVlan:egress_priority_map properties of the setting. If @from is
 already in the given priority map, this function will overwrite the
@@ -13143,7 +13143,7 @@ If @map is #NM_VLAN_EGRESS_MAP then @from is the Linux SKB priority value and
 :return: %TRUE."""
         pass
 
-    def add_priority_str(self, map: VlanPriorityMap=None, str: str=None
+    def add_priority_str(self, map: VlanPriorityMap | None = None, str: str | None = None
         ) -> bool:
         """Adds a priority map entry into either the #NMSettingVlan:ingress_priority_map
 or the #NMSettingVlan:egress_priority_map properties.  The priority map maps
@@ -13155,7 +13155,7 @@ the Linux SKB priorities to 802.1p priorities.
 :return: %TRUE if the entry was successfully added to the list, or it overwrote the old value, %FALSE if @str is not a valid mapping."""
         pass
 
-    def clear_priorities(self, map: VlanPriorityMap=None) -> None:
+    def clear_priorities(self, map: VlanPriorityMap | None = None) -> None:
         """Clear all the entries from #NMSettingVlan:ingress_priority_map or
 #NMSettingVlan:egress_priority_map properties.
 
@@ -13178,7 +13178,7 @@ the Linux SKB priorities to 802.1p priorities.
 :return: the #NMSettingVlan:id property of the setting"""
         pass
 
-    def get_num_priorities(self, map: VlanPriorityMap=None) -> int:
+    def get_num_priorities(self, map: VlanPriorityMap | None = None) -> int:
         """Returns the number of entries in the
 #NMSettingVlan:ingress_priority_map or #NMSettingVlan:egress_priority_map
 properties of this setting.
@@ -13195,8 +13195,8 @@ properties of this setting.
 :return: the #NMSettingVlan:parent property of the setting"""
         pass
 
-    def get_priority(self, map: VlanPriorityMap=None, idx: int=None,
-        out_from: int=None, out_to: int=None) -> bool:
+    def get_priority(self, map: VlanPriorityMap | None = None, idx: int | None = None,
+        out_from: int | None = None, out_to: int | None = None) -> bool:
         """Retrieve one of the entries of the #NMSettingVlan:ingress_priority_map
 or #NMSettingVlan:egress_priority_map properties of this setting.
 
@@ -13215,7 +13215,7 @@ or #NMSettingVlan:egress_priority_map properties of this setting.
 :return: the #NMSettingVlan:protocol property of the setting"""
         pass
 
-    def remove_priority(self, map: VlanPriorityMap=None, idx: int=None
+    def remove_priority(self, map: VlanPriorityMap | None = None, idx: int | None = None
         ) -> None:
         """Removes the priority map at index @idx from the
 #NMSettingVlan:ingress_priority_map or #NMSettingVlan:egress_priority_map
@@ -13227,8 +13227,8 @@ properties.
 :return: """
         pass
 
-    def remove_priority_by_value(self, map: VlanPriorityMap=None, _from:
-        int=None, to: int=None) -> bool:
+    def remove_priority_by_value(self, map: VlanPriorityMap | None = None, _from:
+        int | None = None, to: int | None = None) -> bool:
         """Removes the priority map @form:@to from the #NMSettingVlan:ingress_priority_map
 or #NMSettingVlan:egress_priority_map (according to @map argument)
 properties.
@@ -13240,8 +13240,8 @@ properties.
 :return: %TRUE if the priority mapping was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_priority_str_by_value(self, map: VlanPriorityMap=None, str:
-        str=None) -> bool:
+    def remove_priority_str_by_value(self, map: VlanPriorityMap | None = None, str:
+        str | None = None) -> bool:
         """Removes the priority map @str from the #NMSettingVlan:ingress_priority_map
 or #NMSettingVlan:egress_priority_map (according to @map argument)
 properties.
@@ -13274,7 +13274,7 @@ class SettingVpn(Setting):
 :return: the new empty #NMSettingVpn object"""
         pass
 
-    def add_data_item(self, key: str=None, item: str=None) -> None:
+    def add_data_item(self, key: str | None = None, item: str | None = None) -> None:
         """Establishes a relationship between @key and @item internally in the
 setting which may be retrieved later.  Should not be used to store passwords
 or other secrets, which is what nm_setting_vpn_add_secret() is for.
@@ -13289,7 +13289,7 @@ the key. In that case, the behavior is as if calling nm_setting_vpn_remove_data_
 :return: """
         pass
 
-    def add_secret(self, key: str=None, secret: str=None) -> None:
+    def add_secret(self, key: str | None = None, secret: str | None = None) -> None:
         """Establishes a relationship between @key and @secret internally in the
 setting which may be retrieved later.
 
@@ -13303,8 +13303,8 @@ the key. In that case, the behavior is as if calling nm_setting_vpn_remove_secre
 :return: """
         pass
 
-    def foreach_data_item(self, func: VpnIterFunc=None, user_data:
-        typing.Any=None) -> None:
+    def foreach_data_item(self, func: VpnIterFunc | None = None, user_data:
+        typing.Any | None = None) -> None:
         """Iterates all data items stored in this setting.  It is safe to add, remove,
 and modify data items inside @func, though any additions or removals made
 during iteration will not be part of the iteration.
@@ -13315,7 +13315,7 @@ during iteration will not be part of the iteration.
 :return: """
         pass
 
-    def foreach_secret(self, func: VpnIterFunc=None, user_data: typing.Any=None
+    def foreach_secret(self, func: VpnIterFunc | None = None, user_data: typing.Any | None = None
         ) -> None:
         """Iterates all secrets stored in this setting.  It is safe to add, remove,
 and modify secrets inside @func, though any additions or removals made during
@@ -13327,7 +13327,7 @@ iteration will not be part of the iteration.
 :return: """
         pass
 
-    def get_data_item(self, key: str=None) -> str:
+    def get_data_item(self, key: str | None = None) -> str:
         """Retrieves the data item of a key/value relationship previously established
 by nm_setting_vpn_add_data_item().
 
@@ -13336,7 +13336,7 @@ by nm_setting_vpn_add_data_item().
 :return: the data item, if any"""
         pass
 
-    def get_data_keys(self, out_length: int=None) -> typing.Any:
+    def get_data_keys(self, out_length: int | None = None) -> typing.Any:
         """Retrieves every data key inside @setting, as an array.
 
 :param self: the #NMSettingVpn
@@ -13367,7 +13367,7 @@ by nm_setting_vpn_add_data_item().
 :return: the #NMSettingVpn:persistent property of the setting"""
         pass
 
-    def get_secret(self, key: str=None) -> str:
+    def get_secret(self, key: str | None = None) -> str:
         """Retrieves the secret of a key/value relationship previously established
 by nm_setting_vpn_add_secret().
 
@@ -13376,7 +13376,7 @@ by nm_setting_vpn_add_secret().
 :return: the secret, if any"""
         pass
 
-    def get_secret_keys(self, out_length: int=None) -> typing.Any:
+    def get_secret_keys(self, out_length: int | None = None) -> typing.Any:
         """Retrieves every secret key inside @setting, as an array.
 
 :param self: the #NMSettingVpn
@@ -13408,7 +13408,7 @@ plugin that should be used to connect to this VPN.
 :return: the #NMSettingVpn:user-name property of the setting"""
         pass
 
-    def remove_data_item(self, key: str=None) -> bool:
+    def remove_data_item(self, key: str | None = None) -> bool:
         """Deletes a key/value relationship previously established by
 nm_setting_vpn_add_data_item().
 
@@ -13417,7 +13417,7 @@ nm_setting_vpn_add_data_item().
 :return: %TRUE if the data item was found and removed from the internal list, %FALSE if it was not."""
         pass
 
-    def remove_secret(self, key: str=None) -> bool:
+    def remove_secret(self, key: str | None = None) -> bool:
         """Deletes a key/value relationship previously established by
 nm_setting_vpn_add_secret().
 
@@ -13692,7 +13692,7 @@ class SettingWireGuard(Setting):
 :return: the new empty #NMSettingWireGuard object"""
         pass
 
-    def append_peer(self, peer: WireGuardPeer=None) -> None:
+    def append_peer(self, peer: WireGuardPeer | None = None) -> None:
         """If a peer with the same public-key already exists, that
 one is replaced by @peer. The new @peer is always appended
 (or moved to) the end, so in case a peer is replaced, the
@@ -13745,7 +13745,7 @@ indexes are shifted and the number of peers stays unchanged.
 :return: the MTU of the setting."""
         pass
 
-    def get_peer(self, idx: int=None) -> WireGuardPeer:
+    def get_peer(self, idx: int | None = None) -> WireGuardPeer:
         """
 
 :param self: the #NMSettingWireGuard instance
@@ -13754,7 +13754,7 @@ indexes are shifted and the number of peers stays unchanged.
    index @idx. If the index is out of range, %NULL is returned."""
         pass
 
-    def get_peer_by_public_key(self, public_key: str=None, out_idx: int=None
+    def get_peer_by_public_key(self, public_key: str | None = None, out_idx: int | None = None
         ) -> WireGuardPeer:
         """
 
@@ -13793,7 +13793,7 @@ indexes are shifted and the number of peers stays unchanged.
 :return: the secret-flags for #NMSettingWireGuard:private-key."""
         pass
 
-    def remove_peer(self, idx: int=None) -> bool:
+    def remove_peer(self, idx: int | None = None) -> bool:
         """
 
 :param self: the #NMSettingWireGuard instance
@@ -13802,7 +13802,7 @@ indexes are shifted and the number of peers stays unchanged.
    was removed. Otherwise, @self is unchanged."""
         pass
 
-    def set_peer(self, peer: WireGuardPeer=None, idx: int=None) -> None:
+    def set_peer(self, peer: WireGuardPeer | None = None, idx: int | None = None) -> None:
         """If @idx is one past the last peer, the behavior is the same
 as nm_setting_wireguard_append_peer().
 Otherwise, the peer will be at @idx and replace the peer
@@ -13842,7 +13842,7 @@ class SettingWired(Setting):
 :return: the new empty #NMSettingWired object"""
         pass
 
-    def add_mac_blacklist_item(self, mac: str=None) -> bool:
+    def add_mac_blacklist_item(self, mac: str | None = None) -> bool:
         """Adds a new MAC address to the #NMSettingWired:mac-address-blacklist property.
 
 :param self: the #NMSettingWired
@@ -13850,7 +13850,7 @@ class SettingWired(Setting):
 :return: %TRUE if the MAC address was added; %FALSE if the MAC address is invalid or was already present"""
         pass
 
-    def add_mac_denylist_item(self, mac: str=None) -> bool:
+    def add_mac_denylist_item(self, mac: str | None = None) -> bool:
         """Adds a new MAC address to the #NMSettingWired:mac-address-denylist property.
 
 :param self: the #NMSettingWired
@@ -13858,7 +13858,7 @@ class SettingWired(Setting):
 :return: %TRUE if the MAC address was added; %FALSE if the MAC address is invalid or was already present"""
         pass
 
-    def add_s390_option(self, key: str=None, value: str=None) -> bool:
+    def add_s390_option(self, key: str | None = None, value: str | None = None) -> bool:
         """Add an option to the table. If the key already exists, the value gets
 replaced.
 
@@ -13941,7 +13941,7 @@ an invalid key gets silently added but renders the profile as invalid.
 :return: the #NMSettingWired:mac-address-denylist property of the setting"""
         pass
 
-    def get_mac_blacklist_item(self, idx: int=None) -> str:
+    def get_mac_blacklist_item(self, idx: int | None = None) -> str:
         """Since 1.48, access at index "len" is allowed and returns NULL.
 
 :param self: the #NMSettingWired
@@ -13949,7 +13949,7 @@ an invalid key gets silently added but renders the profile as invalid.
 :return: the blacklisted MAC address string (hex-digits-and-colons notation) at index @idx"""
         pass
 
-    def get_mac_denylist_item(self, idx: int=None) -> str:
+    def get_mac_denylist_item(self, idx: int | None = None) -> str:
         """
 
 :param self: the #NMSettingWired
@@ -14002,8 +14002,8 @@ of 'qeth', 'lcs', or 'ctc'.
 :return: the s390 device type"""
         pass
 
-    def get_s390_option(self, idx: int=None, out_key: str=None, out_value:
-        str=None) -> bool:
+    def get_s390_option(self, idx: int | None = None, out_key: str | None = None, out_value:
+        str | None = None) -> bool:
         """Given an index, return the value of the s390 option at that index.  indexes
 are *not* guaranteed to be static across modifications to options done by
 nm_setting_wired_add_s390_option() and nm_setting_wired_remove_s390_option(),
@@ -14017,7 +14017,7 @@ such as during option iteration.
 :return: %TRUE on success if the index was valid and an option was found, %FALSE if the index was invalid (ie, greater than the number of options currently held by the setting)"""
         pass
 
-    def get_s390_option_by_key(self, key: str=None) -> str:
+    def get_s390_option_by_key(self, key: str | None = None) -> str:
         """Returns the value associated with the s390-specific option specified by
 @key, if it exists.
 
@@ -14067,7 +14067,7 @@ The @setting argument is unused and %NULL may be passed instead.
 :return: the Wake-on-LAN setting password, or %NULL if there is no password."""
         pass
 
-    def remove_mac_blacklist_item(self, idx: int=None) -> None:
+    def remove_mac_blacklist_item(self, idx: int | None = None) -> None:
         """Removes the MAC address at index @idx from the blacklist.
 
 :param self: the #NMSettingWired
@@ -14075,7 +14075,7 @@ The @setting argument is unused and %NULL may be passed instead.
 :return: """
         pass
 
-    def remove_mac_blacklist_item_by_value(self, mac: str=None) -> bool:
+    def remove_mac_blacklist_item_by_value(self, mac: str | None = None) -> bool:
         """Removes the MAC address @mac from the blacklist.
 
 :param self: the #NMSettingWired
@@ -14083,7 +14083,7 @@ The @setting argument is unused and %NULL may be passed instead.
 :return: %TRUE if the MAC address was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_mac_denylist_item(self, idx: int=None) -> None:
+    def remove_mac_denylist_item(self, idx: int | None = None) -> None:
         """Removes the MAC address at index @idx from the denylist.
 
 :param self: the #NMSettingWired
@@ -14091,7 +14091,7 @@ The @setting argument is unused and %NULL may be passed instead.
 :return: """
         pass
 
-    def remove_mac_denylist_item_by_value(self, mac: str=None) -> bool:
+    def remove_mac_denylist_item_by_value(self, mac: str | None = None) -> bool:
         """Removes the MAC address @mac from the denylist.
 
 :param self: the #NMSettingWired
@@ -14099,7 +14099,7 @@ The @setting argument is unused and %NULL may be passed instead.
 :return: %TRUE if the MAC address was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_s390_option(self, key: str=None) -> bool:
+    def remove_s390_option(self, key: str | None = None) -> bool:
         """Remove the s390-specific option referenced by @key from the internal option
 list.
 
@@ -14130,7 +14130,7 @@ class SettingWireless(Setting):
 :return: the new empty #NMSettingWireless object"""
         pass
 
-    def add_mac_blacklist_item(self, mac: str=None) -> bool:
+    def add_mac_blacklist_item(self, mac: str | None = None) -> bool:
         """Adds a new MAC address to the #NMSettingWireless:mac-address-denylist property.
 
 :param self: the #NMSettingWireless
@@ -14138,7 +14138,7 @@ class SettingWireless(Setting):
 :return: %TRUE if the MAC address was added; %FALSE if the MAC address is invalid or was already present"""
         pass
 
-    def add_mac_denylist_item(self, mac: str=None) -> bool:
+    def add_mac_denylist_item(self, mac: str | None = None) -> bool:
         """Adds a new MAC address to the #NMSettingWireless:mac-address-denylist property.
 
 :param self: the #NMSettingWireless
@@ -14146,7 +14146,7 @@ class SettingWireless(Setting):
 :return: %TRUE if the MAC address was added; %FALSE if the MAC address is invalid or was already present"""
         pass
 
-    def add_seen_bssid(self, bssid: str=None) -> bool:
+    def add_seen_bssid(self, bssid: str | None = None) -> bool:
         """Adds a new Wi-Fi AP's BSSID to the previously seen BSSID list of the setting.
 NetworkManager now tracks previously seen BSSIDs internally so this function
 no longer has much use. Actually, changes you make using this function will
@@ -14158,9 +14158,9 @@ not be preserved.
         pass
 
     def ap_security_compatible(self, s_wireless_sec:
-        SettingWirelessSecurity=None, ap_flags: NM80211ApFlags=None, ap_wpa:
-        NM80211ApSecurityFlags=None, ap_rsn: NM80211ApSecurityFlags=None,
-        ap_mode: NM80211Mode=None) -> bool:
+        SettingWirelessSecurity | None = None, ap_flags: NM80211ApFlags | None = None, ap_wpa:
+        NM80211ApSecurityFlags | None = None, ap_rsn: NM80211ApSecurityFlags | None = None,
+        ap_mode: NM80211Mode | None = None) -> bool:
         """Given a #NMSettingWireless and an optional #NMSettingWirelessSecurity,
 determine if the configuration given by the settings is compatible with
 the security of an access point using that access point's capability flags
@@ -14275,7 +14275,7 @@ compatible with which access points.
 :return: the #NMSettingWireless:mac-address-randomization property of the setting"""
         pass
 
-    def get_mac_blacklist_item(self, idx: int=None) -> str:
+    def get_mac_blacklist_item(self, idx: int | None = None) -> str:
         """Since 1.46, access at index "len" is allowed and returns NULL.
 
 :param self: the #NMSettingWireless
@@ -14283,7 +14283,7 @@ compatible with which access points.
 :return: the denylisted MAC address string (hex-digits-and-colons notation) at index @idx"""
         pass
 
-    def get_mac_denylist_item(self, idx: int=None) -> str:
+    def get_mac_denylist_item(self, idx: int | None = None) -> str:
         """
 
 :param self: the #NMSettingWireless
@@ -14340,7 +14340,7 @@ compatible with which access points.
 :return: the #NMSettingWireless:rate property of the setting"""
         pass
 
-    def get_seen_bssid(self, i: int=None) -> str:
+    def get_seen_bssid(self, i: int | None = None) -> str:
         """
 
 :param self: the #NMSettingWireless
@@ -14369,7 +14369,7 @@ compatible with which access points.
 :return: the Wake-on-WLAN options"""
         pass
 
-    def remove_mac_blacklist_item(self, idx: int=None) -> None:
+    def remove_mac_blacklist_item(self, idx: int | None = None) -> None:
         """Removes the MAC address at index @idx from the denylist.
 
 :param self: the #NMSettingWireless
@@ -14377,7 +14377,7 @@ compatible with which access points.
 :return: """
         pass
 
-    def remove_mac_blacklist_item_by_value(self, mac: str=None) -> bool:
+    def remove_mac_blacklist_item_by_value(self, mac: str | None = None) -> bool:
         """Removes the MAC address @mac from the denylist.
 
 :param self: the #NMSettingWireless
@@ -14385,7 +14385,7 @@ compatible with which access points.
 :return: %TRUE if the MAC address was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_mac_denylist_item(self, idx: int=None) -> None:
+    def remove_mac_denylist_item(self, idx: int | None = None) -> None:
         """Removes the MAC address at index @idx from the denylist.
 
 :param self: the #NMSettingWireless
@@ -14393,7 +14393,7 @@ compatible with which access points.
 :return: """
         pass
 
-    def remove_mac_denylist_item_by_value(self, mac: str=None) -> bool:
+    def remove_mac_denylist_item_by_value(self, mac: str | None = None) -> bool:
         """Removes the MAC address @mac from the denylist.
 
 :param self: the #NMSettingWireless
@@ -14423,7 +14423,7 @@ class SettingWirelessSecurity(Setting):
 :return: the new empty #NMSettingWirelessSecurity object"""
         pass
 
-    def add_group(self, group: str=None) -> bool:
+    def add_group(self, group: str | None = None) -> bool:
         """Adds an encryption algorithm to the list of allowed groupwise encryption
 algorithms.  If the list is not empty, then only access points that support
 one or more of the encryption algorithms in the list will be considered
@@ -14434,7 +14434,7 @@ compatible with this connection.
 :return: %TRUE if the algorithm was added to the list, %FALSE if it was already in the list"""
         pass
 
-    def add_pairwise(self, pairwise: str=None) -> bool:
+    def add_pairwise(self, pairwise: str | None = None) -> bool:
         """Adds an encryption algorithm to the list of allowed pairwise encryption
 algorithms.  If the list is not empty, then only access points that support
 one or more of the encryption algorithms in the list will be considered
@@ -14445,7 +14445,7 @@ compatible with this connection.
 :return: %TRUE if the algorithm was added to the list, %FALSE if it was already in the list"""
         pass
 
-    def add_proto(self, proto: str=None) -> bool:
+    def add_proto(self, proto: str | None = None) -> bool:
         """Adds a Wi-Fi security protocol (one of "wpa" or "rsn") to the allowed list;
 only protocols in this list will be used when finding and connecting to
 the Wi-Fi network specified by this connection.  For example, if the
@@ -14496,7 +14496,7 @@ specified then all protocols are allowed.
 :return: the #NMSettingWirelessSecurity:fils property of the setting"""
         pass
 
-    def get_group(self, i: int=None) -> str:
+    def get_group(self, i: int | None = None) -> str:
         """Returns the allowed groupwise encryption algorithm from allowed algorithm
 list.
 
@@ -14554,7 +14554,7 @@ list.
 :return: the number of security protocols this connection allows when connecting to secure Wi-Fi networks"""
         pass
 
-    def get_pairwise(self, i: int=None) -> str:
+    def get_pairwise(self, i: int | None = None) -> str:
         """Returns the allowed pairwise encryption algorithm from allowed algorithm
 list.
 
@@ -14570,7 +14570,7 @@ list.
 :return: the #NMSettingWirelessSecurity:pmf property of the setting"""
         pass
 
-    def get_proto(self, i: int=None) -> str:
+    def get_proto(self, i: int | None = None) -> str:
         """
 
 :param self: the #NMSettingWirelessSecurity
@@ -14592,7 +14592,7 @@ list.
 :return: the #NMSettingSecretFlags pertaining to the #NMSettingWirelessSecurity:psk"""
         pass
 
-    def get_wep_key(self, idx: int=None) -> str:
+    def get_wep_key(self, idx: int | None = None) -> str:
         """
 
 :param self: the #NMSettingWirelessSecurity
@@ -14628,7 +14628,7 @@ list.
 :return: the #NMSettingWirelessSecurity:wps-method property of the setting"""
         pass
 
-    def remove_group(self, i: int=None) -> None:
+    def remove_group(self, i: int | None = None) -> None:
         """Removes an encryption algorithm from the allowed groupwise encryption
 algorithm list.
 
@@ -14637,7 +14637,7 @@ algorithm list.
 :return: """
         pass
 
-    def remove_group_by_value(self, group: str=None) -> bool:
+    def remove_group_by_value(self, group: str | None = None) -> bool:
         """Removes an encryption algorithm from the allowed groupwise encryption
 algorithm list.
 
@@ -14646,7 +14646,7 @@ algorithm list.
 :return: %TRUE if the algorithm was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_pairwise(self, i: int=None) -> None:
+    def remove_pairwise(self, i: int | None = None) -> None:
         """Removes an encryption algorithm from the allowed pairwise encryption
 algorithm list.
 
@@ -14655,7 +14655,7 @@ algorithm list.
 :return: """
         pass
 
-    def remove_pairwise_by_value(self, pairwise: str=None) -> bool:
+    def remove_pairwise_by_value(self, pairwise: str | None = None) -> bool:
         """Removes an encryption algorithm from the allowed pairwise encryption
 algorithm list.
 
@@ -14664,7 +14664,7 @@ algorithm list.
 :return: %TRUE if the encryption algorithm was found and removed; %FALSE if it was not."""
         pass
 
-    def remove_proto(self, i: int=None) -> None:
+    def remove_proto(self, i: int | None = None) -> None:
         """Removes a protocol from the allowed protocol list.
 
 :param self: the #NMSettingWirelessSecurity
@@ -14672,7 +14672,7 @@ algorithm list.
 :return: """
         pass
 
-    def remove_proto_by_value(self, proto: str=None) -> bool:
+    def remove_proto_by_value(self, proto: str | None = None) -> bool:
         """Removes a protocol from the allowed protocol list.
 
 :param self: the #NMSettingWirelessSecurity
@@ -14680,7 +14680,7 @@ algorithm list.
 :return: %TRUE if the protocol was found and removed; %FALSE if it was not."""
         pass
 
-    def set_wep_key(self, idx: int=None, key: str=None) -> None:
+    def set_wep_key(self, idx: int | None = None, key: str | None = None) -> None:
         """Sets a WEP key in the given index.
 
 :param self: the #NMSettingWirelessSecurity
@@ -14762,7 +14762,7 @@ class SimpleConnection(GObject.Object, Connection):
         pass
 
     @staticmethod
-    def new_clone(connection: Connection=None) -> Connection:
+    def new_clone(connection: Connection | None = None) -> Connection:
         """Clones an #NMConnection as an #NMSimpleConnection.
 
 :param connection: the #NMConnection to clone
@@ -14770,7 +14770,7 @@ class SimpleConnection(GObject.Object, Connection):
         pass
 
     @staticmethod
-    def new_from_dbus(dict: GLib.Variant=None) -> Connection:
+    def new_from_dbus(dict: GLib.Variant | None = None) -> Connection:
         """Creates a new #NMSimpleConnection from a hash table describing the
 connection and normalize the connection.  See nm_connection_to_dbus() for a
 description of the expected hash table.
@@ -14787,7 +14787,7 @@ class SimpleConnectionClass:
 class SriovVF:
     """"""
 
-    def __init__(self, index: int=None) -> None:
+    def __init__(self, index: int | None = None) -> None:
         """Creates a new #NMSriovVF object.
 
 :param self: 
@@ -14796,14 +14796,14 @@ class SriovVF:
         pass
 
     @staticmethod
-    def new(index: int=None) -> SriovVF:
+    def new(index: int | None = None) -> SriovVF:
         """Creates a new #NMSriovVF object.
 
 :param index: the VF index
 :return: the new #NMSriovVF object."""
         pass
 
-    def add_vlan(self, vlan_id: int=None) -> bool:
+    def add_vlan(self, vlan_id: int | None = None) -> bool:
         """Adds a VLAN to the VF. Currently kernel only supports one VLAN per VF.
 
 :param self: the #NMSriovVF
@@ -14818,7 +14818,7 @@ class SriovVF:
 :return: a copy of @vf"""
         pass
 
-    def equal(self, other: SriovVF=None) -> bool:
+    def equal(self, other: SriovVF | None = None) -> bool:
         """Determines if two #NMSriovVF objects have the same index,
 attributes and VLANs.
 
@@ -14828,7 +14828,7 @@ attributes and VLANs.
     if they do not."""
         pass
 
-    def get_attribute(self, name: str=None) -> GLib.Variant:
+    def get_attribute(self, name: str | None = None) -> GLib.Variant:
         """Gets the value of the attribute with name @name on @vf
 
 :param self: the #NMSriovVF
@@ -14851,7 +14851,7 @@ attributes and VLANs.
 :return: the VF index"""
         pass
 
-    def get_vlan_ids(self, length: int=None) -> typing.Any:
+    def get_vlan_ids(self, length: int | None = None) -> typing.Any:
         """Returns the VLANs currently configured on the VF. Currently kernel only
 supports one VLAN per VF.
 
@@ -14860,7 +14860,7 @@ supports one VLAN per VF.
 :return: a list of VLAN ids configured on the VF."""
         pass
 
-    def get_vlan_protocol(self, vlan_id: int=None) -> SriovVFVlanProtocol:
+    def get_vlan_protocol(self, vlan_id: int | None = None) -> SriovVFVlanProtocol:
         """Returns the configured protocol for the given VLAN.
 
 :param self: the #NMSriovVF
@@ -14868,7 +14868,7 @@ supports one VLAN per VF.
 :return: the configured protocol"""
         pass
 
-    def get_vlan_qos(self, vlan_id: int=None) -> int:
+    def get_vlan_qos(self, vlan_id: int | None = None) -> int:
         """Returns the QoS value for the given VLAN.
 
 :param self: the #NMSriovVF
@@ -14883,7 +14883,7 @@ supports one VLAN per VF.
 :return: """
         pass
 
-    def remove_vlan(self, vlan_id: int=None) -> bool:
+    def remove_vlan(self, vlan_id: int | None = None) -> bool:
         """Removes a VLAN from a VF.
 
 :param self: the #NMSriovVF
@@ -14892,7 +14892,7 @@ supports one VLAN per VF.
      did not belong to the VF."""
         pass
 
-    def set_attribute(self, name: str=None, value: GLib.Variant=None) -> None:
+    def set_attribute(self, name: str | None = None, value: GLib.Variant | None = None) -> None:
         """Sets the named attribute on @vf to the given value.
 
 :param self: the #NMSriovVF
@@ -14901,8 +14901,8 @@ supports one VLAN per VF.
 :return: """
         pass
 
-    def set_vlan_protocol(self, vlan_id: int=None, protocol:
-        SriovVFVlanProtocol=None) -> None:
+    def set_vlan_protocol(self, vlan_id: int | None = None, protocol:
+        SriovVFVlanProtocol | None = None) -> None:
         """Sets the protocol for the given VLAN.
 
 :param self: the #NMSriovVF
@@ -14911,7 +14911,7 @@ supports one VLAN per VF.
 :return: """
         pass
 
-    def set_vlan_qos(self, vlan_id: int=None, qos: int=None) -> None:
+    def set_vlan_qos(self, vlan_id: int | None = None, qos: int | None = None) -> None:
         """Sets a QoS value for the given VLAN.
 
 :param self: the #NMSriovVF
@@ -14929,8 +14929,8 @@ reaches zero, the object will be destroyed.
         pass
 
     @staticmethod
-    def attribute_validate(name: str=None, value: GLib.Variant=None, known:
-        bool=None) -> bool:
+    def attribute_validate(name: str | None = None, value: GLib.Variant | None = None, known:
+        bool | None = None) -> bool:
         """Validates a VF attribute, i.e. checks that the attribute is a known one,
 the value is of the correct type and well-formed.
 
@@ -14944,7 +14944,7 @@ the value is of the correct type and well-formed.
 class TCAction:
     """"""
 
-    def __init__(self, kind: str=None) -> None:
+    def __init__(self, kind: str | None = None) -> None:
         """Creates a new #NMTCAction object.
 
 :param self: 
@@ -14953,7 +14953,7 @@ class TCAction:
         pass
 
     @staticmethod
-    def new(kind: str=None) -> TCAction:
+    def new(kind: str | None = None) -> TCAction:
         """Creates a new #NMTCAction object.
 
 :param kind: name of the queueing discipline
@@ -14967,7 +14967,7 @@ class TCAction:
 :return: a copy of @action"""
         pass
 
-    def equal(self, other: TCAction=None) -> bool:
+    def equal(self, other: TCAction | None = None) -> bool:
         """Determines if two #NMTCAction objects contain the same kind, family,
 handle, parent and info.
 
@@ -14976,7 +14976,7 @@ handle, parent and info.
 :return: %TRUE if the objects contain the same values, %FALSE if they do not."""
         pass
 
-    def get_attribute(self, name: str=None) -> GLib.Variant:
+    def get_attribute(self, name: str | None = None) -> GLib.Variant:
         """Gets the value of the attribute with name @name on @action
 
 :param self: the #NMTCAction
@@ -15006,7 +15006,7 @@ handle, parent and info.
 :return: """
         pass
 
-    def set_attribute(self, name: str=None, value: GLib.Variant=None) -> None:
+    def set_attribute(self, name: str | None = None, value: GLib.Variant | None = None) -> None:
         """Sets or clears the named attribute on @action to the given value.
 
 :param self: the #NMTCAction
@@ -15027,7 +15027,7 @@ reaches zero, the object will be destroyed.
 class TCQdisc:
     """"""
 
-    def __init__(self, kind: str=None, parent: int=None) -> None:
+    def __init__(self, kind: str | None = None, parent: int | None = None) -> None:
         """Creates a new #NMTCQdisc object.
 
 :param self: 
@@ -15037,7 +15037,7 @@ class TCQdisc:
         pass
 
     @staticmethod
-    def new(kind: str=None, parent: int=None) -> TCQdisc:
+    def new(kind: str | None = None, parent: int | None = None) -> TCQdisc:
         """Creates a new #NMTCQdisc object.
 
 :param kind: name of the queueing discipline
@@ -15052,7 +15052,7 @@ class TCQdisc:
 :return: a copy of @qdisc"""
         pass
 
-    def equal(self, other: TCQdisc=None) -> bool:
+    def equal(self, other: TCQdisc | None = None) -> bool:
         """Determines if two #NMTCQdisc objects contain the same kind, * handle
 and parent.
 
@@ -15061,7 +15061,7 @@ and parent.
 :return: %TRUE if the objects contain the same values, %FALSE if they do not."""
         pass
 
-    def get_attribute(self, name: str=None) -> GLib.Variant:
+    def get_attribute(self, name: str | None = None) -> GLib.Variant:
         """Gets the value of the attribute with name @name on @qdisc
 
 :param self: the #NMTCQdisc
@@ -15106,7 +15106,7 @@ and parent.
 :return: """
         pass
 
-    def set_attribute(self, name: str=None, value: GLib.Variant=None) -> None:
+    def set_attribute(self, name: str | None = None, value: GLib.Variant | None = None) -> None:
         """Sets or clears the named attribute on @qdisc to the given value.
 
 :param self: the #NMTCQdisc
@@ -15115,7 +15115,7 @@ and parent.
 :return: """
         pass
 
-    def set_handle(self, handle: int=None) -> None:
+    def set_handle(self, handle: int | None = None) -> None:
         """Sets the queueing discipline handle.
 
 :param self: the #NMTCQdisc
@@ -15135,7 +15135,7 @@ reaches zero, the object will be destroyed.
 class TCTfilter:
     """"""
 
-    def __init__(self, kind: str=None, parent: int=None) -> None:
+    def __init__(self, kind: str | None = None, parent: int | None = None) -> None:
         """Creates a new #NMTCTfilter object.
 
 :param self: 
@@ -15145,7 +15145,7 @@ class TCTfilter:
         pass
 
     @staticmethod
-    def new(kind: str=None, parent: int=None) -> TCTfilter:
+    def new(kind: str | None = None, parent: int | None = None) -> TCTfilter:
         """Creates a new #NMTCTfilter object.
 
 :param kind: name of the queueing discipline
@@ -15160,7 +15160,7 @@ class TCTfilter:
 :return: a copy of @tfilter"""
         pass
 
-    def equal(self, other: TCTfilter=None) -> bool:
+    def equal(self, other: TCTfilter | None = None) -> bool:
         """Determines if two #NMTCTfilter objects contain the same kind, family,
 handle, parent and info.
 
@@ -15204,7 +15204,7 @@ handle, parent and info.
 :return: """
         pass
 
-    def set_action(self, action: TCAction=None) -> None:
+    def set_action(self, action: TCAction | None = None) -> None:
         """Sets the action associated with a traffic filter.
 
 :param self: the #NMTCTfilter
@@ -15212,7 +15212,7 @@ handle, parent and info.
 :return: """
         pass
 
-    def set_handle(self, handle: int=None) -> None:
+    def set_handle(self, handle: int | None = None) -> None:
         """Sets the queueing discipline handle.
 
 :param self: the #NMTCTfilter
@@ -15233,9 +15233,9 @@ class TeamLinkWatcher:
     """"""
 
     @staticmethod
-    def new_arp_ping(init_wait: int=None, interval: int=None, missed_max:
-        int=None, target_host: str=None, source_host: str=None, flags:
-        TeamLinkWatcherArpPingFlags=None) -> TeamLinkWatcher:
+    def new_arp_ping(init_wait: int | None = None, interval: int | None = None, missed_max:
+        int | None = None, target_host: str | None = None, source_host: str | None = None, flags:
+        TeamLinkWatcherArpPingFlags | None = None) -> TeamLinkWatcher:
         """Creates a new arp_ping #NMTeamLinkWatcher object
 
 :param init_wait: init_wait value
@@ -15248,9 +15248,9 @@ class TeamLinkWatcher:
         pass
 
     @staticmethod
-    def new_arp_ping2(init_wait: int=None, interval: int=None, missed_max:
-        int=None, vlanid: int=None, target_host: str=None, source_host: str
-        =None, flags: TeamLinkWatcherArpPingFlags=None) -> TeamLinkWatcher:
+    def new_arp_ping2(init_wait: int | None = None, interval: int | None = None, missed_max:
+        int | None = None, vlanid: int | None = None, target_host: str | None = None, source_host: str
+        =None, flags: TeamLinkWatcherArpPingFlags | None = None) -> TeamLinkWatcher:
         """Creates a new arp_ping #NMTeamLinkWatcher object
 
 :param init_wait: init_wait value
@@ -15264,7 +15264,7 @@ class TeamLinkWatcher:
         pass
 
     @staticmethod
-    def new_ethtool(delay_up: int=None, delay_down: int=None
+    def new_ethtool(delay_up: int | None = None, delay_down: int | None = None
         ) -> TeamLinkWatcher:
         """Creates a new ethtool #NMTeamLinkWatcher object
 
@@ -15274,8 +15274,8 @@ class TeamLinkWatcher:
         pass
 
     @staticmethod
-    def new_nsna_ping(init_wait: int=None, interval: int=None, missed_max:
-        int=None, target_host: str=None) -> TeamLinkWatcher:
+    def new_nsna_ping(init_wait: int | None = None, interval: int | None = None, missed_max:
+        int | None = None, target_host: str | None = None) -> TeamLinkWatcher:
         """Creates a new nsna_ping #NMTeamLinkWatcher object
 
 :param init_wait: init_wait value
@@ -15292,7 +15292,7 @@ class TeamLinkWatcher:
 :return: a copy of @watcher"""
         pass
 
-    def equal(self, other: TeamLinkWatcher=None) -> bool:
+    def equal(self, other: TeamLinkWatcher | None = None) -> bool:
         """Determines if two #NMTeamLinkWatcher objects contain the same values
 in all the properties.
 
@@ -15422,7 +15422,7 @@ class VpnEditor:
 :return: """
         pass
 
-    def update_connection(self, connection: Connection=None) -> bool:
+    def update_connection(self, connection: Connection | None = None) -> bool:
         """called to save the user-entered options to the connection
   object.  Should return %FALSE and set @error if the current options are
   invalid.  @error should contain enough information for the plugin to
@@ -15442,7 +15442,7 @@ class VpnEditor:
 :return: """
         pass
 
-    def update_connection(self, connection: Connection=None) -> bool:
+    def update_connection(self, connection: Connection | None = None) -> bool:
         """
 
 :param self: 
@@ -15464,7 +15464,7 @@ class VpnEditorPlugin:
     """"""
 
     @staticmethod
-    def load(plugin_name: str=None, check_service: str=None
+    def load(plugin_name: str | None = None, check_service: str | None = None
         ) -> VpnEditorPlugin:
         """Load the shared library @plugin_name and create a new
 #NMVpnEditorPlugin instance via the #NMVpnEditorPluginFactory
@@ -15481,9 +15481,9 @@ nm_vpn_editor_plugin_load_from_file() is preferred.
         pass
 
     @staticmethod
-    def load_from_file(plugin_name: str=None, check_service: str=None,
-        check_owner: int=None, check_file: UtilsCheckFilePredicate=None,
-        user_data: typing.Any=None) -> VpnEditorPlugin:
+    def load_from_file(plugin_name: str | None = None, check_service: str | None = None,
+        check_owner: int | None = None, check_file: UtilsCheckFilePredicate | None = None,
+        user_data: typing.Any | None = None) -> VpnEditorPlugin:
         """Load the shared library @plugin_name and create a new
 #NMVpnEditorPlugin instance via the #NMVpnEditorPluginFactory
 function.
@@ -15502,7 +15502,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: a new plugin instance or %NULL on error."""
         pass
 
-    def export_to_file(self, path: str=None, connection: Connection=None
+    def export_to_file(self, path: str | None = None, connection: Connection | None = None
         ) -> bool:
         """Export the given connection to the specified path.  Return
   %TRUE on success.  On error, return %FALSE and set @error with additional
@@ -15522,7 +15522,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: """
         pass
 
-    def get_editor(self, connection: Connection=None) -> VpnEditor:
+    def get_editor(self, connection: Connection | None = None) -> VpnEditor:
         """returns an #NMVpnEditor, pre-filled with values from @connection
   if non-%NULL.
 
@@ -15531,7 +15531,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: a new #NMVpnEditor or %NULL on error"""
         pass
 
-    def get_suggested_filename(self, connection: Connection=None) -> str:
+    def get_suggested_filename(self, connection: Connection | None = None) -> str:
         """For a given connection, return a suggested file
   name.  Returned value will be %NULL or a suggested file name to be freed by
   the caller.
@@ -15541,7 +15541,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: """
         pass
 
-    def get_vt(self, out_vt_size: int=None) -> VpnEditorPluginVT:
+    def get_vt(self, out_vt_size: int | None = None) -> VpnEditorPluginVT:
         """return a virtual function table to implement further functions in
   the plugin, without requiring to update libnm. Used by nm_vpn_editor_plugin_get_vt().
 
@@ -15550,7 +15550,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: """
         pass
 
-    def import_from_file(self, path: str=None) -> Connection:
+    def import_from_file(self, path: str | None = None) -> Connection:
         """Try to import a connection from the specified path.  On
   success, return a partial #NMConnection object.  On error, return %NULL and
   set @error with additional information.  Note that @error can be %NULL, in
@@ -15561,7 +15561,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: """
         pass
 
-    def notify_plugin_info_set(self, plugin_info: VpnPluginInfo=None) -> None:
+    def notify_plugin_info_set(self, plugin_info: VpnPluginInfo | None = None) -> None:
         """A callback to be called when the plugin info is set.
 
 :param self: 
@@ -15569,7 +15569,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: """
         pass
 
-    def export(self, path: str=None, connection: Connection=None) -> bool:
+    def export(self, path: str | None = None, connection: Connection | None = None) -> bool:
         """
 
 :param self: 
@@ -15585,7 +15585,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: """
         pass
 
-    def get_editor(self, connection: Connection=None) -> VpnEditor:
+    def get_editor(self, connection: Connection | None = None) -> VpnEditor:
         """
 
 :param self: the #NMVpnEditorPlugin
@@ -15600,7 +15600,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: if set, return the #NMVpnPluginInfo instance."""
         pass
 
-    def get_suggested_filename(self, connection: Connection=None) -> str:
+    def get_suggested_filename(self, connection: Connection | None = None) -> str:
         """
 
 :param self: 
@@ -15608,7 +15608,7 @@ as you could for nm_vpn_editor_plugin_load().
 :return: """
         pass
 
-    def get_vt(self, vt: VpnEditorPluginVT=None, vt_size: int=None) -> int:
+    def get_vt(self, vt: VpnEditorPluginVT | None = None, vt_size: int | None = None) -> int:
         """Returns an opaque VT function table for the plugin to extend
 functionality. The actual meaning of NMVpnEditorPluginVT is not
 defined in public API of libnm, instead it must be agreed by
@@ -15621,7 +15621,7 @@ both the plugin and the caller. See the header-only file
 :return: the actual size of the @plugin's virtual function table."""
         pass
 
-    def _import(self, path: str=None) -> Connection:
+    def _import(self, path: str | None = None) -> Connection:
         """
 
 :param self: the #NMVpnEditorPlugin
@@ -15629,7 +15629,7 @@ both the plugin and the caller. See the header-only file
 :return: a new #NMConnection imported from @path, or %NULL on error or if the file at @path was not recognized by this plugin"""
         pass
 
-    def set_plugin_info(self, plugin_info: VpnPluginInfo=None) -> None:
+    def set_plugin_info(self, plugin_info: VpnPluginInfo | None = None) -> None:
         """Set or clear the plugin-info instance.
 This takes a weak reference on @plugin_info, to avoid circular
 reference as the plugin-info might also reference the editor-plugin.
@@ -15660,7 +15660,7 @@ class VpnPluginInfo(GObject.Object, Gio.Initable):
     """"""
 
     @staticmethod
-    def new_from_file(filename: str=None) -> VpnPluginInfo:
+    def new_from_file(filename: str | None = None) -> VpnPluginInfo:
         """Read the plugin info from file @filename. Does not do
 any further verification on the file. You might want to check
 file permissions and ownership of the file.
@@ -15670,7 +15670,7 @@ file permissions and ownership of the file.
         pass
 
     @staticmethod
-    def new_search_file(name: str=None, service: str=None) -> VpnPluginInfo:
+    def new_search_file(name: str | None = None, service: str | None = None) -> VpnPluginInfo:
         """This has the same effect as doing a full nm_vpn_plugin_info_list_load()
 followed by a search for the first matching VPN plugin info that has the
 given @name and/or @service.
@@ -15682,7 +15682,7 @@ given @name and/or @service.
         pass
 
     @staticmethod
-    def new_with_data(filename: str=None, keyfile: GLib.KeyFile=None
+    def new_with_data(filename: str | None = None, keyfile: GLib.KeyFile | None = None
         ) -> VpnPluginInfo:
         """This constructor does not read any data from file but
 takes instead a @keyfile argument.
@@ -15693,7 +15693,7 @@ takes instead a @keyfile argument.
         pass
 
     @staticmethod
-    def list_add(list: GLib.SList=None, plugin_info: VpnPluginInfo=None
+    def list_add(list: GLib.SList | None = None, plugin_info: VpnPluginInfo | None = None
         ) -> bool:
         """
 
@@ -15703,7 +15703,7 @@ takes instead a @keyfile argument.
         pass
 
     @staticmethod
-    def list_find_by_filename(list: GLib.SList=None, filename: str=None
+    def list_find_by_filename(list: GLib.SList | None = None, filename: str | None = None
         ) -> VpnPluginInfo:
         """
 
@@ -15713,7 +15713,7 @@ takes instead a @keyfile argument.
         pass
 
     @staticmethod
-    def list_find_by_name(list: GLib.SList=None, name: str=None
+    def list_find_by_name(list: GLib.SList | None = None, name: str | None = None
         ) -> VpnPluginInfo:
         """
 
@@ -15723,7 +15723,7 @@ takes instead a @keyfile argument.
         pass
 
     @staticmethod
-    def list_find_by_service(list: GLib.SList=None, service: str=None
+    def list_find_by_service(list: GLib.SList | None = None, service: str | None = None
         ) -> VpnPluginInfo:
         """
 
@@ -15733,7 +15733,7 @@ takes instead a @keyfile argument.
         pass
 
     @staticmethod
-    def list_find_service_type(list: GLib.SList=None, name: str=None) -> str:
+    def list_find_service_type(list: GLib.SList | None = None, name: str | None = None) -> str:
         """A VPN plugin provides one or several service-types, like org.freedesktop.NetworkManager.libreswan
 Certain plugins provide more then one service type, via aliases (org.freedesktop.NetworkManager.openswan).
 This function looks up a service-type (or an alias) based on a name.
@@ -15752,8 +15752,8 @@ but it could be retrieved via nm_vpn_plugin_info_list_find_by_service().
         pass
 
     @staticmethod
-    def list_get_service_types(list: GLib.SList=None, only_existing: bool=
-        None, with_abbreviations: bool=None) -> typing.Any:
+    def list_get_service_types(list: GLib.SList | None = None, only_existing: bool=
+        None, with_abbreviations: bool | None = None) -> typing.Any:
         """
 
 :param list: a possibly empty #GSList of #NMVpnPluginInfo
@@ -15771,7 +15771,7 @@ but it could be retrieved via nm_vpn_plugin_info_list_find_by_service().
         pass
 
     @staticmethod
-    def list_remove(list: GLib.SList=None, plugin_info: VpnPluginInfo=None
+    def list_remove(list: GLib.SList | None = None, plugin_info: VpnPluginInfo | None = None
         ) -> bool:
         """Remove @plugin_info from @list.
 
@@ -15781,7 +15781,7 @@ but it could be retrieved via nm_vpn_plugin_info_list_find_by_service().
         pass
 
     @staticmethod
-    def validate_filename(filename: str=None) -> bool:
+    def validate_filename(filename: str | None = None) -> bool:
         """Regular name files have a certain pattern. That basically means
 they have the file extension "name". Check if @filename
 is valid according to that pattern.
@@ -15857,7 +15857,7 @@ is valid according to that pattern.
    nm_vpn_plugin_info_set_editor_plugin()."""
         pass
 
-    def lookup_property(self, group: str=None, key: str=None) -> str:
+    def lookup_property(self, group: str | None = None, key: str | None = None) -> str:
         """
 
 :param self: plugin info instance
@@ -15866,7 +15866,7 @@ is valid according to that pattern.
 :return: #NMVpnPluginInfo is internally a #GKeyFile. Returns the matching property."""
         pass
 
-    def set_editor_plugin(self, plugin: VpnEditorPlugin=None) -> None:
+    def set_editor_plugin(self, plugin: VpnEditorPlugin | None = None) -> None:
         """Set the internal plugin instance. If %NULL, only clear the previous instance.
 
 :param self: plugin info instance
@@ -15906,8 +15906,8 @@ class VpnPluginOld(GObject.Object, Gio.Initable):
     """"""
 
     @staticmethod
-    def get_secret_flags(data: GLib.HashTable=None, secret_name: str=None,
-        out_flags: SettingSecretFlags=None) -> bool:
+    def get_secret_flags(data: GLib.HashTable | None = None, secret_name: str | None = None,
+        out_flags: SettingSecretFlags | None = None) -> bool:
         """Given a VPN secret key name, attempts to find the corresponding flags data
 item in @data.  If found, converts the flags data item to
 #NMSettingSecretFlags and returns it.
@@ -15919,8 +15919,8 @@ item in @data.  If found, converts the flags data item to
         pass
 
     @staticmethod
-    def read_vpn_details(fd: int=None, out_data: GLib.HashTable=None,
-        out_secrets: GLib.HashTable=None) -> bool:
+    def read_vpn_details(fd: int | None = None, out_data: GLib.HashTable | None = None,
+        out_secrets: GLib.HashTable | None = None) -> bool:
         """Parses key/value pairs from a file descriptor (normally stdin) passed by
 an applet when the applet calls the authentication dialog of the VPN plugin.
 
@@ -15930,7 +15930,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: %TRUE if reading values was successful, %FALSE if not"""
         pass
 
-    def config(self, config: GLib.Variant=None) -> None:
+    def config(self, config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -15938,7 +15938,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def connect(self, connection: Connection=None) -> bool:
+    def connect(self, connection: Connection | None = None) -> bool:
         """
 
 :param self: 
@@ -15946,8 +15946,8 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def connect_interactive(self, connection: Connection=None, details:
-        GLib.Variant=None) -> bool:
+    def connect_interactive(self, connection: Connection | None = None, details:
+        GLib.Variant | None = None) -> bool:
         """
 
 :param self: 
@@ -15963,7 +15963,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def failure(self, reason: VpnPluginFailure=None) -> None:
+    def failure(self, reason: VpnPluginFailure | None = None) -> None:
         """
 
 :param self: 
@@ -15971,7 +15971,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def ip4_config(self, ip4_config: GLib.Variant=None) -> None:
+    def ip4_config(self, ip4_config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -15979,7 +15979,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def ip6_config(self, config: GLib.Variant=None) -> None:
+    def ip6_config(self, config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -15987,7 +15987,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def login_banner(self, banner: str=None) -> None:
+    def login_banner(self, banner: str | None = None) -> None:
         """
 
 :param self: 
@@ -15995,7 +15995,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def need_secrets(self, connection: Connection=None, setting_name: str=None
+    def need_secrets(self, connection: Connection | None = None, setting_name: str | None = None
         ) -> bool:
         """
 
@@ -16005,7 +16005,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def new_secrets(self, connection: Connection=None) -> bool:
+    def new_secrets(self, connection: Connection | None = None) -> bool:
         """
 
 :param self: 
@@ -16020,7 +16020,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def state_changed(self, state: VpnServiceState=None) -> None:
+    def state_changed(self, state: VpnServiceState | None = None) -> None:
         """
 
 :param self: 
@@ -16035,7 +16035,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def failure(self, reason: VpnPluginFailure=None) -> None:
+    def failure(self, reason: VpnPluginFailure | None = None) -> None:
         """
 
 :param self: 
@@ -16057,7 +16057,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def secrets_required(self, message: str=None, hints: str=None) -> None:
+    def secrets_required(self, message: str | None = None, hints: str | None = None) -> None:
         """Called by VPN plugin implementations to signal to NetworkManager that secrets
 are required during the connection process.  This signal may be used to
 request new secrets when the secrets originally provided by NetworkManager
@@ -16070,7 +16070,7 @@ information to complete the request.
 :return: """
         pass
 
-    def set_ip4_config(self, ip4_config: GLib.Variant=None) -> None:
+    def set_ip4_config(self, ip4_config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -16078,7 +16078,7 @@ information to complete the request.
 :return: """
         pass
 
-    def set_login_banner(self, banner: str=None) -> None:
+    def set_login_banner(self, banner: str | None = None) -> None:
         """
 
 :param self: 
@@ -16086,7 +16086,7 @@ information to complete the request.
 :return: """
         pass
 
-    def set_state(self, state: VpnServiceState=None) -> None:
+    def set_state(self, state: VpnServiceState | None = None) -> None:
         """
 
 :param self: 
@@ -16118,8 +16118,8 @@ class VpnServicePlugin(GObject.Object, Gio.Initable):
     """"""
 
     @staticmethod
-    def get_secret_flags(data: GLib.HashTable=None, secret_name: str=None,
-        out_flags: SettingSecretFlags=None) -> bool:
+    def get_secret_flags(data: GLib.HashTable | None = None, secret_name: str | None = None,
+        out_flags: SettingSecretFlags | None = None) -> bool:
         """Given a VPN secret key name, attempts to find the corresponding flags data
 item in @data.  If found, converts the flags data item to
 #NMSettingSecretFlags and returns it.
@@ -16131,8 +16131,8 @@ item in @data.  If found, converts the flags data item to
         pass
 
     @staticmethod
-    def read_vpn_details(fd: int=None, out_data: GLib.HashTable=None,
-        out_secrets: GLib.HashTable=None) -> bool:
+    def read_vpn_details(fd: int | None = None, out_data: GLib.HashTable | None = None,
+        out_secrets: GLib.HashTable | None = None) -> bool:
         """Parses key/value pairs from a file descriptor (normally stdin) passed by
 an applet when the applet calls the authentication dialog of the VPN plugin.
 
@@ -16142,7 +16142,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: %TRUE if reading values was successful, %FALSE if not"""
         pass
 
-    def config(self, config: GLib.Variant=None) -> None:
+    def config(self, config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -16150,7 +16150,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def connect(self, connection: Connection=None) -> bool:
+    def connect(self, connection: Connection | None = None) -> bool:
         """
 
 :param self: 
@@ -16158,8 +16158,8 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def connect_interactive(self, connection: Connection=None, details:
-        GLib.Variant=None) -> bool:
+    def connect_interactive(self, connection: Connection | None = None, details:
+        GLib.Variant | None = None) -> bool:
         """
 
 :param self: 
@@ -16175,7 +16175,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def failure(self, reason: VpnPluginFailure=None) -> None:
+    def failure(self, reason: VpnPluginFailure | None = None) -> None:
         """
 
 :param self: 
@@ -16183,7 +16183,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def ip4_config(self, ip4_config: GLib.Variant=None) -> None:
+    def ip4_config(self, ip4_config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -16191,7 +16191,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def ip6_config(self, config: GLib.Variant=None) -> None:
+    def ip6_config(self, config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -16199,7 +16199,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def login_banner(self, banner: str=None) -> None:
+    def login_banner(self, banner: str | None = None) -> None:
         """
 
 :param self: 
@@ -16207,7 +16207,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def need_secrets(self, connection: Connection=None, setting_name: str=None
+    def need_secrets(self, connection: Connection | None = None, setting_name: str | None = None
         ) -> bool:
         """
 
@@ -16217,7 +16217,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def new_secrets(self, connection: Connection=None) -> bool:
+    def new_secrets(self, connection: Connection | None = None) -> bool:
         """
 
 :param self: 
@@ -16232,7 +16232,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def state_changed(self, state: VpnServiceState=None) -> None:
+    def state_changed(self, state: VpnServiceState | None = None) -> None:
         """
 
 :param self: 
@@ -16247,7 +16247,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def failure(self, reason: VpnPluginFailure=None) -> None:
+    def failure(self, reason: VpnPluginFailure | None = None) -> None:
         """
 
 :param self: 
@@ -16262,7 +16262,7 @@ an applet when the applet calls the authentication dialog of the VPN plugin.
 :return: """
         pass
 
-    def secrets_required(self, message: str=None, hints: str=None) -> None:
+    def secrets_required(self, message: str | None = None, hints: str | None = None) -> None:
         """Called by VPN plugin implementations to signal to NetworkManager that secrets
 are required during the connection process.  This signal may be used to
 request new secrets when the secrets originally provided by NetworkManager
@@ -16275,7 +16275,7 @@ information to complete the request.
 :return: """
         pass
 
-    def set_config(self, config: GLib.Variant=None) -> None:
+    def set_config(self, config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -16283,7 +16283,7 @@ information to complete the request.
 :return: """
         pass
 
-    def set_ip4_config(self, ip4_config: GLib.Variant=None) -> None:
+    def set_ip4_config(self, ip4_config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -16291,7 +16291,7 @@ information to complete the request.
 :return: """
         pass
 
-    def set_ip6_config(self, ip6_config: GLib.Variant=None) -> None:
+    def set_ip6_config(self, ip6_config: GLib.Variant | None = None) -> None:
         """
 
 :param self: 
@@ -16299,7 +16299,7 @@ information to complete the request.
 :return: """
         pass
 
-    def set_login_banner(self, banner: str=None) -> None:
+    def set_login_banner(self, banner: str | None = None) -> None:
         """
 
 :param self: 
@@ -16342,7 +16342,7 @@ class VpnServicePluginClass:
 class WifiP2PPeer(Object):
     """"""
 
-    def connection_valid(self, connection: Connection=None) -> bool:
+    def connection_valid(self, connection: Connection | None = None) -> bool:
         """Validates a given connection against a given Wi-Fi P2P peer to ensure that
 the connection may be activated with that peer. The connection must match the
 @peer's address and in the future possibly other attributes.
@@ -16352,7 +16352,7 @@ the connection may be activated with that peer. The connection must match the
 :return: %TRUE if the connection may be activated with this Wi-Fi P2P Peer, %FALSE if it cannot be."""
         pass
 
-    def filter_connections(self, connections: typing.Any=None) -> typing.Any:
+    def filter_connections(self, connections: typing.Any | None = None) -> typing.Any:
         """Filters a given array of connections for a given #NMWifiP2PPeer object and
 returns connections which may be activated with the P2P peer.  Any
 returned connections will match the @peers's HW address and in the future
@@ -16447,7 +16447,7 @@ class WifiP2PPeerClass:
 class WimaxNsp(Object):
     """"""
 
-    def connection_valid(self, connection: Connection=None) -> bool:
+    def connection_valid(self, connection: Connection | None = None) -> bool:
         """Validates a given connection against a given WiMAX NSP to ensure that the
 connection may be activated with that NSP.  The connection must match the
 @nsp's network name and other attributes.
@@ -16457,7 +16457,7 @@ connection may be activated with that NSP.  The connection must match the
 :return: %TRUE if the connection may be activated with this WiMAX NSP, %FALSE if it cannot be."""
         pass
 
-    def filter_connections(self, connections: typing.Any=None) -> typing.Any:
+    def filter_connections(self, connections: typing.Any | None = None) -> typing.Any:
         """Filters a given array of connections for a given #NMWimaxNsp object and
 return connections which may be activated with the NSP.  Any returned
 connections will match the @nsp's network name and other attributes.
@@ -16510,7 +16510,7 @@ class WireGuardPeer:
 :return: a new, default, unsealed #NMWireGuardPeer instance."""
         pass
 
-    def append_allowed_ip(self, allowed_ip: str=None, accept_invalid: bool=None
+    def append_allowed_ip(self, allowed_ip: str | None = None, accept_invalid: bool | None = None
         ) -> bool:
         """Appends @allowed_ip setting to the list. This does not check
 for duplicates and always appends @allowed_ip to the end of the
@@ -16536,7 +16536,7 @@ It is a bug trying to modify a sealed #NMWireGuardPeer instance.
 :return: """
         pass
 
-    def cmp(self, b: WireGuardPeer=None, compare_flags: SettingCompareFlags
+    def cmp(self, b: WireGuardPeer | None = None, compare_flags: SettingCompareFlags
         =None) -> int:
         """
 
@@ -16549,7 +16549,7 @@ It is a bug trying to modify a sealed #NMWireGuardPeer instance.
    affect the comparison."""
         pass
 
-    def get_allowed_ip(self, idx: int=None, out_is_valid: bool=None) -> str:
+    def get_allowed_ip(self, idx: int | None = None, out_is_valid: bool | None = None) -> str:
         """
 
 :param self: the #NMWireGuardPeer instance
@@ -16609,7 +16609,7 @@ It is a bug trying to modify a sealed #NMWireGuardPeer instance.
 :return: whether @self is sealed or not."""
         pass
 
-    def is_valid(self, check_non_secrets: bool=None, check_secrets: bool=None
+    def is_valid(self, check_non_secrets: bool | None = None, check_secrets: bool | None = None
         ) -> bool:
         """
 
@@ -16620,7 +16620,7 @@ It is a bug trying to modify a sealed #NMWireGuardPeer instance.
    reason."""
         pass
 
-    def new_clone(self, with_secrets: bool=None) -> WireGuardPeer:
+    def new_clone(self, with_secrets: bool | None = None) -> WireGuardPeer:
         """
 
 :param self: the #NMWireGuardPeer instance to copy.
@@ -16637,7 +16637,7 @@ It is a bug trying to modify a sealed #NMWireGuardPeer instance.
    the reference count.  Since 1.42, ref-counting of #NMWireGuardPeer is thread-safe."""
         pass
 
-    def remove_allowed_ip(self, idx: int=None) -> bool:
+    def remove_allowed_ip(self, idx: int | None = None) -> bool:
         """Removes the allowed-ip at the given @idx. This shifts all
 following entries one index down.
 
@@ -16659,7 +16659,7 @@ an unsealed copy with nm_wireguard_peer_new_clone().
 :return: """
         pass
 
-    def set_endpoint(self, endpoint: str=None, allow_invalid: bool=None
+    def set_endpoint(self, endpoint: str | None = None, allow_invalid: bool | None = None
         ) -> bool:
         """Sets or clears the endpoint of @self.
 
@@ -16673,7 +16673,7 @@ It is a bug trying to modify a sealed #NMWireGuardPeer instance.
    on @allow_invalid, the instance will be modified."""
         pass
 
-    def set_persistent_keepalive(self, persistent_keepalive: int=None) -> None:
+    def set_persistent_keepalive(self, persistent_keepalive: int | None = None) -> None:
         """It is a bug trying to modify a sealed #NMWireGuardPeer instance.
 
 :param self: the unsealed #NMWireGuardPeer instance
@@ -16681,8 +16681,8 @@ It is a bug trying to modify a sealed #NMWireGuardPeer instance.
 :return: """
         pass
 
-    def set_preshared_key(self, preshared_key: str=None, accept_invalid:
-        bool=None) -> bool:
+    def set_preshared_key(self, preshared_key: str | None = None, accept_invalid:
+        bool | None = None) -> bool:
         """Reset the preshared key. Note that if the preshared key is valid, it
 will be normalized (which may or may not modify the set value).
 
@@ -16704,7 +16704,7 @@ It is a bug trying to modify a sealed #NMWireGuardPeer instance.
         pass
 
     def set_preshared_key_flags(self, preshared_key_flags:
-        SettingSecretFlags=None) -> None:
+        SettingSecretFlags | None = None) -> None:
         """It is a bug trying to modify a sealed #NMWireGuardPeer instance.
 
 :param self: the unsealed #NMWireGuardPeer instance
@@ -16712,7 +16712,7 @@ It is a bug trying to modify a sealed #NMWireGuardPeer instance.
 :return: """
         pass
 
-    def set_public_key(self, public_key: str=None, accept_invalid: bool=None
+    def set_public_key(self, public_key: str | None = None, accept_invalid: bool | None = None
         ) -> bool:
         """Reset the public key. Note that if the public key is valid, it
 will be normalized (which may or may not modify the set value).
@@ -16741,7 +16741,7 @@ Since 1.42, ref-counting of #NMWireGuardPeer is thread-safe.
 class AccessPoint(Object):
     """"""
 
-    def connection_valid(self, connection: Connection=None) -> bool:
+    def connection_valid(self, connection: Connection | None = None) -> bool:
         """Validates a given connection against a given Wi-Fi access point to ensure that
 the connection may be activated with that AP.  The connection must match the
 @ap's SSID, (if given) BSSID, and other attributes like security settings,
@@ -16752,7 +16752,7 @@ channel, band, etc.
 :return: %TRUE if the connection may be activated with this Wi-Fi AP, %FALSE if it cannot be."""
         pass
 
-    def filter_connections(self, connections: typing.Any=None) -> typing.Any:
+    def filter_connections(self, connections: typing.Any | None = None) -> typing.Any:
         """Filters a given array of connections for a given #NMAccessPoint object and
 returns connections which may be activated with the access point.  Any
 returned connections will match the @ap's SSID and (if given) BSSID and
@@ -17031,7 +17031,7 @@ class Device(Object):
     """"""
 
     @staticmethod
-    def disambiguate_names(devices: typing.Any=None, num_devices: int=None
+    def disambiguate_names(devices: typing.Any | None = None, num_devices: int | None = None
         ) -> typing.Any:
         """Generates a list of short-ish unique presentation names for the
 devices in @devices.
@@ -17041,7 +17041,7 @@ devices in @devices.
 :return: the device names"""
         pass
 
-    def connection_compatible(self, connection: Connection=None) -> bool:
+    def connection_compatible(self, connection: Connection | None = None) -> bool:
         """Validates a given connection for a given #NMDevice object and returns
 whether the connection may be activated with the device. For example if
 @device is a Wi-Fi device that supports only WEP encryption, the connection
@@ -17059,7 +17059,7 @@ GError when FALSE is returned.
 :return: %TRUE if the connection may be activated with this device, %FALSE if is incompatible with the device's capabilities and characteristics."""
         pass
 
-    def connection_valid(self, connection: Connection=None) -> bool:
+    def connection_valid(self, connection: Connection | None = None) -> bool:
         """Validates a given connection for a given #NMDevice object and returns
 whether the connection may be activated with the device. For example if
 @device is a Wi-Fi device that supports only WEP encryption, the connection
@@ -17073,7 +17073,7 @@ device.
 :return: %TRUE if the connection may be activated with this device, %FALSE if is incompatible with the device's capabilities and characteristics."""
         pass
 
-    def delete(self, cancellable: Gio.Cancellable=None) -> bool:
+    def delete(self, cancellable: Gio.Cancellable | None = None) -> bool:
         """Deletes the software device. Hardware devices can't be deleted.
 
 :param self: a #NMDevice
@@ -17081,8 +17081,8 @@ device.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def delete_async(self, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def delete_async(self, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Asynchronously begins deleting the software device. Hardware devices can't
 be deleted.
 
@@ -17093,7 +17093,7 @@ be deleted.
 :return: """
         pass
 
-    def delete_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def delete_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_device_delete_async().
 
 :param self: a #NMDevice
@@ -17101,7 +17101,7 @@ be deleted.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def disconnect(self, cancellable: Gio.Cancellable=None) -> bool:
+    def disconnect(self, cancellable: Gio.Cancellable | None = None) -> bool:
         """Disconnects the device if currently connected, and prevents the device from
 automatically connecting to networks until the next manual network connection
 request.
@@ -17111,8 +17111,8 @@ request.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def disconnect_async(self, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def disconnect_async(self, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Asynchronously begins disconnecting the device if currently connected, and
 prevents the device from automatically connecting to networks until the next
 manual network connection request.
@@ -17124,7 +17124,7 @@ manual network connection request.
 :return: """
         pass
 
-    def disconnect_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def disconnect_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_device_disconnect_async().
 
 :param self: a #NMDevice
@@ -17132,7 +17132,7 @@ manual network connection request.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def filter_connections(self, connections: typing.Any=None) -> typing.Any:
+    def filter_connections(self, connections: typing.Any | None = None) -> typing.Any:
         """Filters a given array of connections for a given #NMDevice object and returns
 connections which may be activated with the device. For example if @device
 is a Wi-Fi device that supports only WEP encryption, the returned array will
@@ -17156,8 +17156,8 @@ nm_client_get_connections().
 :return: the #NMActiveConnection or %NULL if the device is not part of an active connection"""
         pass
 
-    def get_applied_connection(self, flags: int=None, version_id: int=None,
-        cancellable: Gio.Cancellable=None) -> Connection:
+    def get_applied_connection(self, flags: int | None = None, version_id: int | None = None,
+        cancellable: Gio.Cancellable | None = None) -> Connection:
         """Fetch the currently applied connection on the device.
 
 :param self: a #NMDevice
@@ -17168,9 +17168,9 @@ nm_client_get_connections().
    or %NULL on error.  The connection is as received from D-Bus and might not validate according to nm_connection_verify()."""
         pass
 
-    def get_applied_connection_async(self, flags: int=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def get_applied_connection_async(self, flags: int | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Asynchronously begins and gets the currently applied connection.
 
 :param self: a #NMDevice
@@ -17181,8 +17181,8 @@ nm_client_get_connections().
 :return: """
         pass
 
-    def get_applied_connection_finish(self, result: Gio.AsyncResult=None,
-        version_id: int=None) -> Connection:
+    def get_applied_connection_finish(self, result: Gio.AsyncResult | None = None,
+        version_id: int | None = None) -> Connection:
         """Gets the result of a call to nm_device_get_applied_connection_async().
 
 :param self: a #NMDevice
@@ -17214,7 +17214,7 @@ be activated on @device.
 :return: the capabilities"""
         pass
 
-    def get_connectivity(self, addr_family: int=None) -> ConnectivityState:
+    def get_connectivity(self, addr_family: int | None = None) -> ConnectivityState:
         """The connectivity state of the device for given address family.
 Supported address families are %AF_INET for IPv4, %AF_INET6
 for IPv6 or %AF_UNSPEC for any.
@@ -17463,8 +17463,8 @@ that can be used on @device.
 :return: %TRUE if @device is a software device, %FALSE if it is a hardware device."""
         pass
 
-    def reapply(self, connection: Connection=None, version_id: int=None,
-        flags: int=None, cancellable: Gio.Cancellable=None) -> bool:
+    def reapply(self, connection: Connection | None = None, version_id: int | None = None,
+        flags: int | None = None, cancellable: Gio.Cancellable | None = None) -> bool:
         """Attempts to update device with changes to the currently active connection
 made since it was last applied.
 
@@ -17476,9 +17476,9 @@ made since it was last applied.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def reapply_async(self, connection: Connection=None, version_id: int=
-        None, flags: int=None, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def reapply_async(self, connection: Connection | None = None, version_id: int=
+        None, flags: int | None = None, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Asynchronously begins an attempt to update device with changes to the
 currently active connection made since it was last applied.
 
@@ -17492,7 +17492,7 @@ currently active connection made since it was last applied.
 :return: """
         pass
 
-    def reapply_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def reapply_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_device_reapply_async().
 
 :param self: a #NMDevice
@@ -17500,7 +17500,7 @@ currently active connection made since it was last applied.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def set_autoconnect(self, autoconnect: bool=None) -> None:
+    def set_autoconnect(self, autoconnect: bool | None = None) -> None:
         """Enables or disables automatic activation of the #NMDevice.
 
 :param self: a #NMDevice
@@ -17508,7 +17508,7 @@ currently active connection made since it was last applied.
 :return: """
         pass
 
-    def set_managed(self, managed: bool=None) -> None:
+    def set_managed(self, managed: bool | None = None) -> None:
         """Enables or disables management of  #NMDevice by NetworkManager.
 
 :param self: a #NMDevice
@@ -18382,7 +18382,7 @@ class DeviceVxlan(Device):
 class DeviceWifi(Device):
     """"""
 
-    def get_access_point_by_path(self, path: str=None) -> AccessPoint:
+    def get_access_point_by_path(self, path: str | None = None) -> AccessPoint:
         """Gets a #NMAccessPoint by path.
 
 :param self: a #NMDeviceWifi
@@ -18450,7 +18450,7 @@ comparing to this value.
 :return: the permanent hardware address. This is the internal string used by the device, and must not be modified."""
         pass
 
-    def request_scan(self, cancellable: Gio.Cancellable=None) -> bool:
+    def request_scan(self, cancellable: Gio.Cancellable | None = None) -> bool:
         """Request NM to scan for access points on @device. Note that the function
 returns immediately after requesting the scan, and it may take some time
 after that for the scan to complete.
@@ -18460,8 +18460,8 @@ after that for the scan to complete.
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def request_scan_async(self, cancellable: Gio.Cancellable=None,
-        callback: Gio.AsyncReadyCallback=None, user_data: typing.Any=None
+    def request_scan_async(self, cancellable: Gio.Cancellable | None = None,
+        callback: Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None
         ) -> None:
         """Request NM to scan for access points on @device. Note that @callback will be
 called immediately after requesting the scan, and it may take some time after
@@ -18474,7 +18474,7 @@ that for the scan to complete.
 :return: """
         pass
 
-    def request_scan_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def request_scan_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Gets the result of a call to nm_device_wifi_request_scan_async() and
 nm_device_wifi_request_scan_options_async().
 
@@ -18483,8 +18483,8 @@ nm_device_wifi_request_scan_options_async().
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def request_scan_options(self, options: GLib.Variant=None, cancellable:
-        Gio.Cancellable=None) -> bool:
+    def request_scan_options(self, options: GLib.Variant | None = None, cancellable:
+        Gio.Cancellable | None = None) -> bool:
         """Request NM to scan for access points on @device. Note that the function
 returns immediately after requesting the scan, and it may take some time
 after that for the scan to complete.
@@ -18499,9 +18499,9 @@ D-Bus call. Valid options inside the dictionary are:
 :return: %TRUE on success, %FALSE on error, in which case @error will be set."""
         pass
 
-    def request_scan_options_async(self, options: GLib.Variant=None,
-        cancellable: Gio.Cancellable=None, callback: Gio.AsyncReadyCallback
-        =None, user_data: typing.Any=None) -> None:
+    def request_scan_options_async(self, options: GLib.Variant | None = None,
+        cancellable: Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback
+        =None, user_data: typing.Any | None = None) -> None:
         """Request NM to scan for access points on @device. Note that @callback will be
 called immediately after requesting the scan, and it may take some time after
 that for the scan to complete.
@@ -18531,7 +18531,7 @@ class DeviceWifiP2P(Device):
 :return: the actual hardware address. This is the internal string used by the device, and must not be modified."""
         pass
 
-    def get_peer_by_path(self, path: str=None) -> WifiP2PPeer:
+    def get_peer_by_path(self, path: str | None = None) -> WifiP2PPeer:
         """Gets a #NMWifiP2PPeer by path.
 
 :param self: a #NMDeviceWifiP2P
@@ -18547,9 +18547,9 @@ class DeviceWifiP2P(Device):
           found #NMWifiP2PPeers. The returned array is owned by the client and should not be modified."""
         pass
 
-    def start_find(self, options: GLib.Variant=None, cancellable:
-        Gio.Cancellable=None, callback: Gio.AsyncReadyCallback=None,
-        user_data: typing.Any=None) -> None:
+    def start_find(self, options: GLib.Variant | None = None, cancellable:
+        Gio.Cancellable | None = None, callback: Gio.AsyncReadyCallback | None = None,
+        user_data: typing.Any | None = None) -> None:
         """Request NM to search for Wi-Fi P2P peers on @device. Note that the call
 returns immediately after requesting the find, and it may take some time
 after that for peers to be found.
@@ -18565,7 +18565,7 @@ using nm_device_p2p_wifi_stop_find().
 :return: """
         pass
 
-    def start_find_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def start_find_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Finish an operation started by nm_device_wifi_p2p_start_find().
 
 :param self: a #NMDeviceWifiP2P
@@ -18573,8 +18573,8 @@ using nm_device_p2p_wifi_stop_find().
 :return: %TRUE if the call was successful"""
         pass
 
-    def stop_find(self, cancellable: Gio.Cancellable=None, callback:
-        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> None:
+    def stop_find(self, cancellable: Gio.Cancellable | None = None, callback:
+        Gio.AsyncReadyCallback | None = None, user_data: typing.Any | None = None) -> None:
         """Request NM to stop any ongoing find operation for Wi-Fi P2P peers on @device.
 
 :param self: a #NMDeviceWifiP2P
@@ -18584,7 +18584,7 @@ using nm_device_p2p_wifi_stop_find().
 :return: """
         pass
 
-    def stop_find_finish(self, result: Gio.AsyncResult=None) -> bool:
+    def stop_find_finish(self, result: Gio.AsyncResult | None = None) -> bool:
         """Finish an operation started by nm_device_wifi_p2p_stop_find().
 
 :param self: a #NMDeviceWifiP2P
@@ -18636,7 +18636,7 @@ meaning when the device is not connected.
           device, and must not be modified."""
         pass
 
-    def get_nsp_by_path(self, path: str=None) -> WimaxNsp:
+    def get_nsp_by_path(self, path: str | None = None) -> WimaxNsp:
         """Gets a #NMWimaxNsp by path.
 
 :param self: a #NMDeviceWimax
@@ -18714,7 +18714,7 @@ class DhcpConfig(Object):
    <literal>AF_INET6</literal>"""
         pass
 
-    def get_one_option(self, option: str=None) -> str:
+    def get_one_option(self, option: str | None = None) -> str:
         """Gets one option by option name.
 
 :param self: a #NMDhcpConfig
