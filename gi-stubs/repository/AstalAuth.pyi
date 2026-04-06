@@ -1,9 +1,12 @@
-from gi.repository import GObject as GObject
+# -*- coding: utf-8 -*-
+from gi.repository import Gio
+import typing
+from gi.repository import GObject
+MAJOR_VERSION = '0'
+MICRO_VERSION = '0'
+MINOR_VERSION = '1'
+VERSION = '0.1.0'
 
-MAJOR_VERSION: int
-MICRO_VERSION: int
-MINOR_VERSION: int
-VERSION: str
 
 class Pam(GObject.Object):
     """For simple authentication using only a password, using the [func@AstalAuth.Pam.authenticate]
@@ -26,74 +29,84 @@ it should be `NULL`. Not connecting those signals, is equivalent to calling
 5. it is possible to reuse the same Pam object for multiple sequential authentication attempts.
 Just call [method@AstalAuth.Pam.start_authenticate] again after the `success` or `fail` signal
 was emitted."""
+
     @staticmethod
-    def authenticate(password=None, result_callback=None, user_data=None):
-        """        Requests authentication of the provided password using the PAM (Pluggable Authentication Modules)
-        system.
-        @param password: the password to be authenticated
-        @param result_callback: a GAsyncReadyCallback   to call when the request is satisfied
-        @param user_data: the data to pass to callback function
-        @type password: str
-        @type result_callback: Gio.AsyncReadyCallback
-        @type user_data: gpointer
-        @returns: 
-        @rtype: bool
-        """
+    def authenticate(password: str=None, result_callback:
+        Gio.AsyncReadyCallback=None, user_data: typing.Any=None) -> bool:
+        """Requests authentication of the provided password using the PAM (Pluggable Authentication Modules)
+system.
+
+:param password: the password to be authenticated
+:param result_callback: a GAsyncReadyCallback   to call when the request is satisfied
+:param user_data: the data to pass to callback function
+:return: """
+        pass
+
     @staticmethod
-    def authenticate_finish(res=None):
-        """        
-        @type res: Gio.AsyncResult
-        @returns: 
-        @rtype: gssize
-        """
-    def get_service(self):
-        """        Fetches the service from AsalAuthPam object.
-        @returns: the service of the AsalAuthPam object. This string is owned by the object and must not be modified or freed.
-        @rtype: str
-        """
-    def get_username(self):
-        """        Fetches the username from AsalAuthPam object.
-        @returns: the username of the AsalAuthPam object. This string is owned by the object and must not be modified or freed.
-        @rtype: str
-        """
-    def set_service(self, service=None):
-        """        Sets the service to be used for authentication. This must be set to
-        before calling start_authenticate.
-        Changing it afterwards has no effect on the authentication process.
-        
-        Defaults to `astal-auth`.
-        @param service: the pam service used for authentication
-        @type service: str
-        @returns: 
-        @rtype: None
-        """
-    def set_username(self, username=None):
-        """        Sets the username to be used for authentication. This must be set to
-        before calling start_authenticate.
-        Changing it afterwards has no effect on the authentication process.
-        
-        Defaults to the owner of the process.
-        @param username: the new username
-        @type username: str
-        @returns: 
-        @rtype: None
-        """
-    def start_authenticate(self):
-        """        starts a new authentication process using the PAM (Pluggable Authentication Modules) system.
-        Note that this will cancel an already running authentication process
-        associated with this AstalAuthPam object.
-        @returns: 
-        @rtype: bool
-        """
-    def supply_secret(self, secret=None):
-        """        provides pam with a secret. This method must be called exactly once after a
-        auth-* signal is emitted.
-        @param secret: the secret to be provided to pam. Can be NULL.
-        @type secret: str
-        @returns: 
-        @rtype: None
+    def authenticate_finish(res: Gio.AsyncResult=None) -> gssize:
         """
 
+:param res: 
+:return: """
+        pass
+
+    def get_service(self) -> str:
+        """Fetches the service from AsalAuthPam object.
+
+:param self: a AstalAuthPam
+:return: the service of the AsalAuthPam object. This string is owned by the object and must not be modified or freed."""
+        pass
+
+    def get_username(self) -> str:
+        """Fetches the username from AsalAuthPam object.
+
+:param self: a AstalAuthPam object
+:return: the username of the AsalAuthPam object. This string is owned by the object and must not be modified or freed."""
+        pass
+
+    def set_service(self, service: str=None) -> None:
+        """Sets the service to be used for authentication. This must be set to
+before calling start_authenticate.
+Changing it afterwards has no effect on the authentication process.
+
+Defaults to `astal-auth`.
+
+:param self: a AstalAuthPam object
+:param service: the pam service used for authentication
+:return: """
+        pass
+
+    def set_username(self, username: str=None) -> None:
+        """Sets the username to be used for authentication. This must be set to
+before calling start_authenticate.
+Changing it afterwards has no effect on the authentication process.
+
+Defaults to the owner of the process.
+
+:param self: a AstalAuthPam object
+:param username: the new username
+:return: """
+        pass
+
+    def start_authenticate(self) -> bool:
+        """starts a new authentication process using the PAM (Pluggable Authentication Modules) system.
+Note that this will cancel an already running authentication process
+associated with this AstalAuthPam object.
+
+:param self: a AstalAuthPam Object
+:return: """
+        pass
+
+    def supply_secret(self, secret: str=None) -> None:
+        """provides pam with a secret. This method must be called exactly once after a
+auth-* signal is emitted.
+
+:param self: a AstalAuthPam Object
+:param secret: the secret to be provided to pam. Can be NULL.
+:return: """
+        pass
+
+
 class PamClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass

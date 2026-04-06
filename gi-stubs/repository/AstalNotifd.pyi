@@ -1,457 +1,611 @@
-from gi.repository import GObject as GObject
+# -*- coding: utf-8 -*-
+from gi.repository import Gio
+import typing
+from gi.repository import GLib
+from gi.repository import AstalNotifd
+import enum
+from gi.repository import GObject
 
-class Urgency:
-    LOW: int
-    NORMAL: int
-    CRITICAL: int
 
-class ClosedReason:
-    EXPIRED: int
-    DISMISSED_BY_USER: int
-    CLOSED: int
-    UNDEFINED: int
+class Urgency(enum.Enum):
+    """"""
+    LOW = 0
+    NORMAL = 1
+    CRITICAL = 2
 
-class State:
-    DRAFT: int
-    SENT: int
-    RECEIVED: int
 
-MAJOR_VERSION: int
-MINOR_VERSION: int
-MICRO_VERSION: int
-VERSION: str
+class ClosedReason(enum.Enum):
+    """"""
+    EXPIRED = 1
+    DISMISSED_BY_USER = 2
+    CLOSED = 3
+    UNDEFINED = 4
 
-def get_default():
-    """    Get the singleton instance of [class@AstalNotifd.Notifd]
-    @returns: 
-    @rtype: AstalNotifd.Notifd
+
+class State(enum.Enum):
+    """"""
+    DRAFT = 0
+    SENT = 1
+    RECEIVED = 2
+
+
+MAJOR_VERSION = '0'
+MINOR_VERSION = '1'
+MICRO_VERSION = '0'
+VERSION = '0.1.0'
+
+
+def get_default() -> AstalNotifd.Notifd:
+    """Get the singleton instance of [class@AstalNotifd.Notifd]
+
+:return: """
+    pass
+
+
+def send_notification(notification: AstalNotifd.Notification=None,
+    _callback_: Gio.AsyncReadyCallback=None, _callback__target: typing.Any=None
+    ) -> None:
+    """Send a notification. This function does not depend on Notifd and can be used with any notification server. The [class@
+AstalNotifd.Notification] passed to this function is never the same instance that [method@AstalNotifd.Notifd.get_notification] returns. This 
+function will set the state of the passed notification from `DRAFT` to `SENT` after which the notification can no longer be mutated.
+
+:param notification: 
+:param _callback_: 
+:param _callback__target: 
+:return: """
+    pass
+
+
+def send_notification_finish(_res_: Gio.AsyncResult=None) -> None:
     """
-def send_notification(notification=None, _callback_=None, _callback__target=None):
-    """    Send a notification. This function does not depend on Notifd and can be used with any notification server. The [class@
-    AstalNotifd.Notification] passed to this function is never the same instance that [method@AstalNotifd.Notifd.get_notification] returns. This 
-    function will set the state of the passed notification from `DRAFT` to `SENT` after which the notification can no longer be mutated.
-    @type notification: AstalNotifd.Notification
-    @type _callback_: Gio.AsyncReadyCallback
-    @type _callback__target: gpointer
-    @returns: 
-    @rtype: None
-    """
-def send_notification_finish(_res_=None):
-    """    
-    @type _res_: Gio.AsyncResult
-    @returns: 
-    @rtype: None
-    """
+
+:param _res_: 
+:return: """
+    pass
+
 
 class Action(GObject.Object):
     """Notification action."""
-    def __init__(self, id=None, label=None) -> None:
-        """        
-        @type id: str
-        @type label: str
-        @returns: Newly created Action
-        @rtype: Action
+
+    def __init__(self, id: str=None, label: str=None) -> None:
         """
+
+:param self: 
+:param id: 
+:param label: 
+:return: """
+        pass
+
     @staticmethod
-    def new(id=None, label=None):
-        """        
-        @type id: str
-        @type label: str
-        @returns: Newly created Action
-        @rtype: Action
+    def new(id: str=None, label: str=None) -> AstalNotifd.Action:
         """
-    def invoke(self):
-        """        Invoke this action. Note that this method just notifies the client that this action was invoked by the user. If for example this notification 
-        persists through the lifetime of the sending application this action will have no effect.
-        @returns: 
-        @rtype: None
+
+:param id: 
+:param label: 
+:return: """
+        pass
+
+    def invoke(self) -> None:
+        """Invoke this action. Note that this method just notifies the client that this action was invoked by the user. If for example this notification 
+persists through the lifetime of the sending application this action will have no effect.
+
+:param self: 
+:return: """
+        pass
+
+    def get_id(self) -> str:
         """
-    def get_id(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def set_id(self, value: str=None) -> None:
         """
-    def set_id(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_label(self) -> str:
         """
-    def get_label(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def set_label(self, value: str=None) -> None:
         """
-    def set_label(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:param value: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: ActionPrivate
+
 
 class ActionClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class ActionPrivate: ...
+
+class ActionPrivate:
+    """"""
+
 
 class Notifd(GObject.Object):
     """The Notification daemon.
 This class queues up to become the next daemon, while acting as a proxy in the meantime."""
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Notifd
-        @rtype: Notifd
-        """
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Notifd
-        @rtype: Notifd
+    def get_default() -> AstalNotifd.Notifd:
+        """Get the singleton instance
+
+:return: """
+        pass
+
+    def get_notification(self, id: int=None) -> AstalNotifd.Notification:
+        """Gets the [class@AstalNotifd.Notification] with id or null if there is no such Notification.
+
+:param self: 
+:param id: 
+:return: """
+        pass
+
+    def __init__(self) -> None:
         """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def get_default():
-        """        Get the singleton instance
-        @returns: 
-        @rtype: AstalNotifd.Notifd
+    def new() -> AstalNotifd.Notifd:
         """
-    def get_notification(self, id=None):
-        """        Gets the [class@AstalNotifd.Notification] with id or null if there is no such Notification.
-        @type id: int
-        @returns: 
-        @rtype: AstalNotifd.Notification
+
+:return: """
+        pass
+
+    def get_ignore_timeout(self) -> bool:
         """
-    def get_ignore_timeout(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def set_ignore_timeout(self, value: bool=None) -> None:
         """
-    def set_ignore_timeout(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_dont_disturb(self) -> bool:
         """
-    def get_dont_disturb(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def set_dont_disturb(self, value: bool=None) -> None:
         """
-    def set_dont_disturb(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_default_timeout(self) -> int:
         """
-    def get_default_timeout(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def set_default_timeout(self, value: int=None) -> None:
         """
-    def set_default_timeout(self, value=None):
-        """        
-        @type value: int
-        @returns: 
-        @rtype: None
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_notifications(self) -> GLib.List:
         """
-    def get_notifications(self):
-        """        
-        @returns: 
-        @rtype: GLib.List
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: NotifdPrivate
+
 
 class NotifdClass:
-    @property
-    def parent_class(self): ...
-    @property
-    def notified(self): ...
-    @property
-    def resolved(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
+    notified: typing.Any
+    resolved: typing.Any
 
-class NotifdPrivate: ...
+
+class NotifdPrivate:
+    """"""
+
 
 class Notification(GObject.Object):
     """Class representing a notification."""
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Notification
-        @rtype: Notification
+
+    def dismiss(self) -> None:
+        """Resolve this notification with [enum@AstalNotifd.ClosedReason.DISMISSED_BY_USER].
+
+:param self: 
+:return: """
+        pass
+
+    def expire(self) -> None:
+        """Resolve this notification with [enum@AstalNotifd.ClosedReason.EXPIRED]. Note that there should be no reason to use this method because 
+expiration should be left to the daemon.
+
+:param self: 
+:return: """
+        pass
+
+    def invoke(self, action_id: str=None) -> None:
+        """Invoke an [class@AstalNotifd.Action] of this notification.
+
+:param self: 
+:param action_id: 
+:return: """
+        pass
+
+    def add_action(self, action: AstalNotifd.Action=None
+        ) -> AstalNotifd.Notification:
         """
+
+:param self: 
+:param action: 
+:return: """
+        pass
+
+    def set_hint(self, name: str=None, value: GLib.Variant=None
+        ) -> AstalNotifd.Notification:
+        """
+
+:param self: 
+:param name: 
+:param value: 
+:return: """
+        pass
+
+    def get_hint(self, name: str=None) -> GLib.Variant:
+        """
+
+:param self: 
+:param name: 
+:return: """
+        pass
+
+    def __init__(self) -> None:
+        """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Notification
-        @rtype: Notification
+    def new() -> AstalNotifd.Notification:
         """
-    def dismiss(self):
-        """        Resolve this notification with [enum@AstalNotifd.ClosedReason.DISMISSED_BY_USER].
-        @returns: 
-        @rtype: None
+
+:return: """
+        pass
+
+    def get_state(self) -> AstalNotifd.State:
         """
-    def expire(self):
-        """        Resolve this notification with [enum@AstalNotifd.ClosedReason.EXPIRED]. Note that there should be no reason to use this method because 
-        expiration should be left to the daemon.
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_time(self) -> int:
         """
-    def invoke(self, action_id=None):
-        """        Invoke an [class@AstalNotifd.Action] of this notification.
-        @type action_id: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_id(self) -> int:
         """
-    def add_action(self, action=None):
-        """        
-        @type action: AstalNotifd.Action
-        @returns: 
-        @rtype: AstalNotifd.Notification
+
+:param self: 
+:return: """
+        pass
+
+    def set_id(self, value: int=None) -> None:
         """
-    def set_hint(self, name=None, value=None):
-        """        
-        @type name: str
-        @type value: GLib.Variant
-        @returns: 
-        @rtype: AstalNotifd.Notification
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_app_name(self) -> str:
         """
-    def get_hint(self, name=None):
-        """        
-        @type name: str
-        @returns: 
-        @rtype: GLib.Variant
+
+:param self: 
+:return: """
+        pass
+
+    def set_app_name(self, value: str=None) -> None:
         """
-    def get_state(self):
-        """        
-        @returns: 
-        @rtype: AstalNotifd.State
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_app_icon(self) -> str:
         """
-    def get_time(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def set_app_icon(self, value: str=None) -> None:
         """
-    def get_id(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_summary(self) -> str:
         """
-    def set_id(self, value=None):
-        """        
-        @type value: int
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_summary(self, value: str=None) -> None:
         """
-    def get_app_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_body(self) -> str:
         """
-    def set_app_name(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_body(self, value: str=None) -> None:
         """
-    def get_app_icon(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_expire_timeout(self) -> int:
         """
-    def set_app_icon(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_expire_timeout(self, value: int=None) -> None:
         """
-    def get_summary(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_actions(self) -> GLib.List:
         """
-    def set_summary(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_hints(self) -> GLib.Variant:
         """
-    def get_body(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_image(self) -> str:
         """
-    def set_body(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_image(self, value: str=None) -> None:
         """
-    def get_expire_timeout(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_action_icons(self) -> bool:
         """
-    def set_expire_timeout(self, value=None):
-        """        
-        @type value: int
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_action_icons(self, value: bool=None) -> None:
         """
-    def get_actions(self):
-        """        
-        @returns: 
-        @rtype: GLib.List
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_category(self) -> str:
         """
-    def get_hints(self):
-        """        
-        @returns: 
-        @rtype: GLib.Variant
+
+:param self: 
+:return: """
+        pass
+
+    def set_category(self, value: str=None) -> None:
         """
-    def get_image(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_desktop_entry(self) -> str:
         """
-    def set_image(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_desktop_entry(self, value: str=None) -> None:
         """
-    def get_action_icons(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_resident(self) -> bool:
         """
-    def set_action_icons(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_resident(self, value: bool=None) -> None:
         """
-    def get_category(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_sound_file(self) -> str:
         """
-    def set_category(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_sound_file(self, value: str=None) -> None:
         """
-    def get_desktop_entry(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_sound_name(self) -> str:
         """
-    def set_desktop_entry(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_sound_name(self, value: str=None) -> None:
         """
-    def get_resident(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_suppress_sound(self) -> bool:
         """
-    def set_resident(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_suppress_sound(self, value: bool=None) -> None:
         """
-    def get_sound_file(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_transient(self) -> bool:
         """
-    def set_sound_file(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_transient(self, value: bool=None) -> None:
         """
-    def get_sound_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_x(self) -> int:
         """
-    def set_sound_name(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_x(self, value: int=None) -> None:
         """
-    def get_suppress_sound(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_y(self) -> int:
         """
-    def set_suppress_sound(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_y(self, value: int=None) -> None:
         """
-    def get_transient(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_urgency(self) -> AstalNotifd.Urgency:
         """
-    def set_transient(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_urgency(self, value: AstalNotifd.Urgency=None) -> None:
         """
-    def get_x(self):
-        """        
-        @returns: 
-        @rtype: int
-        """
-    def set_x(self, value=None):
-        """        
-        @type value: int
-        @returns: 
-        @rtype: None
-        """
-    def get_y(self):
-        """        
-        @returns: 
-        @rtype: int
-        """
-    def set_y(self, value=None):
-        """        
-        @type value: int
-        @returns: 
-        @rtype: None
-        """
-    def get_urgency(self):
-        """        
-        @returns: 
-        @rtype: AstalNotifd.Urgency
-        """
-    def set_urgency(self, value=None):
-        """        
-        @type value: AstalNotifd.Urgency
-        @returns: 
-        @rtype: None
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:param value: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: NotificationPrivate
+
 
 class NotificationClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class NotificationPrivate: ...
+
+class NotificationPrivate:
+    """"""

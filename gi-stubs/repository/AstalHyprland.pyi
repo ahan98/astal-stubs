@@ -1,811 +1,1105 @@
-from gi.repository import GObject as GObject
+# -*- coding: utf-8 -*-
+from gi.repository import Gio
+from gi.repository import GLib
+from gi.repository import GObject
+import typing
+import enum
+from gi.repository import AstalHyprland
 
-class Fullscreen:
-    CURRENT: int
-    NONE: int
-    MAXIMIZED: int
-    FULLSCREEN: int
 
-class MonitorTransform:
-    NORMAL: int
-    ROTATE_90_DEG: int
-    ROTATE_180_DEG: int
-    ROTATE_270_DEG: int
-    FLIPPED: int
-    FLIPPED_ROTATE_90_DEG: int
-    FLIPPED_ROTATE_180_DEG: int
-    FLIPPED_ROTATE_270_DEG: int
+class Fullscreen(enum.Enum):
+    """"""
+    CURRENT = -1
+    NONE = 0
+    MAXIMIZED = 1
+    FULLSCREEN = 2
 
-MAJOR_VERSION: int
-MINOR_VERSION: int
-MICRO_VERSION: int
-VERSION: str
 
-def get_default():
-    """    
-    @returns: 
-    @rtype: AstalHyprland.Hyprland
+class MonitorTransform(enum.Enum):
+    """"""
+    NORMAL = 0
+    ROTATE_90_DEG = 1
+    ROTATE_180_DEG = 2
+    ROTATE_270_DEG = 3
+    FLIPPED = 4
+    FLIPPED_ROTATE_90_DEG = 5
+    FLIPPED_ROTATE_180_DEG = 6
+    FLIPPED_ROTATE_270_DEG = 7
+
+
+MAJOR_VERSION = '0'
+MINOR_VERSION = '1'
+MICRO_VERSION = '0'
+VERSION = '0.1.0'
+
+
+def get_default() -> AstalHyprland.Hyprland:
     """
 
+:return: """
+    pass
+
+
 class Client(GObject.Object):
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Client
-        @rtype: Client
+    """"""
+
+    def kill(self) -> None:
         """
+
+:param self: 
+:return: """
+        pass
+
+    def focus(self) -> None:
+        """
+
+:param self: 
+:return: """
+        pass
+
+    def move_to(self, ws: AstalHyprland.Workspace=None) -> None:
+        """
+
+:param self: 
+:param ws: 
+:return: """
+        pass
+
+    def toggle_floating(self) -> None:
+        """
+
+:param self: 
+:return: """
+        pass
+
+    def __init__(self) -> None:
+        """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Client
-        @rtype: Client
+    def new() -> AstalHyprland.Client:
         """
-    def kill(self):
-        """        
-        @returns: 
-        @rtype: None
+
+:return: """
+        pass
+
+    def get_address(self) -> str:
         """
-    def focus(self):
-        """        
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_mapped(self) -> bool:
         """
-    def move_to(self, ws=None):
-        """        
-        @type ws: AstalHyprland.Workspace
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_hidden(self) -> bool:
         """
-    def toggle_floating(self):
-        """        
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_x(self) -> int:
         """
-    def get_address(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_y(self) -> int:
         """
-    def get_mapped(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_width(self) -> int:
         """
-    def get_hidden(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_height(self) -> int:
         """
-    def get_x(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_workspace(self) -> AstalHyprland.Workspace:
         """
-    def get_y(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_floating(self) -> bool:
         """
-    def get_width(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_monitor(self) -> AstalHyprland.Monitor:
         """
-    def get_height(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_class(self) -> str:
         """
-    def get_workspace(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Workspace
+
+:param self: 
+:return: """
+        pass
+
+    def get_title(self) -> str:
         """
-    def get_floating(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_initial_class(self) -> str:
         """
-    def get_monitor(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Monitor
+
+:param self: 
+:return: """
+        pass
+
+    def get_initial_title(self) -> str:
         """
-    def get_class(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_pid(self) -> int:
         """
-    def get_title(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_xwayland(self) -> bool:
         """
-    def get_initial_class(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_pinned(self) -> bool:
         """
-    def get_initial_title(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_fullscreen(self) -> AstalHyprland.Fullscreen:
         """
-    def get_pid(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_fullscreen_client(self) -> AstalHyprland.Fullscreen:
         """
-    def get_xwayland(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_swallowing(self) -> str:
         """
-    def get_pinned(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_focus_history_id(self) -> int:
         """
-    def get_fullscreen(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Fullscreen
-        """
-    def get_fullscreen_client(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Fullscreen
-        """
-    def get_swallowing(self):
-        """        
-        @returns: 
-        @rtype: str
-        """
-    def get_focus_history_id(self):
-        """        
-        @returns: 
-        @rtype: int
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: ClientPrivate
+
 
 class ClientClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class ClientPrivate: ...
+
+class ClientPrivate:
+    """"""
+
 
 class Hyprland(GObject.Object):
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Hyprland
-        @rtype: Hyprland
-        """
+    """"""
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Hyprland
-        @rtype: Hyprland
+    def get_default() -> AstalHyprland.Hyprland:
         """
+
+:return: """
+        pass
+
+    def get_monitor(self, id: int=None) -> AstalHyprland.Monitor:
+        """
+
+:param self: 
+:param id: 
+:return: """
+        pass
+
+    def get_workspace(self, id: int=None) -> AstalHyprland.Workspace:
+        """
+
+:param self: 
+:param id: 
+:return: """
+        pass
+
+    def get_client(self, address: str=None) -> AstalHyprland.Client:
+        """
+
+:param self: 
+:param address: 
+:return: """
+        pass
+
+    def get_monitor_by_name(self, name: str=None) -> AstalHyprland.Monitor:
+        """
+
+:param self: 
+:param name: 
+:return: """
+        pass
+
+    def get_workspace_by_name(self, name: str=None) -> AstalHyprland.Workspace:
+        """
+
+:param self: 
+:param name: 
+:return: """
+        pass
+
+    def message(self, message: str=None) -> str:
+        """
+
+:param self: 
+:param message: 
+:return: """
+        pass
+
+    def message_async(self, message: str=None, _callback_:
+        Gio.AsyncReadyCallback=None, _callback__target: typing.Any=None
+        ) -> None:
+        """
+
+:param self: 
+:param message: 
+:param _callback_: 
+:param _callback__target: 
+:return: """
+        pass
+
+    def message_finish(self, _res_: Gio.AsyncResult=None) -> str:
+        """
+
+:param self: 
+:param _res_: 
+:return: """
+        pass
+
+    def dispatch(self, dispatcher: str=None, args: str=None) -> None:
+        """
+
+:param self: 
+:param dispatcher: 
+:param args: 
+:return: """
+        pass
+
+    def move_cursor(self, x: int=None, y: int=None) -> None:
+        """
+
+:param self: 
+:param x: 
+:param y: 
+:return: """
+        pass
+
+    def sync_monitors(self, _callback_: Gio.AsyncReadyCallback=None,
+        _callback__target: typing.Any=None) -> None:
+        """
+
+:param self: 
+:param _callback_: 
+:param _callback__target: 
+:return: """
+        pass
+
+    def sync_monitors_finish(self, _res_: Gio.AsyncResult=None) -> None:
+        """
+
+:param self: 
+:param _res_: 
+:return: """
+        pass
+
+    def sync_workspaces(self, _callback_: Gio.AsyncReadyCallback=None,
+        _callback__target: typing.Any=None) -> None:
+        """
+
+:param self: 
+:param _callback_: 
+:param _callback__target: 
+:return: """
+        pass
+
+    def sync_workspaces_finish(self, _res_: Gio.AsyncResult=None) -> None:
+        """
+
+:param self: 
+:param _res_: 
+:return: """
+        pass
+
+    def sync_clients(self, _callback_: Gio.AsyncReadyCallback=None,
+        _callback__target: typing.Any=None) -> None:
+        """
+
+:param self: 
+:param _callback_: 
+:param _callback__target: 
+:return: """
+        pass
+
+    def sync_clients_finish(self, _res_: Gio.AsyncResult=None) -> None:
+        """
+
+:param self: 
+:param _res_: 
+:return: """
+        pass
+
+    def __init__(self) -> None:
+        """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def get_default():
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Hyprland
+    def new() -> AstalHyprland.Hyprland:
         """
-    def get_monitor(self, id=None):
-        """        
-        @type id: int
-        @returns: 
-        @rtype: AstalHyprland.Monitor
+
+:return: """
+        pass
+
+    def get_monitors(self) -> GLib.List:
         """
-    def get_workspace(self, id=None):
-        """        
-        @type id: int
-        @returns: 
-        @rtype: AstalHyprland.Workspace
+
+:param self: 
+:return: """
+        pass
+
+    def get_workspaces(self) -> GLib.List:
         """
-    def get_client(self, address=None):
-        """        
-        @type address: str
-        @returns: 
-        @rtype: AstalHyprland.Client
+
+:param self: 
+:return: """
+        pass
+
+    def get_clients(self) -> GLib.List:
         """
-    def get_monitor_by_name(self, name=None):
-        """        
-        @type name: str
-        @returns: 
-        @rtype: AstalHyprland.Monitor
+
+:param self: 
+:return: """
+        pass
+
+    def get_focused_workspace(self) -> AstalHyprland.Workspace:
         """
-    def get_workspace_by_name(self, name=None):
-        """        
-        @type name: str
-        @returns: 
-        @rtype: AstalHyprland.Workspace
+
+:param self: 
+:return: """
+        pass
+
+    def get_focused_monitor(self) -> AstalHyprland.Monitor:
         """
-    def message(self, message=None):
-        """        
-        @type message: str
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_focused_client(self) -> AstalHyprland.Client:
         """
-    def message_async(self, message=None, _callback_=None, _callback__target=None):
-        """        
-        @type message: str
-        @type _callback_: Gio.AsyncReadyCallback
-        @type _callback__target: gpointer
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_binds(self) -> GLib.List:
         """
-    def message_finish(self, _res_=None):
-        """        
-        @type _res_: Gio.AsyncResult
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_cursor_position(self) -> AstalHyprland.Position:
         """
-    def dispatch(self, dispatcher=None, args=None):
-        """        
-        @type dispatcher: str
-        @type args: str
-        @returns: 
-        @rtype: None
-        """
-    def move_cursor(self, x=None, y=None):
-        """        
-        @type x: int
-        @type y: int
-        @returns: 
-        @rtype: None
-        """
-    def sync_monitors(self, _callback_=None, _callback__target=None):
-        """        
-        @type _callback_: Gio.AsyncReadyCallback
-        @type _callback__target: gpointer
-        @returns: 
-        @rtype: None
-        """
-    def sync_monitors_finish(self, _res_=None):
-        """        
-        @type _res_: Gio.AsyncResult
-        @returns: 
-        @rtype: None
-        """
-    def sync_workspaces(self, _callback_=None, _callback__target=None):
-        """        
-        @type _callback_: Gio.AsyncReadyCallback
-        @type _callback__target: gpointer
-        @returns: 
-        @rtype: None
-        """
-    def sync_workspaces_finish(self, _res_=None):
-        """        
-        @type _res_: Gio.AsyncResult
-        @returns: 
-        @rtype: None
-        """
-    def sync_clients(self, _callback_=None, _callback__target=None):
-        """        
-        @type _callback_: Gio.AsyncReadyCallback
-        @type _callback__target: gpointer
-        @returns: 
-        @rtype: None
-        """
-    def sync_clients_finish(self, _res_=None):
-        """        
-        @type _res_: Gio.AsyncResult
-        @returns: 
-        @rtype: None
-        """
-    def get_monitors(self):
-        """        
-        @returns: 
-        @rtype: GLib.List
-        """
-    def get_workspaces(self):
-        """        
-        @returns: 
-        @rtype: GLib.List
-        """
-    def get_clients(self):
-        """        
-        @returns: 
-        @rtype: GLib.List
-        """
-    def get_focused_workspace(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Workspace
-        """
-    def get_focused_monitor(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Monitor
-        """
-    def get_focused_client(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Client
-        """
-    def get_binds(self):
-        """        
-        @returns: 
-        @rtype: GLib.List
-        """
-    def get_cursor_position(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Position
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: HyprlandPrivate
+
 
 class HyprlandClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class HyprlandPrivate: ...
+
+class HyprlandPrivate:
+    """"""
+
 
 class Monitor(GObject.Object):
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Monitor
-        @rtype: Monitor
+    """"""
+
+    def focus(self) -> None:
         """
+
+:param self: 
+:return: """
+        pass
+
+    def __init__(self) -> None:
+        """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Monitor
-        @rtype: Monitor
+    def new() -> AstalHyprland.Monitor:
         """
-    def focus(self):
-        """        
-        @returns: 
-        @rtype: None
+
+:return: """
+        pass
+
+    def get_id(self) -> int:
         """
-    def get_id(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_name(self) -> str:
         """
-    def get_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_description(self) -> str:
         """
-    def get_description(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_make(self) -> str:
         """
-    def get_make(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_model(self) -> str:
         """
-    def get_model(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_serial(self) -> str:
         """
-    def get_serial(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_width(self) -> int:
         """
-    def get_width(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_height(self) -> int:
         """
-    def get_height(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_refresh_rate(self) -> float:
         """
-    def get_refresh_rate(self):
-        """        
-        @returns: 
-        @rtype: float
+
+:param self: 
+:return: """
+        pass
+
+    def get_x(self) -> int:
         """
-    def get_x(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_y(self) -> int:
         """
-    def get_y(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_active_workspace(self) -> AstalHyprland.Workspace:
         """
-    def get_active_workspace(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Workspace
+
+:param self: 
+:return: """
+        pass
+
+    def get_special_workspace(self) -> AstalHyprland.Workspace:
         """
-    def get_special_workspace(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Workspace
+
+:param self: 
+:return: """
+        pass
+
+    def get_reserved_top(self) -> int:
         """
-    def get_reserved_top(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_reserved_bottom(self) -> int:
         """
-    def get_reserved_bottom(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_reserved_left(self) -> int:
         """
-    def get_reserved_left(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_reserved_right(self) -> int:
         """
-    def get_reserved_right(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_scale(self) -> float:
         """
-    def get_scale(self):
-        """        
-        @returns: 
-        @rtype: float
+
+:param self: 
+:return: """
+        pass
+
+    def get_transform(self) -> AstalHyprland.MonitorTransform:
         """
-    def get_transform(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.MonitorTransform
+
+:param self: 
+:return: """
+        pass
+
+    def get_focused(self) -> bool:
         """
-    def get_focused(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_dpms_status(self) -> bool:
         """
-    def get_dpms_status(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_vrr(self) -> bool:
         """
-    def get_vrr(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_actively_tearing(self) -> bool:
         """
-    def get_actively_tearing(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_disabled(self) -> bool:
         """
-    def get_disabled(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_current_format(self) -> str:
         """
-    def get_current_format(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_available_modes(self) -> typing.Any:
         """
-    def get_available_modes(self):
-        """        
-        @rtype: None
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: MonitorPrivate
+
 
 class MonitorClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class MonitorPrivate: ...
+
+class MonitorPrivate:
+    """"""
+
 
 class Bind(GObject.Object):
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Bind
-        @rtype: Bind
+    """"""
+
+    def __init__(self) -> None:
         """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Bind
-        @rtype: Bind
+    def new() -> AstalHyprland.Bind:
         """
-    def get_locked(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:return: """
+        pass
+
+    def get_locked(self) -> bool:
         """
-    def set_locked(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_locked(self, value: bool=None) -> None:
         """
-    def get_mouse(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_mouse(self) -> bool:
         """
-    def set_mouse(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_mouse(self, value: bool=None) -> None:
         """
-    def get_release(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_release(self) -> bool:
         """
-    def set_release(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_release(self, value: bool=None) -> None:
         """
-    def get_repeat(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_repeat(self) -> bool:
         """
-    def set_repeat(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_repeat(self, value: bool=None) -> None:
         """
-    def get_long_press(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_long_press(self) -> bool:
         """
-    def set_long_press(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_long_press(self, value: bool=None) -> None:
         """
-    def get_non_consuming(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_non_consuming(self) -> bool:
         """
-    def set_non_consuming(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_non_consuming(self, value: bool=None) -> None:
         """
-    def get_has_description(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_has_description(self) -> bool:
         """
-    def set_has_description(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_has_description(self, value: bool=None) -> None:
         """
-    def get_modmask(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_modmask(self) -> int:
         """
-    def set_modmask(self, value=None):
-        """        
-        @type value: int
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_modmask(self, value: int=None) -> None:
         """
-    def get_submap(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_submap(self) -> str:
         """
-    def set_submap(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_submap(self, value: str=None) -> None:
         """
-    def get_key(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_key(self) -> str:
         """
-    def set_key(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_key(self, value: str=None) -> None:
         """
-    def get_keycode(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_keycode(self) -> int:
         """
-    def set_keycode(self, value=None):
-        """        
-        @type value: int
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_keycode(self, value: int=None) -> None:
         """
-    def get_catch_all(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_catch_all(self) -> bool:
         """
-    def set_catch_all(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_catch_all(self, value: bool=None) -> None:
         """
-    def get_description(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_description(self) -> str:
         """
-    def set_description(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_description(self, value: str=None) -> None:
         """
-    def get_dispatcher(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_dispatcher(self) -> str:
         """
-    def set_dispatcher(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_dispatcher(self, value: str=None) -> None:
         """
-    def get_arg(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_arg(self) -> str:
         """
-    def set_arg(self, value=None):
-        """        
-        @type value: str
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_arg(self, value: str=None) -> None:
         """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:param value: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: BindPrivate
+
 
 class BindClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class BindPrivate: ...
+
+class BindPrivate:
+    """"""
+
 
 class Position(GObject.Object):
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Position
-        @rtype: Position
+    """"""
+
+    def __init__(self) -> None:
         """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Position
-        @rtype: Position
+    def new() -> AstalHyprland.Position:
         """
-    def get_x(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:return: """
+        pass
+
+    def get_x(self) -> int:
         """
-    def set_x(self, value=None):
-        """        
-        @type value: int
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_x(self, value: int=None) -> None:
         """
-    def get_y(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_y(self) -> int:
         """
-    def set_y(self, value=None):
-        """        
-        @type value: int
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_y(self, value: int=None) -> None:
         """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:param value: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: PositionPrivate
+
 
 class PositionClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class PositionPrivate: ...
+
+class PositionPrivate:
+    """"""
+
 
 class Workspace(GObject.Object):
+    """"""
+
     @staticmethod
-    def dummy(id=None, monitor=None):
-        """        
-        @type id: int
-        @type monitor: AstalHyprland.Monitor
-        @returns: Newly created Workspace
-        @rtype: Workspace
+    def dummy(id: int=None, monitor: AstalHyprland.Monitor=None
+        ) -> AstalHyprland.Workspace:
         """
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Workspace
-        @rtype: Workspace
+
+:param id: 
+:param monitor: 
+:return: """
+        pass
+
+    def focus(self) -> None:
         """
+
+:param self: 
+:return: """
+        pass
+
+    def move_to(self, m: AstalHyprland.Monitor=None) -> None:
+        """
+
+:param self: 
+:param m: 
+:return: """
+        pass
+
+    def __init__(self) -> None:
+        """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Workspace
-        @rtype: Workspace
+    def new() -> AstalHyprland.Workspace:
         """
-    def focus(self):
-        """        
-        @returns: 
-        @rtype: None
+
+:return: """
+        pass
+
+    def get_id(self) -> int:
         """
-    def move_to(self, m=None):
-        """        
-        @type m: AstalHyprland.Monitor
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_name(self) -> str:
         """
-    def get_id(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_monitor(self) -> AstalHyprland.Monitor:
         """
-    def get_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_clients(self) -> GLib.List:
         """
-    def get_monitor(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Monitor
+
+:param self: 
+:return: """
+        pass
+
+    def get_has_fullscreen(self) -> bool:
         """
-    def get_clients(self):
-        """        
-        @returns: 
-        @rtype: GLib.List
+
+:param self: 
+:return: """
+        pass
+
+    def get_last_client(self) -> AstalHyprland.Client:
         """
-    def get_has_fullscreen(self):
-        """        
-        @returns: 
-        @rtype: bool
-        """
-    def get_last_client(self):
-        """        
-        @returns: 
-        @rtype: AstalHyprland.Client
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: WorkspacePrivate
+    _clients: GLib.List
+
 
 class WorkspaceClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class WorkspacePrivate: ...
+
+class WorkspacePrivate:
+    """"""

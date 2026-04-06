@@ -1,415 +1,563 @@
-from gi.repository import GObject as GObject
+# -*- coding: utf-8 -*-
+from gi.repository import NM
+from gi.repository import GLib
+from gi.repository import Gio
+from gi.repository import GObject
+import enum
+import typing
+from gi.repository import AstalNetwork
 
-class Primary:
-    UNKNOWN: int
-    WIRED: int
-    WIFI: int
 
-def primary_to_string(self):
-    """    
-    @returns: 
-    @rtype: str
-    """
-def primary_from_connection_type(type=None):
-    """    
-    @type type: str
-    @returns: 
-    @rtype: AstalNetwork.Primary
-    """
+class Primary(enum.Enum):
+    """"""
+    UNKNOWN = 0
+    WIRED = 1
+    WIFI = 2
 
-class State:
-    UNKNOWN: int
-    ASLEEP: int
-    DISCONNECTED: int
-    DISCONNECTING: int
-    CONNECTING: int
-    CONNECTED_LOCAL: int
-    CONNECTED_SITE: int
-    CONNECTED_GLOBAL: int
 
-def state_to_string(self):
-    """    
-    @returns: 
-    @rtype: str
+def primary_to_string(self) -> str:
     """
 
-class Connectivity:
-    UNKNOWN: int
-    NONE: int
-    PORTAL: int
-    LIMITED: int
-    FULL: int
+:param self: 
+:return: """
+    pass
 
-def connectivity_to_string(self):
-    """    
-    @returns: 
-    @rtype: str
+
+def primary_from_connection_type(type: str=None) -> AstalNetwork.Primary:
     """
 
-class DeviceState:
-    UNKNOWN: int
-    UNMANAGED: int
-    UNAVAILABLE: int
-    DISCONNECTED: int
-    PREPARE: int
-    CONFIG: int
-    NEED_AUTH: int
-    IP_CONFIG: int
-    IP_CHECK: int
-    SECONDARIES: int
-    ACTIVATED: int
-    DEACTIVATING: int
-    FAILED: int
+:param type: 
+:return: """
+    pass
 
-def device_state_to_string(self):
-    """    
-    @returns: 
-    @rtype: str
+
+class State(enum.Enum):
+    """"""
+    UNKNOWN = 0
+    ASLEEP = 10
+    DISCONNECTED = 20
+    DISCONNECTING = 30
+    CONNECTING = 40
+    CONNECTED_LOCAL = 50
+    CONNECTED_SITE = 60
+    CONNECTED_GLOBAL = 70
+
+
+def state_to_string(self) -> str:
     """
 
-class Internet:
-    CONNECTED: int
-    CONNECTING: int
-    DISCONNECTED: int
+:param self: 
+:return: """
+    pass
 
-def internet_from_device(device=None):
-    """    
-    @type device: NM.Device
-    @returns: 
-    @rtype: AstalNetwork.Internet
-    """
-def internet_to_string(self):
-    """    
-    @returns: 
-    @rtype: str
+
+class Connectivity(enum.Enum):
+    """"""
+    UNKNOWN = 0
+    NONE = 1
+    PORTAL = 2
+    LIMITED = 3
+    FULL = 4
+
+
+def connectivity_to_string(self) -> str:
     """
 
-MAJOR_VERSION: int
-MINOR_VERSION: int
-MICRO_VERSION: int
-VERSION: str
+:param self: 
+:return: """
+    pass
 
-def get_default():
-    """    
-    @returns: 
-    @rtype: AstalNetwork.Network
+
+class DeviceState(enum.Enum):
+    """"""
+    UNKNOWN = 0
+    UNMANAGED = 10
+    UNAVAILABLE = 20
+    DISCONNECTED = 30
+    PREPARE = 40
+    CONFIG = 50
+    NEED_AUTH = 60
+    IP_CONFIG = 70
+    IP_CHECK = 80
+    SECONDARIES = 90
+    ACTIVATED = 100
+    DEACTIVATING = 110
+    FAILED = 120
+
+
+def device_state_to_string(self) -> str:
     """
+
+:param self: 
+:return: """
+    pass
+
+
+class Internet(enum.Enum):
+    """"""
+    CONNECTED = 0
+    CONNECTING = 1
+    DISCONNECTED = 2
+
+
+def internet_from_device(device: NM.Device=None) -> AstalNetwork.Internet:
+    """
+
+:param device: 
+:return: """
+    pass
+
+
+def internet_to_string(self) -> str:
+    """
+
+:param self: 
+:return: """
+    pass
+
+
+MAJOR_VERSION = '0'
+MINOR_VERSION = '1'
+MICRO_VERSION = '0'
+VERSION = '0.1.0'
+
+
+def get_default() -> AstalNetwork.Network:
+    """
+
+:return: """
+    pass
+
 
 class AccessPoint(GObject.Object):
-    def get_connections(self):
-        """        
-        @rtype: None
+    """"""
+
+    def get_connections(self) -> typing.Any:
         """
-    def get_path(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_path(self) -> str:
         """
-    def activate(self, password=None, _callback_=None, _callback__target=None):
-        '''        Activates the first connection associated with this AccessPoint or creates a new SimpleConnection using "wpa-psk" and activates it. 
-        Returns whether the connection is the new active connection.
-        @type password: str
-        @type _callback_: Gio.AsyncReadyCallback
-        @type _callback__target: gpointer
-        @returns: 
-        @rtype: None
-        '''
-    def activate_finish(self, _res_=None):
-        """        
-        @type _res_: Gio.AsyncResult
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def activate(self, password: str=None, _callback_:
+        Gio.AsyncReadyCallback=None, _callback__target: typing.Any=None
+        ) -> None:
+        """Activates the first connection associated with this AccessPoint or creates a new SimpleConnection using "wpa-psk" and activates it. 
+Returns whether the connection is the new active connection.
+
+:param self: 
+:param password: 
+:param _callback_: 
+:param _callback__target: 
+:return: """
+        pass
+
+    def activate_finish(self, _res_: Gio.AsyncResult=None) -> None:
         """
-    def get_bandwidth(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:param _res_: 
+:return: """
+        pass
+
+    def get_bandwidth(self) -> int:
         """
-    def get_bssid(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_bssid(self) -> str:
         """
-    def get_frequency(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_frequency(self) -> int:
         """
-    def get_last_seen(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_last_seen(self) -> int:
         """
-    def get_max_bitrate(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_max_bitrate(self) -> int:
         """
-    def get_strength(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_strength(self) -> int:
         """
-    def get_icon_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_icon_name(self) -> str:
         """
-    def get_mode(self):
-        """        
-        @returns: 
-        @rtype: NM.80211Mode
+
+:param self: 
+:return: """
+        pass
+
+    def get_mode(self) -> NM.80211Mode:
         """
-    def get_flags(self):
-        """        
-        @returns: 
-        @rtype: NM.80211ApFlags
+
+:param self: 
+:return: """
+        pass
+
+    def get_flags(self) -> NM.80211ApFlags:
         """
-    def get_rsn_flags(self):
-        """        
-        @returns: 
-        @rtype: NM.80211ApSecurityFlags
+
+:param self: 
+:return: """
+        pass
+
+    def get_rsn_flags(self) -> NM.80211ApSecurityFlags:
         """
-    def get_wpa_flags(self):
-        """        
-        @returns: 
-        @rtype: NM.80211ApSecurityFlags
+
+:param self: 
+:return: """
+        pass
+
+    def get_wpa_flags(self) -> NM.80211ApSecurityFlags:
         """
-    def get_requires_password(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_requires_password(self) -> bool:
         """
-    def get_ssid(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_ssid(self) -> str:
         """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
-    @property
-    def ap(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: AccessPointPrivate
+    ap: NM.AccessPoint
+
 
 class AccessPointClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class AccessPointPrivate: ...
+
+class AccessPointPrivate:
+    """"""
+
 
 class Network(GObject.Object):
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Network
-        @rtype: Network
-        """
+    """"""
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Network
-        @rtype: Network
+    def get_default() -> AstalNetwork.Network:
         """
+
+:return: """
+        pass
+
+    def __init__(self) -> None:
+        """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def get_default():
-        """        
-        @returns: 
-        @rtype: AstalNetwork.Network
+    def new() -> AstalNetwork.Network:
         """
-    def get_client(self):
-        """        
-        @returns: 
-        @rtype: NM.Client
+
+:return: """
+        pass
+
+    def get_client(self) -> NM.Client:
         """
-    def get_wifi(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.Wifi
+
+:param self: 
+:return: """
+        pass
+
+    def get_wifi(self) -> AstalNetwork.Wifi:
         """
-    def get_wired(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.Wired
+
+:param self: 
+:return: """
+        pass
+
+    def get_wired(self) -> AstalNetwork.Wired:
         """
-    def get_primary(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.Primary
+
+:param self: 
+:return: """
+        pass
+
+    def get_primary(self) -> AstalNetwork.Primary:
         """
-    def get_connectivity(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.Connectivity
+
+:param self: 
+:return: """
+        pass
+
+    def get_connectivity(self) -> AstalNetwork.Connectivity:
         """
-    def get_state(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.State
+
+:param self: 
+:return: """
+        pass
+
+    def get_state(self) -> AstalNetwork.State:
         """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: NetworkPrivate
+
 
 class NetworkClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class NetworkPrivate: ...
+
+class NetworkPrivate:
+    """"""
+
 
 class Wifi(GObject.Object):
-    def scan(self):
-        """        
-        @returns: 
-        @rtype: None
+    """"""
+
+    def scan(self) -> None:
         """
-    def deactivate_connection(self, _callback_=None, _callback__target=None):
-        """        
-        @type _callback_: Gio.AsyncReadyCallback
-        @type _callback__target: gpointer
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def deactivate_connection(self, _callback_: Gio.AsyncReadyCallback=None,
+        _callback__target: typing.Any=None) -> None:
         """
-    def deactivate_connection_finish(self, _res_=None):
-        """        
-        @type _res_: Gio.AsyncResult
-        @returns: 
-        @rtype: None
+
+:param self: 
+:param _callback_: 
+:param _callback__target: 
+:return: """
+        pass
+
+    def deactivate_connection_finish(self, _res_: Gio.AsyncResult=None
+        ) -> None:
         """
-    def get_device(self):
-        """        
-        @returns: 
-        @rtype: NM.DeviceWifi
+
+:param self: 
+:param _res_: 
+:return: """
+        pass
+
+    def get_device(self) -> NM.DeviceWifi:
         """
-    def set_device(self, value=None):
-        """        
-        @type value: NM.DeviceWifi
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_device(self, value: NM.DeviceWifi=None) -> None:
         """
-    def get_active_connection(self):
-        """        
-        @returns: 
-        @rtype: NM.ActiveConnection
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_active_connection(self) -> NM.ActiveConnection:
         """
-    def get_active_access_point(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.AccessPoint
+
+:param self: 
+:return: """
+        pass
+
+    def get_active_access_point(self) -> AstalNetwork.AccessPoint:
         """
-    def get_access_points(self):
-        """        
-        @returns: 
-        @rtype: GLib.List
+
+:param self: 
+:return: """
+        pass
+
+    def get_access_points(self) -> GLib.List:
         """
-    def get_enabled(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_enabled(self) -> bool:
         """
-    def set_enabled(self, value=None):
-        """        
-        @type value: bool
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_enabled(self, value: bool=None) -> None:
         """
-    def get_internet(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.Internet
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_internet(self) -> AstalNetwork.Internet:
         """
-    def get_bandwidth(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_bandwidth(self) -> int:
         """
-    def get_ssid(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_ssid(self) -> str:
         """
-    def get_strength(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_strength(self) -> int:
         """
-    def get_frequency(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_frequency(self) -> int:
         """
-    def get_state(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.DeviceState
+
+:param self: 
+:return: """
+        pass
+
+    def get_state(self) -> AstalNetwork.DeviceState:
         """
-    def get_icon_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_icon_name(self) -> str:
         """
-    def get_is_hotspot(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_is_hotspot(self) -> bool:
         """
-    def get_scanning(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_scanning(self) -> bool:
         """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: WifiPrivate
+
 
 class WifiClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class WifiPrivate: ...
+
+class WifiPrivate:
+    """"""
+
 
 class Wired(GObject.Object):
-    def get_device(self):
-        """        
-        @returns: 
-        @rtype: NM.DeviceEthernet
+    """"""
+
+    def get_device(self) -> NM.DeviceEthernet:
         """
-    def set_device(self, value=None):
-        """        
-        @type value: NM.DeviceEthernet
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def set_device(self, value: NM.DeviceEthernet=None) -> None:
         """
-    def get_speed(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:param value: 
+:return: """
+        pass
+
+    def get_speed(self) -> int:
         """
-    def get_internet(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.Internet
+
+:param self: 
+:return: """
+        pass
+
+    def get_internet(self) -> AstalNetwork.Internet:
         """
-    def get_state(self):
-        """        
-        @returns: 
-        @rtype: AstalNetwork.DeviceState
+
+:param self: 
+:return: """
+        pass
+
+    def get_state(self) -> AstalNetwork.DeviceState:
         """
-    def get_icon_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_icon_name(self) -> str:
         """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
-    @property
-    def connection(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: WiredPrivate
+    connection: NM.ActiveConnection
+
 
 class WiredClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class WiredPrivate: ...
+
+class WiredPrivate:
+    """"""

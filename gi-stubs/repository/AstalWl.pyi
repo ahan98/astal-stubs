@@ -1,315 +1,396 @@
-from gi.repository import GObject as GObject
+# -*- coding: utf-8 -*-
+from gi.repository import GObject
+from gi.repository import Wl
+from gi.repository import AstalWl
+import enum
+from gi.repository import GLib
 
-class OutputSubpixel:
+
+class OutputSubpixel(enum.Enum):
     """This enumeration describes how the physical pixels on an output are laid out."""
-    UNKNOWN: int
-    NONE: int
-    HORIZONTAL_RGB: int
-    HORIZONTAL_BGR: int
-    VERTICAL_RGB: int
-    VERTICAL_BGR: int
+    UNKNOWN = 0
+    NONE = 1
+    HORIZONTAL_RGB = 2
+    HORIZONTAL_BGR = 3
+    VERTICAL_RGB = 4
+    VERTICAL_BGR = 5
 
-class OutputTransform:
+
+class OutputTransform(enum.Enum):
     """This describes transformations that clients and compositors apply to buffer contents. The flipped values correspond to an initial flip around a 
 vertical axis followed by rotation."""
-    NORMAL: int
-    ROTATE_90: int
-    ROTATE_180: int
-    ROTATE_270: int
-    FLIPPED: int
-    FLIPPED_90: int
-    FLIPPED_180: int
-    FLIPPED_270: int
+    NORMAL = 0
+    ROTATE_90 = 1
+    ROTATE_180 = 2
+    ROTATE_270 = 3
+    FLIPPED = 4
+    FLIPPED_90 = 5
+    FLIPPED_180 = 6
+    FLIPPED_270 = 7
 
-class SeatCapabilities:
+
+class SeatCapabilities(enum.Enum):
     """Bitfield flags describing the input capabilities of this seat."""
-    POINTER: int
-    KEYBOARD: int
-    TOUCH: int
+    POINTER = 1
+    KEYBOARD = 2
+    TOUCH = 4
 
-MAJOR_VERSION: int
-MINOR_VERSION: int
-MICRO_VERSION: int
-VERSION: str
 
-def get_default():
-    """    Convenience wrapper for [func@AstalWl.Registry.get_default].
-    Returns the singleton `Registry` instance that tracks all known globals, outputs, and seats on the connected Wayland display.
-    @returns: 
-    @rtype: AstalWl.Registry
-    """
+MAJOR_VERSION = '0'
+MINOR_VERSION = '1'
+MICRO_VERSION = '0'
+VERSION = '0.1.0'
+
+
+def get_default() -> AstalWl.Registry:
+    """Convenience wrapper for [func@AstalWl.Registry.get_default].
+Returns the singleton `Registry` instance that tracks all known globals, outputs, and seats on the connected Wayland display.
+
+:return: """
+    pass
+
 
 class Registry(GObject.Object):
     """Wraps the Wayland `wl_registry` interface and keeps track of all announced globals, outputs and seats.
 It exposes high-level collections and lookup helpers and emits signals when globals, outputs or seats are added or removed."""
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Registry
-        @rtype: Registry
-        """
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Registry
-        @rtype: Registry
+    def get_default() -> AstalWl.Registry:
+        """Returns the singleton `Registry` instance.
+The first call connects to the Wayland display and sets up the underlying `wl_registry` listener.
+
+:return: """
+        pass
+
+    def get_globals(self) -> GLib.List:
+        """Returns a list of all known globals.
+
+:param self: 
+:return: """
+        pass
+
+    def get_outputs(self) -> GLib.List:
+        """Returns a list of all known outputs.
+
+:param self: 
+:return: """
+        pass
+
+    def get_seats(self) -> GLib.List:
+        """Returns a list of all known seats.
+
+:param self: 
+:return: """
+        pass
+
+    def get_registry(self) -> Wl.Registry:
+        """Returns the underlying `wl_registry` object.
+
+:param self: 
+:return: """
+        pass
+
+    def get_display(self) -> Wl.Display:
+        """Returns the underlying `wl_display` used by this registry.
+
+:param self: 
+:return: """
+        pass
+
+    def find_globals(self, interface: str=None) -> GLib.List:
+        """Returns a list of globals, optionally filtered by interface name. If `null` is passed, all globals are returned.
+
+:param self: 
+:param interface: 
+:return: """
+        pass
+
+    def get_global_by_id(self, id: int=None) -> AstalWl.Global:
+        """Looks up a global by its numeric Iid.
+
+:param self: 
+:param id: 
+:return: """
+        pass
+
+    def get_output_by_id(self, id: int=None) -> AstalWl.Output:
+        """Looks up an output by its global id.
+
+:param self: 
+:param id: 
+:return: """
+        pass
+
+    def get_output_by_name(self, name: str=None) -> AstalWl.Output:
+        """Looks up an output by its compositor-assigned name.
+
+:param self: 
+:param name: 
+:return: """
+        pass
+
+    def get_output_by_wl_output(self, wl_output: Wl.Output=None
+        ) -> AstalWl.Output:
+        """Looks up an `Output` by its underlying `wl_output`.
+
+:param self: 
+:param wl_output: 
+:return: """
+        pass
+
+    def get_seat_by_id(self, id: int=None) -> AstalWl.Seat:
+        """Looks up a seat by its global id.
+
+:param self: 
+:param id: 
+:return: """
+        pass
+
+    def get_seat_by_name(self, name: str=None) -> AstalWl.Seat:
+        """Looks up a seat by its compositor-assigned name.
+
+:param self: 
+:param name: 
+:return: """
+        pass
+
+    def get_seat_by_wl_seat(self, wl_seat: Wl.Seat=None) -> AstalWl.Seat:
+        """Looks up a `Seat` by its underlying `wl_seat`.
+
+:param self: 
+:param wl_seat: 
+:return: """
+        pass
+
+    def __init__(self) -> None:
         """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def get_default():
-        """        Returns the singleton `Registry` instance.
-        The first call connects to the Wayland display and sets up the underlying `wl_registry` listener.
-        @returns: 
-        @rtype: AstalWl.Registry
+    def new() -> AstalWl.Registry:
         """
-    def get_globals(self):
-        """        Returns a list of all known globals.
-        @returns: 
-        @rtype: GLib.List
-        """
-    def get_outputs(self):
-        """        Returns a list of all known outputs.
-        @returns: 
-        @rtype: GLib.List
-        """
-    def get_seats(self):
-        """        Returns a list of all known seats.
-        @returns: 
-        @rtype: GLib.List
-        """
-    def get_registry(self):
-        """        Returns the underlying `wl_registry` object.
-        @returns: 
-        @rtype: Wl.Registry
-        """
-    def get_display(self):
-        """        Returns the underlying `wl_display` used by this registry.
-        @returns: 
-        @rtype: Wl.Display
-        """
-    def find_globals(self, interface=None):
-        """        Returns a list of globals, optionally filtered by interface name. If `null` is passed, all globals are returned.
-        @type interface: str
-        @returns: 
-        @rtype: GLib.List
-        """
-    def get_global_by_id(self, id=None):
-        """        Looks up a global by its numeric Iid.
-        @type id: int
-        @returns: 
-        @rtype: AstalWl.Global
-        """
-    def get_output_by_id(self, id=None):
-        """        Looks up an output by its global id.
-        @type id: int
-        @returns: 
-        @rtype: AstalWl.Output
-        """
-    def get_output_by_name(self, name=None):
-        """        Looks up an output by its compositor-assigned name.
-        @type name: str
-        @returns: 
-        @rtype: AstalWl.Output
-        """
-    def get_output_by_wl_output(self, wl_output=None):
-        """        Looks up an `Output` by its underlying `wl_output`.
-        @type wl_output: Wl.Output
-        @returns: 
-        @rtype: AstalWl.Output
-        """
-    def get_seat_by_id(self, id=None):
-        """        Looks up a seat by its global id.
-        @type id: int
-        @returns: 
-        @rtype: AstalWl.Seat
-        """
-    def get_seat_by_name(self, name=None):
-        """        Looks up a seat by its compositor-assigned name.
-        @type name: str
-        @returns: 
-        @rtype: AstalWl.Seat
-        """
-    def get_seat_by_wl_seat(self, wl_seat=None):
-        """        Looks up a `Seat` by its underlying `wl_seat`.
-        @type wl_seat: Wl.Seat
-        @returns: 
-        @rtype: AstalWl.Seat
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
-    @property
-    def globals(self): ...
-    @property
-    def outputs(self): ...
-    @property
-    def seats(self): ...
+
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: RegistryPrivate
+    globals: GLib.HashTable
+    outputs: GLib.HashTable
+    seats: GLib.HashTable
+
 
 class RegistryClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class RegistryPrivate: ...
+
+class RegistryPrivate:
+    """"""
+
 
 class Output(GObject.Object):
     """Represents a display output device and tracks properties associated with it.
 This class listens to Wayland `wl_output` and optional `zxdg_output_v1` events if supported by the compositor to maintain accurate state 
 information."""
-    def get_wl_output(self):
-        """        Returns the underlying `wl_output` proxy pointer.
-        @returns: 
-        @rtype: Wl.Output
+
+    def get_wl_output(self) -> Wl.Output:
+        """Returns the underlying `wl_output` proxy pointer.
+
+:param self: 
+:return: """
+        pass
+
+    def get_id(self) -> int:
         """
-    def get_id(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_geometry(self) -> AstalWl.Rectangle:
         """
-    def get_geometry(self):
-        """        
-        @returns: 
-        @rtype: AstalWl.Rectangle
+
+:param self: 
+:return: """
+        pass
+
+    def get_physical_width(self) -> int:
         """
-    def get_physical_width(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_physical_height(self) -> int:
         """
-    def get_physical_height(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_refresh_rate(self) -> float:
         """
-    def get_refresh_rate(self):
-        """        
-        @returns: 
-        @rtype: float
+
+:param self: 
+:return: """
+        pass
+
+    def get_transform(self) -> AstalWl.OutputTransform:
         """
-    def get_transform(self):
-        """        
-        @returns: 
-        @rtype: AstalWl.OutputTransform
+
+:param self: 
+:return: """
+        pass
+
+    def get_subpixel(self) -> AstalWl.OutputSubpixel:
         """
-    def get_subpixel(self):
-        """        
-        @returns: 
-        @rtype: AstalWl.OutputSubpixel
+
+:param self: 
+:return: """
+        pass
+
+    def get_make(self) -> str:
         """
-    def get_make(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_model(self) -> str:
         """
-    def get_model(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_scale(self) -> float:
         """
-    def get_scale(self):
-        """        
-        @returns: 
-        @rtype: float
+
+:param self: 
+:return: """
+        pass
+
+    def get_name(self) -> str:
         """
-    def get_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_description(self) -> str:
         """
-    def get_description(self):
-        """        
-        @returns: 
-        @rtype: str
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: OutputPrivate
+
 
 class OutputClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class OutputPrivate: ...
+
+class OutputPrivate:
+    """"""
+
 
 class Seat(GObject.Object):
     """Wraps the Wayland `wl_seat` interface.
 A seat represents a user input device group containing one or more keyboards, pointer devices, or touchscreens. It tracks the seats 
 capabilities and compositor-assigned name."""
-    def get_wl_seat(self):
-        """        Returns the underlying `wl_seat` object.
-        @returns: 
-        @rtype: Wl.Seat
+
+    def get_wl_seat(self) -> Wl.Seat:
+        """Returns the underlying `wl_seat` object.
+
+:param self: 
+:return: """
+        pass
+
+    def get_id(self) -> int:
         """
-    def get_id(self):
-        """        
-        @returns: 
-        @rtype: int
+
+:param self: 
+:return: """
+        pass
+
+    def get_name(self) -> str:
         """
-    def get_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_capabilities(self) -> AstalWl.SeatCapabilities:
         """
-    def get_capabilities(self):
-        """        
-        @returns: 
-        @rtype: AstalWl.SeatCapabilities
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: SeatPrivate
+
 
 class SeatClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class SeatPrivate: ...
+
+class SeatPrivate:
+    """"""
+
 
 class Global:
     """Describes a single Wayland global announced by `wl_registry`."""
-    @property
-    def name(self): ...
-    @property
-    def interface(self): ...
-    @property
-    def version(self): ...
+    name: int
+    interface: str
+    version: int
+
 
 class Rectangle:
     """A simple 2D axis-aligned rectangle with integer coordinates.
 Used throughout the AstalWl library to represent output geometry, window bounds, and other screen regions."""
-    def init_zero(self):
-        """        Creates a zero-sized rectangle at position (0,0).
-        @returns: 
-        @rtype: None
-        """
-    def copy(self, result=None):
-        """        Creates an exact copy of this rectangle.
-        @type result: AstalWl.Rectangle
-        @returns: 
-        @rtype: None
-        """
-    def normalize(self):
-        """        Normalizes the rectangle to ensure positive width and height.
-        If width or height are negative, adjusts the origin (x,y) so the rectangle always represents a valid region with top-left origin and 
-        positive extent.
-        @returns: 
-        @rtype: None
-        """
+
+    def init_zero(self) -> None:
+        """Creates a zero-sized rectangle at position (0,0).
+
+:param self: 
+:return: """
+        pass
+
+    def copy(self, result: AstalWl.Rectangle=None) -> None:
+        """Creates an exact copy of this rectangle.
+
+:param self: 
+:param result: 
+:return: """
+        pass
+
+    def normalize(self) -> None:
+        """Normalizes the rectangle to ensure positive width and height.
+If width or height are negative, adjusts the origin (x,y) so the rectangle always represents a valid region with top-left origin and 
+positive extent.
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def intersect(a=None, b=None, _result_=None):
-        """        Computes the intersection of two rectangles.
-        If no intersection exists, `result` is set to a zero rectangle and `false` is returned.
-        @type a: AstalWl.Rectangle
-        @type b: AstalWl.Rectangle
-        @type _result_: AstalWl.Rectangle
-        @returns: 
-        @rtype: bool
-        """
-    @property
-    def x(self): ...
-    @property
-    def y(self): ...
-    @property
-    def width(self): ...
-    @property
-    def height(self): ...
+    def intersect(a: AstalWl.Rectangle=None, b: AstalWl.Rectangle=None,
+        _result_: AstalWl.Rectangle=None) -> bool:
+        """Computes the intersection of two rectangles.
+If no intersection exists, `result` is set to a zero rectangle and `false` is returned.
+
+:param a: 
+:param b: 
+:param _result_: 
+:return: """
+        pass
+    x: int
+    y: int
+    width: int
+    height: int

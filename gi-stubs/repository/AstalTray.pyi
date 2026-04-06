@@ -1,242 +1,314 @@
-from gi.repository import GObject as GObject
+# -*- coding: utf-8 -*-
+from gi.repository import GLib
+import typing
+from gi.repository import AstalTray
+import enum
+from gi.repository import Gio
+from gi.repository import GObject
+from gi.repository import GdkPixbuf
 
-class Category:
-    APPLICATION: int
-    COMMUNICATIONS: int
-    SYSTEM: int
-    HARDWARE: int
 
-def category_to_nick(self):
-    """    
-    @returns: 
-    @rtype: str
-    """
-def category_from_string(value=None):
-    """    
-    @type value: str
-    @returns: 
-    @rtype: AstalTray.Category
-    """
+class Category(enum.Enum):
+    """"""
+    APPLICATION = 0
+    COMMUNICATIONS = 1
+    SYSTEM = 2
+    HARDWARE = 3
 
-class Status:
-    PASSIVE: int
-    ACTIVE: int
-    NEEDS_ATTENTION: int
 
-def status_to_nick(self):
-    """    
-    @returns: 
-    @rtype: str
-    """
-def status_from_string(value=None):
-    """    
-    @type value: str
-    @returns: 
-    @rtype: AstalTray.Status
+def category_to_nick(self) -> str:
     """
 
-MAJOR_VERSION: int
-MINOR_VERSION: int
-MICRO_VERSION: int
-VERSION: str
+:param self: 
+:return: """
+    pass
 
-def get_default():
-    """    Get the singleton instance of [class@AstalTray.Tray]
-    @returns: 
-    @rtype: AstalTray.Tray
+
+def category_from_string(value: str=None) -> AstalTray.Category:
     """
+
+:param value: 
+:return: """
+    pass
+
+
+class Status(enum.Enum):
+    """"""
+    PASSIVE = 0
+    ACTIVE = 1
+    NEEDS_ATTENTION = 2
+
+
+def status_to_nick(self) -> str:
+    """
+
+:param self: 
+:return: """
+    pass
+
+
+def status_from_string(value: str=None) -> AstalTray.Status:
+    """
+
+:param value: 
+:return: """
+    pass
+
+
+MAJOR_VERSION = '0'
+MINOR_VERSION = '1'
+MICRO_VERSION = '0'
+VERSION = '0.1.0'
+
+
+def get_default() -> AstalTray.Tray:
+    """Get the singleton instance of [class@AstalTray.Tray]
+
+:return: """
+    pass
+
 
 class TrayItem(GObject.Object):
-    def about_to_show(self):
-        """        tells the tray app that its menu is about to be opened, so it can update the menu if needed. You should call this method before openening the 
-        menu.
-        @returns: 
-        @rtype: None
+    """"""
+
+    def about_to_show(self) -> None:
+        """tells the tray app that its menu is about to be opened, so it can update the menu if needed. You should call this method before openening the 
+menu.
+
+:param self: 
+:return: """
+        pass
+
+    def activate(self, x: int=None, y: int=None) -> None:
+        """Send an activate request to the tray app.
+
+:param self: 
+:param x: 
+:param y: 
+:return: """
+        pass
+
+    def secondary_activate(self, x: int=None, y: int=None) -> None:
+        """Send a secondary activate request to the tray app.
+
+:param self: 
+:param x: 
+:param y: 
+:return: """
+        pass
+
+    def scroll(self, delta: int=None, orientation: str=None) -> None:
+        """Send a scroll request to the tray app. valid values for the orientation are "horizontal" and "vertical".
+
+:param self: 
+:param delta: 
+:param orientation: 
+:return: """
+        pass
+
+    def to_json_string(self) -> str:
         """
-    def activate(self, x=None, y=None):
-        """        Send an activate request to the tray app.
-        @type x: int
-        @type y: int
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_title(self) -> str:
         """
-    def secondary_activate(self, x=None, y=None):
-        """        Send a secondary activate request to the tray app.
-        @type x: int
-        @type y: int
-        @returns: 
-        @rtype: None
+
+:param self: 
+:return: """
+        pass
+
+    def get_category(self) -> AstalTray.Category:
         """
-    def scroll(self, delta=None, orientation=None):
-        '''        Send a scroll request to the tray app. valid values for the orientation are "horizontal" and "vertical".
-        @type delta: int
-        @type orientation: str
-        @returns: 
-        @rtype: None
-        '''
-    def to_json_string(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_status(self) -> AstalTray.Status:
         """
-    def get_title(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_tooltip(self) -> AstalTray.Tooltip:
         """
-    def get_category(self):
-        """        
-        @returns: 
-        @rtype: AstalTray.Category
+
+:param self: 
+:return: """
+        pass
+
+    def get_tooltip_markup(self) -> str:
         """
-    def get_status(self):
-        """        
-        @returns: 
-        @rtype: AstalTray.Status
+
+:param self: 
+:return: """
+        pass
+
+    def get_tooltip_text(self) -> str:
         """
-    def get_tooltip(self):
-        """        
-        @returns: 
-        @rtype: AstalTray.Tooltip
+
+:param self: 
+:return: """
+        pass
+
+    def get_id(self) -> str:
         """
-    def get_tooltip_markup(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_is_menu(self) -> bool:
         """
-    def get_tooltip_text(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_icon_theme_path(self) -> str:
         """
-    def get_id(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_icon_name(self) -> str:
         """
-    def get_is_menu(self):
-        """        
-        @returns: 
-        @rtype: bool
+
+:param self: 
+:return: """
+        pass
+
+    def get_icon_pixbuf(self) -> GdkPixbuf.Pixbuf:
         """
-    def get_icon_theme_path(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_gicon(self) -> Gio.Icon:
         """
-    def get_icon_name(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_item_id(self) -> str:
         """
-    def get_icon_pixbuf(self):
-        """        
-        @returns: 
-        @rtype: GdkPixbuf.Pixbuf
+
+:param self: 
+:return: """
+        pass
+
+    def get_menu_path(self) -> GLib.ObjectPath:
         """
-    def get_gicon(self):
-        """        
-        @returns: 
-        @rtype: Gio.Icon
+
+:param self: 
+:return: """
+        pass
+
+    def get_menu_model(self) -> Gio.MenuModel:
         """
-    def get_item_id(self):
-        """        
-        @returns: 
-        @rtype: str
+
+:param self: 
+:return: """
+        pass
+
+    def get_action_group(self) -> Gio.ActionGroup:
         """
-    def get_menu_path(self):
-        """        
-        @returns: 
-        @rtype: GLib.ObjectPath
-        """
-    def get_menu_model(self):
-        """        
-        @returns: 
-        @rtype: Gio.MenuModel
-        """
-    def get_action_group(self):
-        """        
-        @returns: 
-        @rtype: Gio.ActionGroup
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: TrayItemPrivate
+
 
 class TrayItemClass:
-    @property
-    def parent_class(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
 
-class TrayItemPrivate: ...
+
+class TrayItemPrivate:
+    """"""
+
 
 class Tray(GObject.Object):
-    def __init__(self, **kwargs) -> None:
-        """        
-        @returns: Newly created Tray
-        @rtype: Tray
-        """
+    """"""
+
     @staticmethod
-    def new():
-        """        
-        @returns: Newly created Tray
-        @rtype: Tray
+    def get_default() -> AstalTray.Tray:
+        """Get the singleton instance of [class@AstalTray.Tray]
+
+:return: """
+        pass
+
+    def get_item(self, item_id: str=None) -> AstalTray.TrayItem:
+        """gets the TrayItem with the given item-id.
+
+:param self: 
+:param item_id: 
+:return: """
+        pass
+
+    def __init__(self) -> None:
         """
+
+:param self: 
+:return: """
+        pass
+
     @staticmethod
-    def get_default():
-        """        Get the singleton instance of [class@AstalTray.Tray]
-        @returns: 
-        @rtype: AstalTray.Tray
+    def new() -> AstalTray.Tray:
         """
-    def get_item(self, item_id=None):
-        """        gets the TrayItem with the given item-id.
-        @type item_id: str
-        @returns: 
-        @rtype: AstalTray.TrayItem
+
+:return: """
+        pass
+
+    def get_items(self) -> GLib.List:
         """
-    def get_items(self):
-        """        
-        @returns: 
-        @rtype: GLib.List
+
+:param self: 
+:return: """
+        pass
+
+    def get_items_model(self) -> Gio.ListModel:
         """
-    def get_items_model(self):
-        """        
-        @returns: 
-        @rtype: Gio.ListModel
-        """
-    @property
-    def parent_instance(self): ...
-    @property
-    def priv(self): ...
+
+:param self: 
+:return: """
+        pass
+    parent_instance: GObject.Object
+    priv: TrayPrivate
+
 
 class TrayClass:
-    @property
-    def parent_class(self): ...
-    @property
-    def item_added(self): ...
-    @property
-    def item_removed(self): ...
+    """"""
+    parent_class: GObject.ObjectClass
+    item_added: typing.Any
+    item_removed: typing.Any
 
-class TrayPrivate: ...
+
+class TrayPrivate:
+    """"""
+
 
 class Pixmap:
-    @property
-    def width(self): ...
-    @property
-    def height(self): ...
-    @property
-    def bytes(self): ...
-    @property
-    def bytes_length1(self): ...
+    """"""
+    width: int
+    height: int
+    bytes: typing.Any
+    bytes_length1: int
+
 
 class Tooltip:
-    @property
-    def icon_name(self): ...
-    @property
-    def icon(self): ...
-    @property
-    def icon_length1(self): ...
-    @property
-    def title(self): ...
-    @property
-    def description(self): ...
+    """"""
+    icon_name: str
+    icon: typing.Any
+    icon_length1: int
+    title: str
+    description: str
